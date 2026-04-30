@@ -1,7 +1,7 @@
 import { LuGithub, LuInstagram, LuLinkedin } from "react-icons/lu";
 import Link from "next/link";
 
-const navLinks = ["Home", "Projects", "About", "Contact"];
+const navLinks = ["Home", "Projects", "Case Studies", "About", "Contact"];
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -36,7 +36,7 @@ export default function Footer() {
             {navLinks.map((item) => (
               <Link
                 key={item}
-                href={item === "Home" ? "/" : `/${item.toLowerCase()}`}
+                href={item === "Home" ? "/" : `/${item.toLowerCase().replace(" ", "-")}`}
                 className="font-['Space_Mono'] text-[11px] tracking-[0.12em] uppercase text-slate-500 no-underline transition-colors duration-300 hover:text-orange-400"
               >
                 {item}

@@ -18,38 +18,38 @@ interface FeaturedProject {
 const featuredProjects: FeaturedProject[] = [
   {
     id: 1,
-    title: "Cyberrey Platform",
+    title: "Cyberrey",
     description:
-      "A modern SaaS experience designed to simplify complex workflows through intuitive interfaces and lightning-fast performance.",
+      "Cyberrey is a cybersecurity website built to showcase trust and enterprise-grade protection.",
     tags: ["UI/UX", "Webflow", "CMS"],
-    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=1200",
+    image: "/projects/Cyberrey Mockup.png",
     link: "#",
   },
   {
     id: 2,
-    title: "Nova Financial",
+    title: "CWESD",
     description:
-      "High-conversion fintech landing page crafted with precision typography and seamless micro-interactions.",
+      "CWESD is a modern, conversion-focused learning platform empowering women to learn, grow, and lead.",
     tags: ["Web Design", "Development", "Figma"],
-    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=1200",
+    image: "/projects/CWESD - Mockup.png",
     link: "#",
   },
   {
     id: 3,
-    title: "Aura Skincare",
+    title: "Axion Lighting Collection",
     description:
-      "Premium e-commerce experience featuring editorial photography and a frictionless checkout flow.",
-    tags: ["E-Commerce", "Webflow", "Interaction"],
-    image: "https://images.unsplash.com/photo-1616401784845-180882ba9ba8?auto=format&fit=crop&q=80&w=1200",
+      "Axion is a sleek eCommerce platform showcasing curated lighting collections with an elegant and user-friendly shopping experience.",
+    tags: ["E-Commerce", "Figma", "Interaction"],
+    image: "/projects/Axion-Mockup.png",
     link: "#",
   },
   {
     id: 4,
-    title: "Nexus Dashboard",
+    title: "Prime Renovations",
     description:
-      "Enterprise-grade analytics interface with real-time data visualization and dark-mode-first design.",
-    tags: ["UI/UX", "Dashboard", "SaaS"],
-    image: "https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&q=80&w=1200",
+      "Prime Renovations is a premium home renovation website reflecting precision and craftsmanship.",
+    tags: ["UI/UX", "Figma", "SaaS"],
+    image: "/projects/Prime Renovations Mockup.png",
     link: "#",
   },
 ];
