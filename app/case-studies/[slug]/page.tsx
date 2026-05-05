@@ -8,6 +8,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { caseStudies } from "@/lib/case-studies";
 import Header from "@/components/header";
 import Footer from "@/components/footer";
+import GalleryCarousel from "@/components/gallery-carousel";
 import IPhoneFrame from "@/components/device-frames/iphone-frame";
 import DesktopFrame from "@/components/device-frames/desktop-frame";
 
@@ -197,33 +198,7 @@ export default function CaseStudyDetail() {
               </div>
             </div>
 
-            {/* Images Gallery */}
-            {caseStudy.gallery.length > 0 && (
-              <div className="mb-20">
-                <h2 className="font-['Rajdhani'] text-3xl font-bold text-slate-100 mb-8 flex items-center gap-3">
-                  <div className="w-12 h-px" style={{ background: "linear-gradient(to right, rgba(249,115,22,0.5), transparent)" }} />
-                  Project Gallery
-                </h2>
-
-                <div className="grid grid-cols-1 gap-6">
-                  {caseStudy.gallery.map((image, i) => (
-                    <div key={i} className="relative group overflow-hidden rounded-lg">
-                      <div className="absolute -inset-[1px] opacity-0 transition-opacity duration-700 group-hover:opacity-100 pointer-events-none rounded-lg z-10" style={{ background: "linear-gradient(135deg, rgba(249,115,22,0.2), rgba(168,85,247,0.1))" }} />
-
-                      <div className="relative w-full aspect-video overflow-hidden rounded-lg" style={{ boxShadow: "inset 0 0 0 1px rgba(255,255,255,0.05)" }}>
-                        {/* eslint-disable-next-line @next/next/no-img-element */}
-                        <img
-                          src={image}
-                          alt={`${caseStudy.title} - Gallery ${i + 1}`}
-                          className="absolute inset-0 w-full h-full object-cover transition-transform duration-[1s] ease-[cubic-bezier(0.25,0.46,0.45,0.94)] group-hover:scale-[1.02]"
-                        />
-                        <div className="absolute inset-0 pointer-events-none" style={{ background: "linear-gradient(to top, rgba(9,9,15,0.5) 0%, rgba(9,9,15,0.1) 50%, transparent 100%)" }} />
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            )}
+            <GalleryCarousel images={caseStudy.gallery} title={caseStudy.title} />
 
             {/* Device Showcase Section */}
             <div className="mb-20">
@@ -243,7 +218,7 @@ export default function CaseStudyDetail() {
                     Full-width responsive design optimized for desktop viewing
                   </p>
                 </div>
-                <div className="flex justify-center overflow-x-auto pb-4">
+                <div className="flex justify-center pb-4">
                   <DesktopFrame
                     src={caseStudy.previews.desktop}
                     alt={`${caseStudy.title} - Desktop View`}
@@ -252,23 +227,24 @@ export default function CaseStudyDetail() {
               </div>
 
               {/* Mobile View */}
-              <div>
-                <div className="mb-6">
-                  <h3 className="font-['Rajdhani'] text-xl font-bold text-slate-300 mb-2 flex items-center gap-2">
-                    <span className="inline-block w-2 h-2 bg-purple-400/60 rounded-full" />
-                    Mobile Experience
-                  </h3>
-                  <p className="font-sans text-slate-500 text-sm">
-                    Optimized mobile interface with touch-friendly interactions
-                  </p>
-                </div>
-                <div className="flex justify-center">
-                  <IPhoneFrame
-                    src={caseStudy.previews.mobile}
-                    alt={`${caseStudy.title} - Mobile View`}
-                  />
-                </div>
-              </div>
+              {caseStudy.previews.mobile && (
+                <div>
+                  <div className="mb-6">
+                    <h3 className="font-['Rajdhani'] text-xl font-bold text-slate-300 mb-2 flex items-center gap-2">
+                      <span className="inline-block w-2 h-2 bg-purple-400/60 rounded-full" />
+                      Mobile Experience
+                    </h3>
+                    <p className="font-sans text-slate-500 text-sm">
+                      Optimized mobile interface with touch-friendly interactions
+                    </p>
+                  </div>
+                  <div className="flex justify-center">
+                    <IPhoneFrame
+                      src={caseStudy.previews.mobile}
+                      alt={`${caseStudy.title} - Mobile View`}
+                    />
+                  </div>
+                </div>)}
             </div>
 
             {/* CTA */}
@@ -283,6 +259,21 @@ export default function CaseStudyDetail() {
                   </p>
                 </div>
 
+                {
+                  caseStudy.liveUrl && (
+                    <a
+                      href={caseStudy.liveUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-3 font-['Space_Mono'] text-xs tracking-[0.12em] uppercase px-6 py-3 bg-orange-500 text-slate-950 border border-orange-500 no-underline transition-all duration-250 hover:bg-orange-600 hover:shadow-[0_0_20px_rgba(255,87,34,0.4)] rounded-sm group whitespace-nowrap"
+                    >
+                      Live Site
+                      <svg className="transform group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" width="12" height="12" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
+                        <path d="M7 17L17 7M17 7H7M17 7v10" />
+                      </svg>
+                    </a>
+                  )
+                }
                 <a
                   href={caseStudy.link}
                   target="_blank"
@@ -366,7 +357,6 @@ export default function CaseStudyDetail() {
           </div>
         </section>
       </main>
-      <Footer />
     </>
   );
 }

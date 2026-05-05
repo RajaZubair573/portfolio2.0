@@ -22,7 +22,7 @@ const featuredProjects: FeaturedProject[] = [
     description:
       "Cyberrey is a cybersecurity website built to showcase trust and enterprise-grade protection.",
     tags: ["UI/UX", "Webflow", "CMS"],
-    image: "/projects/Cyberrey Mockup.png",
+    image: "/projects/Cyberrey/Cyberrey Mockup.png",
     link: "#",
   },
   {

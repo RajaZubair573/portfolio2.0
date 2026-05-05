@@ -19,3 +19,19 @@ body {
 .word-appear {
   animation: popIn 0.25s ease-out forwards;
 }
+
+.scroll-container {
+  /* 1. For Chrome, Safari, and Opera */
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* 2. For Firefox */
+  scrollbar-width: none;
+
+  /* 3. For IE and older Edge */
+  -ms-overflow-style: none;
+
+  /* Ensure scrolling is actually enabled */
+  overflow-y: scroll; 
+}

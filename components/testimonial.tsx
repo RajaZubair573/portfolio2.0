@@ -10,7 +10,7 @@ gsap.registerPlugin(ScrollTrigger);
 export default function Testimonial() {
   const sectionRef = useRef<HTMLElement>(null);
   const headerRef = useRef<HTMLDivElement>(null);
-  const cardsRef = useRef<(HTMLDivElement | null)[]>([]);
+  const cardsRef = useRef<Array<HTMLElement | null>>([]);
 
   useEffect(() => {
     const ctx = gsap.context(() => {

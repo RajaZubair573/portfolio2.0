@@ -9,30 +9,31 @@ export interface CaseStudy {
   gallery: string[];
   previews: {
     desktop: string;
-    mobile: string;
+    mobile?: string;
   };
   tags: string[];
   link: string;
+  liveUrl?: string;
   featured: boolean;
 }
 
 export const caseStudies: CaseStudy[] = [
   {
     id: 1,
-    title: "Cyberrey Platform Redesign",
+    title: "CyberRey — Cybersecurity Website Redesign",
     slug: "cyberrey-platform",
-    overview: "Cyberrey is a cybersecurity platform that needed a complete redesign to better communicate trust, security, and enterprise-grade protection to potential clients.",
-    challenge: "The previous design lacked visual hierarchy and failed to convey the seriousness and reliability expected from a cybersecurity brand. Users were not converting due to unclear value propositions and outdated aesthetics.",
-    solution: "Implemented a dark, professional design with strong typography, security-focused iconography, and clear CTAs. Used Webflow for responsive development with custom animations to showcase trust indicators.",
+    overview: "CyberRey is a cybersecurity solutions provider redesigned to better communicate trust, clarity, and enterprise-grade protection to modern organizations.",
+    challenge: "The existing website lacked a clear visual hierarchy and failed to communicate the credibility and trust expected from a cybersecurity brand. The interface felt outdated, with unclear messaging and weak value positioning, leading to low user engagement and poor conversion performance.",
+    solution: "Redesigned the experience with a modern, security-focused approach centered on clarity and trust. Introduced strong typography, structured layouts, and refined iconography to guide users through key offerings. Established a consistent visual system with clear CTAs and improved content hierarchy. Built the site in Webflow with fully responsive behavior and subtle interactions to reinforce credibility without distraction.",
     results: [
-      "Increased conversion rate by 45%",
-      "Improved user engagement metrics by 60%",
-      "Enhanced brand perception as a premium cybersecurity solution"
+      "Increased conversion rate by 45% through clearer messaging and optimized user flow",
+      "IImproved user engagement by 60%, with better navigation and content structure",
+      "Elevated brand perception, positioning CyberRey as a premium, enterprise-grade cybersecurity partner"
     ],
-    gallery: ["/projects/Cyberrey Mockup.png"],
+    gallery: ["/projects/Cyberrey/Cyberrey Mockup.png"],
     previews: {
-      desktop: "/projects/Cyberrey Mockup.png",
-      mobile: "/projects/Cyberrey Mockup.png"
+      desktop: "/projects/Cyberrey/Cyberrey Landing Page.png",
+      // mobile: "/projects/Cyberrey/Cyberrey Mockup.png"
     },
     tags: ["UI/UX", "Webflow", "Cybersecurity", "Redesign"],
     link: "https://www.figma.com/design/zVgjqRKZdXfZZ5vREeBkqk/Cyberrey-New?node-id=0-1&t=OZsJfQbaAWpAAWyH-1",
@@ -71,14 +72,15 @@ export const caseStudies: CaseStudy[] = [
       "Reduced cart abandonment by 50%",
       "Achieved 4.8/5 customer satisfaction rating"
     ],
-    gallery: ["/projects/Axion-Mockup.png"],
+    gallery: ["/projects/Axion/Axion-Mockup.png", "/projects/CWESD - Mockup.png", "/projects/Axion/Axion-Mockup.png", "/projects/CWESD - Mockup.png", "/projects/Axion/Axion-Mockup.png", "/projects/CWESD - Mockup.png", "/projects/Axion/Axion-Mockup.png", "/projects/CWESD - Mockup.png", "/projects/Axion/Axion-Mockup.png", "/projects/Axion/Axion-Mockup.png",],
     previews: {
-      desktop: "/projects/Axion-Mockup.png",
-      mobile: "/projects/Axion-Mockup.png"
+      desktop: "/projects/Axion/Axion Main Landing Page.png",
+      mobile: "/projects/Axion/axion Mobile Landing Page.png"
     },
     tags: ["E-Commerce", "UI/UX", "Product Design", "Conversion Optimization"],
     link: "https://www.figma.com/design/uqVa8WTG7FIBpBvQoGPPto/Axion-Selective-Part?node-id=0-1&t=KSUe2Mjwk15kkrK4-1",
-    featured: true
+    featured: true,
+    liveUrl: "https://axionlights.com/"
   },
   {
     id: 4,
@@ -101,4 +103,5 @@ export const caseStudies: CaseStudy[] = [
     link: "https://www.figma.com/design/FeOzf3wjda23O4VP7gkblb/Redesign-Prime-Renovations?node-id=0-1&t=NUTmH5mg5fhqMcwf-1",
     featured: false
   }
+
 ];

@@ -28,12 +28,12 @@ export default function DesktopFrame({ src, alt }: DesktopFrameProps) {
           </div>
 
           {/* Screen content */}
-          <div className="relative w-full aspect-video overflow-hidden bg-slate-950">
+          <div className="relative w-full aspect-video overflow-y-auto bg-slate-950 scroll-container">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src={src}
               alt={alt}
-              className="w-full h-full object-cover"
+              className="w-full object-cover"
             />
           </div>
         </div>

@@ -19,12 +19,12 @@ export default function IPhoneFrame({ src, alt }: IPhoneFrameProps) {
           <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-40 h-7 bg-black rounded-b-3xl z-10" />
 
           {/* Screen content */}
-          <div className="relative w-full aspect-[9/19.5] overflow-hidden bg-slate-950">
+          <div className="relative w-full aspect-[9/19.5] overflow-y-auto bg-slate-950 scroll-container">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src={src}
               alt={alt}
-              className="w-full h-full object-cover"
+              className="w-full object-cover"
             />
           </div>
         </div>
