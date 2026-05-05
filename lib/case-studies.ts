@@ -51,10 +51,9 @@ export const caseStudies: CaseStudy[] = [
       "Increased course enrollment by 120%",
       "Built a strong community with 5000+ active members"
     ],
-    gallery: ["/projects/CWESD - Mockup.png"],
+    gallery: ["/projects/CWESD/CWESD - Mockup.png"],
     previews: {
-      desktop: "/projects/CWESD - Mockup.png",
-      mobile: "/projects/CWESD - Mockup.png"
+      desktop: "/projects/CWESD/CWESD Landing Page.png",
     },
     tags: ["UI/UX", "Education", "Community", "Mobile-First"],
     link: "https://www.figma.com/design/9Nv6z5mVXXUn2KzwMK1d5V/CWESD?node-id=0-1&t=Bnl38CVdCQKy85JX-1",
@@ -72,13 +71,13 @@ export const caseStudies: CaseStudy[] = [
       "Reduced cart abandonment by 50%",
       "Achieved 4.8/5 customer satisfaction rating"
     ],
-    gallery: ["/projects/Axion/Axion-Mockup.png", "/projects/CWESD - Mockup.png", "/projects/Axion/Axion-Mockup.png", "/projects/CWESD - Mockup.png", "/projects/Axion/Axion-Mockup.png", "/projects/CWESD - Mockup.png", "/projects/Axion/Axion-Mockup.png", "/projects/CWESD - Mockup.png", "/projects/Axion/Axion-Mockup.png", "/projects/Axion/Axion-Mockup.png",],
+    gallery: ["/projects/Axion/Axion-Mockup.png"],
     previews: {
       desktop: "/projects/Axion/Axion Main Landing Page.png",
       mobile: "/projects/Axion/axion Mobile Landing Page.png"
     },
     tags: ["E-Commerce", "UI/UX", "Product Design", "Conversion Optimization"],
-    link: "https://www.figma.com/design/uqVa8WTG7FIBpBvQoGPPto/Axion-Selective-Part?node-id=0-1&t=KSUe2Mjwk15kkrK4-1",
+    link: "https://www.figma.com/design/9f0Zx8QtkreC2pR7xTk6ut/Axion-Landing-Pages?node-id=99-88&t=x23Vp5gOW6NUTELI-1",
     featured: true,
     liveUrl: "https://axionlights.com/"
   },
@@ -94,14 +93,35 @@ export const caseStudies: CaseStudy[] = [
       "Improved brand positioning in premium market",
       "Reduced inquiry response time by 70%"
     ],
-    gallery: ["/projects/Prime Renovations Mockup.png"],
+    gallery: ["/projects/Prime Renovations/Prime Renovations Mockup.png"],
     previews: {
-      desktop: "/projects/Prime Renovations Mockup.png",
-      mobile: "/projects/Prime Renovations Mockup.png"
+      desktop: "/projects/Prime Renovations/Prime Renovations Landing Page.png"
     },
     tags: ["Web Design", "Luxury Branding", "Lead Generation", "Portfolio"],
     link: "https://www.figma.com/design/FeOzf3wjda23O4VP7gkblb/Redesign-Prime-Renovations?node-id=0-1&t=NUTmH5mg5fhqMcwf-1",
+    featured: false,
+    liveUrl: "https://www.primerenovationsnyc.com/"
+  },
+  {
+    id: 5,
+    title: "Pablo Marble & Granite",
+    slug: "pablo-marbles-granite",
+    overview: "A modern website redesign for a premium stone fabrication company, showcasing materials, projects, and services with a clean, luxury-focused experience.",
+    challenge: "The old website felt outdated and cluttered, making it difficult to showcase materials, projects, and services in a premium and user-friendly way.",
+    solution: "Redesigned the website with a clean layout, gallery-focused sections, modern typography, improved page structure, and a premium appointment booking experience aligned with the brand.",
+    results: [
+      "Created a modern and premium digital presence",
+      "Improved navigation and overall user experience",
+      "Enhanced project and material presentation with cleaner layouts"
+    ],
+    gallery: ["/projects/Pablo Marbles and Granite/Pablo Granite and Marbles.png"],
+    previews: {
+      desktop: "/projects/Pablo Marbles and Granite/Pablo Landing Page.png",
+    },
+    tags: ["Web Design", "Figma", "Luxury Branding", "UI/UX"],
+    link: "https://www.figma.com/design/5q5JMJqUHSxyByIGSiw25p/Pablo-Marbles?node-id=527-2221&t=zA0zz6kk9kOubyb5-1",
     featured: false
   }
+  
 
 ];

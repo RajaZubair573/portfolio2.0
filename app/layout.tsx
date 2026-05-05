@@ -3,11 +3,15 @@ import { Toaster } from "react-hot-toast";
 import "./globals.css";
 import Header from "@/components/header";
 import Footer from "@/components/footer";
+import DisableScrollRestoration from "@/components/disable-scroll-restoration";
 
 export const metadata: Metadata = {
   title: "Raja Zubair | Portfolio",
   description:
     "UI/UX Designer & Webflow Developer crafting premium digital experiences.",
+  icons: {
+    icon: "/svgs/icon.jpg",
+  },
 };
 
 export default function RootLayout({

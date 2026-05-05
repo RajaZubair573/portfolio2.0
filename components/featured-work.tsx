@@ -23,7 +23,7 @@ const featuredProjects: FeaturedProject[] = [
       "Cyberrey is a cybersecurity website built to showcase trust and enterprise-grade protection.",
     tags: ["UI/UX", "Webflow", "CMS"],
     image: "/projects/Cyberrey/Cyberrey Mockup.png",
-    link: "#",
+    link: "/case-studies/cyberrey-platform",
   },
   {
     id: 2,
@@ -31,8 +31,8 @@ const featuredProjects: FeaturedProject[] = [
     description:
       "CWESD is a modern, conversion-focused learning platform empowering women to learn, grow, and lead.",
     tags: ["Web Design", "Development", "Figma"],
-    image: "/projects/CWESD - Mockup.png",
-    link: "#",
+    image: "/projects/CWESD/CWESD - Mockup.png",
+    link: "/case-studies/cwesd-learning-platform",
   },
   {
     id: 3,
@@ -40,8 +40,8 @@ const featuredProjects: FeaturedProject[] = [
     description:
       "Axion is a sleek eCommerce platform showcasing curated lighting collections with an elegant and user-friendly shopping experience.",
     tags: ["E-Commerce", "Figma", "Interaction"],
-    image: "/projects/Axion-Mockup.png",
-    link: "#",
+    image: "/projects/Axion/Axion-Mockup.png",
+    link: "/case-studies/axion-lighting-ecommerce",
   },
   {
     id: 4,
@@ -49,8 +49,8 @@ const featuredProjects: FeaturedProject[] = [
     description:
       "Prime Renovations is a premium home renovation website reflecting precision and craftsmanship.",
     tags: ["UI/UX", "Figma", "SaaS"],
-    image: "/projects/Prime Renovations Mockup.png",
-    link: "#",
+    image: "/projects/Prime Renovations/Prime Renovations Mockup.png",
+    link: "/case-studies/prime-renovations",
   },
 ];
 
