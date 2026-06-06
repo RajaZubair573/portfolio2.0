@@ -11,6 +11,7 @@ import Footer from "@/components/footer";
 import GalleryCarousel from "@/components/gallery-carousel";
 import IPhoneFrame from "@/components/device-frames/iphone-frame";
 import DesktopFrame from "@/components/device-frames/desktop-frame";
+import Image from "next/image";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -123,12 +124,13 @@ export default function CaseStudyDetail() {
 
               {/* Featured Image Preview */}
               <div className="relative mt-12 md:mt-16 -mx-8 md:mx-0">
-                <div className="relative h-64 md:h-96 overflow-hidden rounded-lg" style={{ boxShadow: "inset 0 0 0 1px rgba(255,255,255,0.04)" }}>
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img
+                <div className="relative h-64 md:h-[40rem] overflow-hidden rounded-lg" style={{ boxShadow: "inset 0 0 0 1px rgba(255,255,255,0.04)" }}>
+                  
+                  <Image
+                    fill
                     src={caseStudy.gallery[0]}
                     alt={caseStudy.title}
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-cover md:object-top"
                   />
                   <div className="absolute inset-0 pointer-events-none" style={{ background: "linear-gradient(to top, rgba(9,9,15,0.8) 0%, rgba(9,9,15,0.2) 60%, transparent 100%)" }} />
                 </div>

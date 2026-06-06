@@ -6,6 +6,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { projects } from "@/lib/constants";
 import Header from "@/components/header";
 import Footer from "@/components/footer";
+import Image from "next/image";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -79,19 +80,13 @@ export default function ProjectsPage() {
                     style={{ background: "rgba(9,9,15,1)", boxShadow: "inset 0 0 0 1px rgba(255,255,255,0.06)" }}
                   >
                     <div className="relative w-full aspect-video overflow-hidden">
-                      {/* eslint-disable-next-line @next/next/no-img-element */}
-                      <img
+                      
+                      <Image
+                        fill
                         src={project.imagePath}
                         alt={project.name}
                         className="absolute inset-0 w-full h-full object-cover object-center transition-transform duration-[1s] ease-[cubic-bezier(0.25,0.46,0.45,0.94)] group-hover:scale-[1.04]"
                       />
-                      <div className="absolute inset-0 pointer-events-none" style={{ background: "linear-gradient(to top, #09090f 0%, rgba(9,9,15,0.7) 40%, transparent 100%)" }} />
-                      <div className="absolute inset-0 pointer-events-none opacity-0 transition-opacity duration-700 group-hover:opacity-100" style={{ background: "radial-gradient(ellipse at 50% 120%, rgba(249,115,22,0.08) 0%, transparent 70%)" }} />
-                      <div className="absolute top-4 left-5 z-10">
-                        <span className="font-['Space_Mono'] text-[10px] tracking-[0.25em] text-white/15 transition-all duration-500 group-hover:text-orange-400/40">
-                          {String(index + 1).padStart(2, "0")}
-                        </span>
-                      </div>
                     </div>
 
                     <div className="relative px-5 pb-5 pt-0 -mt-1">

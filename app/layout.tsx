@@ -9,6 +9,22 @@ export const metadata: Metadata = {
   title: "Raja Zubair | Portfolio",
   description:
     "UI/UX Designer & Webflow Developer crafting premium digital experiences.",
+  openGraph: {
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Raja Zubair Portfolio"
+      }
+    ]
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Raja Zubair | Portfolio",
+    description: "UI/UX Designer & Webflow Developer crafting premium digital experiences.",
+    images: ["/og-image.png"],
+  },
   icons: {
     icon: "/svgs/icon.jpg",
   },
@@ -34,7 +50,7 @@ export default function RootLayout({
         />
       </head>
       <body className="bg-[#06060a] text-slate-200 min-h-screen font-mono">
-      <Header />
+        <Header />
         {children}
         <Footer />
         <Toaster

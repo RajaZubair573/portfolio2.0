@@ -50,7 +50,7 @@ export default function DesktopFrame({ src, alt }: DesktopFrameProps) {
               <svg width="9" height="9" viewBox="0 0 24 24" fill="currentColor" className="flex-shrink-0 text-green-400">
                 <path d="M12 1a6 6 0 0 1 6 6v2h1a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V11a2 2 0 0 1 2-2h1V7a6 6 0 0 1 6-6zm0 2a4 4 0 0 0-4 4v2h8V7a4 4 0 0 0-4-4z" />
               </svg>
-              <span className="text-[10px] font-['Space_Mono'] text-slate-400 truncate">rajazubair.com</span>
+              <span className="text-[10px] font-['Space_Mono'] text-slate-400 truncate">rajazubair.me</span>
             </div>
           </div>
 

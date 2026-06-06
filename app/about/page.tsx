@@ -103,7 +103,7 @@ export default function AboutPage() {
                   {/* Image container */}
                   <div className="relative overflow-hidden rounded-2xl" style={{ boxShadow: "inset 0 0 0 1px rgba(255,255,255,0.08), 0 20px 60px rgba(0,0,0,0.4)" }}>
                     <Image
-                      src="/designer.png"
+                      src="/og-image.png"
                       alt="Raja Zubair - Designer"
                       width={600}
                       height={700}

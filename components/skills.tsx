@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { skills } from "@/lib/constants";
+import Image from "next/image";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -64,8 +65,9 @@ function SkillCard({ skill, index, cardRef }: SkillCardProps) {
         {/* Icon */}
         <div className="relative w-16 h-16 flex items-center justify-center">
           <div className="absolute inset-[-8px] rounded-full transition-all duration-700 opacity-0 group-hover:opacity-100" style={{ background: "radial-gradient(circle, rgba(249,115,22,0.1) 0%, transparent 70%)", filter: "blur(8px)" }} />
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
+          
+          <Image
+            fill
             src={skill.icon}
             alt={skill.name}
             className="relative w-12 h-12 object-contain transition-all duration-500 group-hover:scale-110 filter brightness-[0.85] group-hover:brightness-110 group-hover:drop-shadow-[0_0_12px_rgba(249,115,22,0.2)]"

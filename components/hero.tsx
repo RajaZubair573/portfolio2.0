@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { gsap } from "gsap";
+import Image from "next/image";
 
 const headingWords = [
   {
@@ -283,8 +284,9 @@ export default function Hero() {
           <div className="md:hidden relative" style={{ height: "calc(100vh - 52px)" }}>
             {/* Person image — leaves gap at top, fills rest */}
             <div ref={personRef} className="absolute z-10" style={{ top: "8%", left: 0, right: 0, bottom: 0 }}>
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
+              
+              <Image
+                fill
                 src="/hero.png"
                 alt="Raja Zubair"
                 className="w-full h-full object-cover object-top"
@@ -341,8 +343,9 @@ export default function Hero() {
             style={{ transform: "translateX(-48%)" }}
           >
             <div className="relative w-[500px] h-full flex items-end justify-center">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
+              
+              <Image
+                fill
                 src="/hero.png"
                 alt="Raja Zubair - UI/UX Designer & Webflow Developer"
                 className="absolute bottom-0 w-full h-full object-contain object-bottom"

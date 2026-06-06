@@ -5,6 +5,7 @@ import Link from "next/link";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { caseStudies } from "@/lib/case-studies";
+import Image from "next/image";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -114,8 +115,9 @@ function CaseStudyCard({ caseStudy, index, cardRef }: CaseStudyCardProps) {
                 : "md:col-start-7 md:order-2", // normal: image right
             ].join(" ")}
           >
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
+            
+            <Image
+              fill
               src={caseStudy.gallery[0] || caseStudy.previews.desktop}
               alt={caseStudy.title}
               className="absolute inset-0 w-full h-full object-cover transition-transform duration-[1s] ease-[cubic-bezier(0.25,0.46,0.45,0.94)] group-hover:scale-[1.05]"
