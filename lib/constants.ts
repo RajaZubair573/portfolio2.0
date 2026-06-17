@@ -81,7 +81,7 @@ export const projects: Project[] = [
   {
     id: 15,
     name: "Synctom",
-    imagePath: "/projects/Synctom.png",
+    imagePath: "/projects/Synctom/Synctom.png",
     desc: "Synctom is a sleek, responsive software house website designed for clear branding and seamless user experience.",
     link: "https://www.figma.com/design/QhYhGveD5HWhzDzln55eVb/Synctom-Selective-Part?node-id=0-1&t=CXtAEPU7zQDepI7G-1",
   },
@@ -98,6 +98,13 @@ export const projects: Project[] = [
     imagePath: "/projects/Ikonic Dev Web Design.png",
     desc: "Ikonic Dev is a software house website designed to attract and convert top-tier clients.",
     link: "https://www.figma.com/design/Mx1CXDgdzHok40g99y8ZTV/IKONIC-Landing-Page?node-id=62-2421&t=eige5ZkvQMzgsF26-1",
+  },
+  {
+    id: 5,
+    name: "Fly High",
+    imagePath: "/projects/Fly high.png",
+    desc: "Inspiring aviation-themed graphic design project.",
+    link: "https://www.figma.com/design/XFM3L9bTBe0TzMCQMQQAm0/Untitled?t=nhFsB4Fz2qCUHGkO-1",
   },
   {
     id: 22,
@@ -161,13 +168,6 @@ export const projects: Project[] = [
     imagePath: "/projects/Flux - Figma Build Tutorial (Starter) (Community).jpg",
     desc: "Step-by-step tutorial for building a Flux-inspired design in Figma.",
     link: "https://www.figma.com/design/1XuOrvqIjXDyWzJGkoNBnT/Flux---Figma-Build-Tutorial-(Starter)-(Community)?t=nhFsB4Fz2qCUHGkO-1",
-  },
-  {
-    id: 5,
-    name: "Fly High",
-    imagePath: "/projects/Fly high.png",
-    desc: "Inspiring aviation-themed graphic design project.",
-    link: "https://www.figma.com/design/XFM3L9bTBe0TzMCQMQQAm0/Untitled?t=nhFsB4Fz2qCUHGkO-1",
   },
   {
     id: 6,

@@ -15,8 +15,8 @@ const skills = [
 
 const stats = [
   { value: "3+", label: "Years Experience" },
-  { value: "50+", label: "Projects Completed" },
-  { value: "20+", label: "Happy Clients" },
+  { value: "15+", label: "Projects Completed" },
+  { value: "10+", label: "Happy Clients" },
 ];
 
 const contactLinks = [
@@ -131,7 +131,7 @@ export default function AboutPage() {
                     I specialize in crafting clean, modern, user-focused websites and digital products that balance aesthetics with performance. My work spans from initial concept and design to final development and deployment.
                   </p>
                   <p className="text-slate-400">
-                    I&apos;ve collaborated with international clients on projects like <span className="text-orange-400">Cyberrey</span> and <span className="text-orange-400">Prime Renovations</span>, and worked with Synctom on products including Axion Lighting and CWESD. Currently completing my Bachelor&apos;s in Computer Science (June 2026).
+                    I&apos;ve collaborated with international clients on projects like <span className="text-orange-400">Cyberrey</span> and <span className="text-orange-400">Prime Renovations</span>, and worked with Synctom on products including Axion Lighting and CWESD. I completed my Bachelor&apos;s in Computer Science From National University of Modern Languages (June 2026).
                   </p>
                 </div>
               </div>

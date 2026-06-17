@@ -426,6 +426,7 @@ export default function Hero() {
             <a href="https://www.behance.net/rajazubair3" className="font-['Space_Mono'] text-[10px] md:text-xs tracking-[0.1em] uppercase text-slate-400 no-underline transition-colors duration-200 hover:text-orange-500">Behance</a>
             <a href="https://dribbble.com/rajazubair" className="font-['Space_Mono'] text-[10px] md:text-xs tracking-[0.1em] uppercase text-slate-400 no-underline transition-colors duration-200 hover:text-orange-500">Dribbble</a>
             <a href="https://www.linkedin.com/in/raja-zubair-664066294/" className="font-['Space_Mono'] text-[10px] md:text-xs tracking-[0.1em] uppercase text-slate-400 no-underline transition-colors duration-200 hover:text-orange-500">LinkedIn</a>
+            <a href="https://contra.com/raja_zubair_s7bnxtwu?referralExperimentNid=DEFAULT_REFERRAL_PROGRAM&referrerUsername=raja_zubair_s7bnxtwu" className="font-['Space_Mono'] text-[10px] md:text-xs tracking-[0.1em] uppercase text-slate-400 no-underline transition-colors duration-200 hover:text-orange-500">Contra</a>
           </div>
         </footer>
       </div>

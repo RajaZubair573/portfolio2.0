@@ -104,6 +104,27 @@ export const caseStudies: CaseStudy[] = [
   },
   {
     id: 5,
+    title: "Synctom - Digital Solutions That Drive Innovation",
+    slug: "synctom-digital-solutions",
+    overview: "Synctom is a software development company that wanted its website to better reflect the quality of its services and expertise. The project focused on redesigning their existing website into a complete digital experience that would strengthen their brand identity, showcase their capabilities, and encourage potential clients to get in touch.",
+    challenge: "The existing website was limited to a single landing page with outdated visuals, minimal content, and little information about the company's services. It lacked the credibility, structure, and user experience needed to attract and convert potential clients, making it difficult for visitors to understand the value Synctom could provide.",
+    solution: "I redesigned the website from the ground up, creating a modern and professional experience that aligned with Synctom's vision. The new design introduced a stronger visual identity, dedicated service pages, improved content hierarchy, clear calls-to-action, and a user-friendly layout that effectively communicated the company's expertise and built trust with visitors.",
+    results: [
+      "Established a stronger and more professional brand presence.",
+      "Improved user engagement through a modern website experience.",
+      "Increased client interest with clearer service presentation and messaging."
+    ],
+    gallery: ["/projects/Synctom/Synctom.png"],
+    previews: {
+      desktop: "/projects/Synctom/Landing-Page_Synctom.png",
+    },
+    tags: ["Web Design", "Figma", "Luxury Branding", "UI/UX"],
+    link: "https://www.figma.com/design/5q5JMJqUHSxyByIGSiw25p/Pablo-Marbles?node-id=527-2221&t=zA0zz6kk9kOubyb5-1",
+    featured: false,
+    liveUrl: "https://www.synctom.com/"
+  },
+  {
+    id: 6,
     title: "Pablo Marble & Granite",
     slug: "pablo-marbles-granite",
     overview: "A modern website redesign for a premium stone fabrication company, showcasing materials, projects, and services with a clean, luxury-focused experience.",
@@ -121,7 +142,5 @@ export const caseStudies: CaseStudy[] = [
     tags: ["Web Design", "Figma", "Luxury Branding", "UI/UX"],
     link: "https://www.figma.com/design/5q5JMJqUHSxyByIGSiw25p/Pablo-Marbles?node-id=527-2221&t=zA0zz6kk9kOubyb5-1",
     featured: false
-  }
-  
-
+  },
 ];
