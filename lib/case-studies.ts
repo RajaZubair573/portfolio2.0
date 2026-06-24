@@ -37,7 +37,8 @@ export const caseStudies: CaseStudy[] = [
     },
     tags: ["UI/UX", "Webflow", "Cybersecurity", "Redesign"],
     link: "https://www.figma.com/design/zVgjqRKZdXfZZ5vREeBkqk/Cyberrey-New?node-id=0-1&t=OZsJfQbaAWpAAWyH-1",
-    featured: true
+    featured: true,
+    liveUrl: "https://cyberrey.com/"
   },
   {
     id: 2,
