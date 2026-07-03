@@ -46,12 +46,12 @@ const featuredProjects: FeaturedProject[] = [
   },
   {
     id: 4,
-    title: "Prime Renovations",
+    title: "Synctom",
     description:
-      "Prime Renovations is a premium home renovation website reflecting precision and craftsmanship.",
+      "Synctom is a sleek, responsive software house website designed for clear branding and seamless user experience.",
     tags: ["UI/UX", "Figma", "SaaS"],
-    image: "/projects/Prime Renovations/Prime Renovations Mockup.png",
-    link: "/case-studies/prime-renovations",
+    image: "/projects/Synctom/Synctom.png",
+    link: "/case-studies/synctom-digital-solutions",
   },
 ];
 
@@ -88,7 +88,7 @@ function ProjectCard({ project, index, cardRef }: ProjectCardProps) {
               alt={project.title}
               className="absolute inset-0 w-full h-full object-cover transition-transform duration-[1s] ease-[cubic-bezier(0.25,0.46,0.45,0.94)] group-hover:scale-[1.04]"
             />
-            <div className="absolute inset-0 pointer-events-none" style={{ background: "linear-gradient(to top, #09090f 0%, #09090f 5%, rgba(9,9,15,0.85) 30%, rgba(9,9,15,0.3) 60%, transparent 100%)" }} />
+            {/* Removed bottom dark gradient overlay as requested */}
             <div className="absolute inset-0 pointer-events-none" style={{ background: "linear-gradient(to right, rgba(9,9,15,0.4) 0%, transparent 40%, transparent 80%, rgba(9,9,15,0.2) 100%)" }} />
             <div className="absolute inset-0 pointer-events-none opacity-100 transition-opacity duration-700" style={{ background: "linear-gradient(170deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.02) 20%, transparent 50%)" }} />
             <div className="absolute inset-0 pointer-events-none opacity-0 transition-opacity duration-700 group-hover:opacity-100" style={{ background: "radial-gradient(ellipse at 50% 120%, rgba(249,115,22,0.08) 0%, transparent 70%)" }} />

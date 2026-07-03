@@ -30,7 +30,7 @@ export const caseStudies: CaseStudy[] = [
       "IImproved user engagement by 60%, with better navigation and content structure",
       "Elevated brand perception, positioning CyberRey as a premium, enterprise-grade cybersecurity partner"
     ],
-    gallery: ["/projects/Cyberrey/Cyberrey Mockup.png"],
+    gallery: ["/projects/Cyberrey/Cyberrey Mockup.png","/projects/Cyberrey/Cyberrey_typography.png"],
     previews: {
       desktop: "/projects/Cyberrey/Cyberrey Landing Page.png",
       // mobile: "/projects/Cyberrey/Cyberrey Mockup.png"
@@ -72,7 +72,7 @@ export const caseStudies: CaseStudy[] = [
       "Reduced cart abandonment by 50%",
       "Achieved 4.8/5 customer satisfaction rating"
     ],
-    gallery: ["/projects/Axion/Axion-Mockup.png"],
+    gallery: ["/projects/Axion/Axion-Mockup.png", "/projects/Axion/Axion_typography.png"],
     previews: {
       desktop: "/projects/Axion/Axion Main Landing Page.png",
       mobile: "/projects/Axion/axion Mobile Landing Page.png"

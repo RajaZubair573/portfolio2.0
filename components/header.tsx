@@ -103,7 +103,7 @@ export default function Header() {
 
           <li className="mt-4 md:mt-0">
             <a
-              href="/Raja_Zubair_CV.pdf"
+              href="/Raja_Zubair_Resume.pdf"
               download
               onClick={() => setIsOpen(false)}
               className="font-['Space_Mono'] text-xs tracking-[0.12em] uppercase px-5 py-2.5 bg-slate-900/50 backdrop-blur-sm text-slate-300 border border-slate-100/10 no-underline transition-all duration-300 hover:text-slate-100 hover:border-slate-100/30 hover:bg-slate-800/50 flex items-center gap-2 rounded-sm"
