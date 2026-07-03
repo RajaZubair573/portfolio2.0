@@ -52,7 +52,7 @@ export const caseStudies: CaseStudy[] = [
       "Increased course enrollment by 120%",
       "Built a strong community with 5000+ active members"
     ],
-    gallery: ["/projects/CWESD/CWESD - Mockup.png"],
+    gallery: ["/projects/CWESD/CWESD - Mockup.png","/projects/CWESD/CWESD_typography.png"],
     previews: {
       desktop: "/projects/CWESD/CWESD Landing Page.png",
     },
@@ -72,7 +72,7 @@ export const caseStudies: CaseStudy[] = [
       "Reduced cart abandonment by 50%",
       "Achieved 4.8/5 customer satisfaction rating"
     ],
-    gallery: ["/projects/Axion/Axion-Mockup.png", "/projects/Axion/Axion_typography.png"],
+    gallery: ["/projects/Axion/Axion-Mockup.png", "/projects/Axion/Axion_typography.png", "/projects/Axion/Axion_colorpalette.png","/projects/Axion/Axion_Products_Pages.png","/projects/Axion/Axion_Projects_Pages.png","/projects/Axion/Axion_Blogs_Pages.png","/projects/Axion/Axion_AC_Pages.png","/projects/Axion/Axion_Order_Pages.png","/projects/Axion/Axion_Profile_Pages.png","/projects/Axion/Axion_Mobile_View.png","/projects/Axion/Axion_Dashboards.png"],
     previews: {
       desktop: "/projects/Axion/Axion Main Landing Page.png",
       mobile: "/projects/Axion/axion Mobile Landing Page.png"
@@ -94,7 +94,7 @@ export const caseStudies: CaseStudy[] = [
       "Improved brand positioning in premium market",
       "Reduced inquiry response time by 70%"
     ],
-    gallery: ["/projects/Prime Renovations/Prime Renovations Mockup.png"],
+    gallery: ["/projects/Prime Renovations/Prime Renovations Mockup.png","/projects/Prime Renovations/Prime_Renovations_Typography.png"],
     previews: {
       desktop: "/projects/Prime Renovations/Prime Renovations Landing Page.png"
     },
@@ -115,7 +115,7 @@ export const caseStudies: CaseStudy[] = [
       "Improved user engagement through a modern website experience.",
       "Increased client interest with clearer service presentation and messaging."
     ],
-    gallery: ["/projects/Synctom/Synctom.png"],
+    gallery: ["/projects/Synctom/Synctom.png","/projects/Synctom/Synctom_typography.png"],
     previews: {
       desktop: "/projects/Synctom/Landing-Page_Synctom.png",
     },
@@ -136,7 +136,7 @@ export const caseStudies: CaseStudy[] = [
       "Improved navigation and overall user experience",
       "Enhanced project and material presentation with cleaner layouts"
     ],
-    gallery: ["/projects/Pablo Marbles and Granite/Pablo Granite and Marbles.png"],
+    gallery: ["/projects/Pablo Marbles and Granite/Pablo Granite and Marbles.png", "/projects/Pablo Marbles and Granite/Pablo_typography.png"],
     previews: {
       desktop: "/projects/Pablo Marbles and Granite/Pablo Landing Page.png",
     },
