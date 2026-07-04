@@ -30,7 +30,7 @@ export const caseStudies: CaseStudy[] = [
       "IImproved user engagement by 60%, with better navigation and content structure",
       "Elevated brand perception, positioning CyberRey as a premium, enterprise-grade cybersecurity partner"
     ],
-    gallery: ["/projects/Cyberrey/Cyberrey Mockup.png","/projects/Cyberrey/Cyberrey_typography.png"],
+    gallery: ["/projects/Cyberrey/Cyberrey Mockup.png","/projects/Cyberrey/Cyberrey_typography.png","/projects/Cyberrey/Cyberrey_Colorpalette.webp","/projects/Cyberrey/Cyberrey_Navbars.webp","/projects/Cyberrey/Cyberrey_Vendor.webp","/projects/Cyberrey/Cyberrey_Solutions.webp","/projects/Cyberrey/Cyberrey_Abouts.webp","/projects/Cyberrey/Cyberrey_Blogs.webp","/projects/Cyberrey/Cyberrey_Contact.webp"],
     previews: {
       desktop: "/projects/Cyberrey/Cyberrey Landing Page.png",
       // mobile: "/projects/Cyberrey/Cyberrey Mockup.png"
