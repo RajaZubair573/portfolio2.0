@@ -136,7 +136,7 @@ export const caseStudies: CaseStudy[] = [
       "Improved navigation and overall user experience",
       "Enhanced project and material presentation with cleaner layouts"
     ],
-    gallery: ["/projects/Pablo Marbles and Granite/Pablo Granite and Marbles.png", "/projects/Pablo Marbles and Granite/Pablo_typography.png"],
+    gallery: ["/projects/Pablo Marbles and Granite/Pablo Granite and Marbles.png", "/projects/Pablo Marbles and Granite/Pablo_typography.png", "/projects/Pablo Marbles and Granite/Pablo_Colorpalette.webp", "/projects/Pablo Marbles and Granite/Pablo_Product.webp", "/projects/Pablo Marbles and Granite/Pablo_About.webp", "/projects/Pablo Marbles and Granite/Pablo_Inventory.webp", "/projects/Pablo Marbles and Granite/Pablo_Blogs.webp", "/projects/Pablo Marbles and Granite/Pablo_Works.webp", "/projects/Pablo Marbles and Granite/Pablo_Contact.webp", "/projects/Pablo Marbles and Granite/Pablo_Remodeling.webp"],
     previews: {
       desktop: "/projects/Pablo Marbles and Granite/Pablo Landing Page.png",
     },
