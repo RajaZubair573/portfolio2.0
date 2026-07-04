@@ -72,7 +72,7 @@ export const caseStudies: CaseStudy[] = [
       "Reduced cart abandonment by 50%",
       "Achieved 4.8/5 customer satisfaction rating"
     ],
-    gallery: ["/projects/Axion/Axion-Mockup.png", "/projects/Axion/Axion_typography.png", "/projects/Axion/Axion_colorpalette.png","/projects/Axion/Axion_Products_Pages.png","/projects/Axion/Axion_Projects_Pages.png","/projects/Axion/Axion_Blogs_Pages.png","/projects/Axion/Axion_AC_Pages.png","/projects/Axion/Axion_Order_Pages.png","/projects/Axion/Axion_Profile_Pages.png","/projects/Axion/Axion_Mobile_View.png","/projects/Axion/Axion_Dashboards.png"],
+    gallery: ["/projects/Axion/Axion-Mockup.png", "/projects/Axion/Axion_typography.png", "/projects/Axion/Axion_colorpalette.png","/projects/Axion/Axion_Products_Pages.webp","/projects/Axion/Axion_Projects_Pages.webp","/projects/Axion/Axion_Blogs_Pages.webp","/projects/Axion/Axion_AC_Pages.webp","/projects/Axion/Axion_Order_Pages.webp","/projects/Axion/Axion_Profile_Pages.webp","/projects/Axion/Axion_Mobile_View.webp","/projects/Axion/Axion_Dashboards.webp"],
     previews: {
       desktop: "/projects/Axion/Axion Main Landing Page.png",
       mobile: "/projects/Axion/axion Mobile Landing Page.png"
