@@ -52,7 +52,7 @@ export const caseStudies: CaseStudy[] = [
       "Increased course enrollment by 120%",
       "Built a strong community with 5000+ active members"
     ],
-    gallery: ["/projects/CWESD/CWESD - Mockup.png","/projects/CWESD/CWESD_typography.png"],
+    gallery: ["/projects/CWESD/CWESD - Mockup.png","/projects/CWESD/CWESD_typography.png","/projects/CWESD/CWESD_Colorpalette.webp","/projects/CWESD/CWESD_Landingpage.webp"],
     previews: {
       desktop: "/projects/CWESD/CWESD Landing Page.png",
     },
@@ -94,7 +94,7 @@ export const caseStudies: CaseStudy[] = [
       "Improved brand positioning in premium market",
       "Reduced inquiry response time by 70%"
     ],
-    gallery: ["/projects/Prime Renovations/Prime Renovations Mockup.png","/projects/Prime Renovations/Prime_Renovations_Typography.png"],
+    gallery: ["/projects/Prime Renovations/Prime Renovations Mockup.png","/projects/Prime Renovations/Prime_Renovations_Typography.png","/projects/Prime Renovations/Prime_Colorpalette.webp","/projects/Prime Renovations/Prime_Projects.webp","/projects/Prime Renovations/Prime_Process.webp","/projects/Prime Renovations/Prime_Blogs.webp","/projects/Prime Renovations/Prime_About.webp"],
     previews: {
       desktop: "/projects/Prime Renovations/Prime Renovations Landing Page.png"
     },
@@ -115,7 +115,7 @@ export const caseStudies: CaseStudy[] = [
       "Improved user engagement through a modern website experience.",
       "Increased client interest with clearer service presentation and messaging."
     ],
-    gallery: ["/projects/Synctom/Synctom.png","/projects/Synctom/Synctom_typography.png"],
+    gallery: ["/projects/Synctom/Synctom.png","/projects/Synctom/Synctom_typography.png","/projects/Synctom/Synctom_Colorpalette.webp","/projects/Synctom/Synctom_LandingPage.webp","/projects/Synctom/Synctom_ServicePage.webp","/projects/Synctom/Synctom_Project.webp","/projects/Synctom/Synctom_About.webp"],
     previews: {
       desktop: "/projects/Synctom/Landing-Page_Synctom.png",
     },
