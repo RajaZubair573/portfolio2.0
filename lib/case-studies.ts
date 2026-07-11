@@ -35,7 +35,7 @@ export const caseStudies: CaseStudy[] = [
       desktop: "/projects/Cyberrey/Cyberrey Landing Page.png",
       // mobile: "/projects/Cyberrey/Cyberrey Mockup.png"
     },
-    tags: ["UI/UX", "Webflow", "Cybersecurity", "Redesign"],
+    tags: ["UI/UX", "Webflow", "Cybersecurity", "Web Design"],
     link: "https://www.figma.com/design/zVgjqRKZdXfZZ5vREeBkqk/Cyberrey-New?node-id=0-1&t=OZsJfQbaAWpAAWyH-1",
     featured: true,
     liveUrl: "https://cyberrey.com/"
@@ -56,7 +56,7 @@ export const caseStudies: CaseStudy[] = [
     previews: {
       desktop: "/projects/CWESD/CWESD Landing Page.png",
     },
-    tags: ["UI/UX", "Education", "Community", "Mobile-First"],
+    tags: ["UI/UX", "Education", "Web Design", "Mobile-First", "Community"],
     link: "https://www.figma.com/design/9Nv6z5mVXXUn2KzwMK1d5V/CWESD?node-id=0-1&t=Bnl38CVdCQKy85JX-1",
     featured: true
   },
@@ -77,7 +77,7 @@ export const caseStudies: CaseStudy[] = [
       desktop: "/projects/Axion/Axion Main Landing Page.png",
       mobile: "/projects/Axion/axion Mobile Landing Page.png"
     },
-    tags: ["E-Commerce", "UI/UX", "Product Design", "Conversion Optimization"],
+    tags: ["E-Commerce", "UI/UX", "Product Design", "Conversion Optimization", "Web Design"],
     link: "https://www.figma.com/design/9f0Zx8QtkreC2pR7xTk6ut/Axion-Landing-Pages?node-id=99-88&t=x23Vp5gOW6NUTELI-1",
     featured: true,
     liveUrl: "https://axionlights.com/"
@@ -98,7 +98,7 @@ export const caseStudies: CaseStudy[] = [
     previews: {
       desktop: "/projects/Prime Renovations/Prime Renovations Landing Page.png"
     },
-    tags: ["Web Design", "Luxury Branding", "Lead Generation", "Portfolio"],
+    tags: ["Web Design", "Luxury Branding", "Webflow", "Portfolio"],
     link: "https://www.figma.com/design/FeOzf3wjda23O4VP7gkblb/Redesign-Prime-Renovations?node-id=0-1&t=NUTmH5mg5fhqMcwf-1",
     featured: false,
     liveUrl: "https://www.primerenovationsnyc.com/"

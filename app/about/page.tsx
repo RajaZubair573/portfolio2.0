@@ -14,7 +14,7 @@ const skills = [
 ];
 
 const stats = [
-  { value: "3+", label: "Years Experience" },
+  { value: "2", label: "Years Experience" },
   { value: "15+", label: "Projects Completed" },
   { value: "10+", label: "Happy Clients" },
 ];
@@ -125,13 +125,13 @@ export default function AboutPage() {
                     <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-orange-500 font-semibold">UI/UX Designer</span>
                     {" "}and{" "}
                     <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-orange-500 font-semibold">Webflow Developer</span>
-                    {" "}with over 3 years of design experience and nearly a year in development.
+                    {" "}with 2 years of design experience and nearly a year in development.
                   </p>
                   <p className="text-slate-400">
                     I specialize in crafting clean, modern, user-focused websites and digital products that balance aesthetics with performance. My work spans from initial concept and design to final development and deployment.
                   </p>
                   <p className="text-slate-400">
-                    I&apos;ve collaborated with international clients on projects like <span className="text-orange-400">Cyberrey</span> and <span className="text-orange-400">Prime Renovations</span>, and worked with Synctom on products including Axion Lighting and CWESD. I completed my Bachelor&apos;s in Computer Science From National University of Modern Languages (June 2026).
+                    I&apos;ve collaborated with international clients on projects like <span className="text-orange-400">Cyberrey, Pablo Marbles and Granite</span> and <span className="text-orange-400">Prime Renovations</span>, and worked with Synctom on products including Axion Lighting and CWESD. I completed my Bachelor&apos;s in Computer Science From National University of Modern Languages (June 2026) with <span className="text-orange-400">CGPA = 3.49.</span>
                   </p>
                 </div>
               </div>
