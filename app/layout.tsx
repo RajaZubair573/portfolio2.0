@@ -5,6 +5,7 @@ import Header from "@/components/header";
 import Footer from "@/components/footer";
 import DisableScrollRestoration from "@/components/disable-scroll-restoration";
 
+
 export const metadata: Metadata = {
   title: "Raja Zubair | Portfolio",
   description:

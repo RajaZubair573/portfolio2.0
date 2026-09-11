@@ -8,7 +8,7 @@ import Image from "next/image";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const designTools = ["Figma", "Framer", "Webflow", "Photoshop", "Illustrator", "Lightroom", "Canva"];
+const designTools = ["Figma", "Framer", "Webflow", "Photoshop", "Illustrator", "Lovable", "Canva"];
 const devTools = ["HTML", "CSS", "Tailwind CSS", "ReactJS"];
 
 const categorized = {

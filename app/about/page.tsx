@@ -10,13 +10,13 @@ gsap.registerPlugin(ScrollTrigger);
 const skills = [
   { category: "Design", items: ["UI/UX Design", "Figma", "Adobe Suite", "Prototyping", "Design Systems"] },
   { category: "Development", items: ["Webflow", "React", "Next.js", "Tailwind CSS", "Responsive Design"] },
-  { category: "Tools", items: ["Git", "Framer", "Canva", "Lightroom", "Collaboration Tools"] },
+  { category: "Tools", items: ["Framer", "Git", "Canva", "Lightroom", "Collaboration Tools"] },
 ];
 
 const stats = [
   { value: "2", label: "Years Experience" },
-  { value: "15+", label: "Projects Completed" },
-  { value: "10+", label: "Happy Clients" },
+  { value: "40+", label: "Projects Completed" },
+  { value: "25+", label: "Happy Clients" },
 ];
 
 const contactLinks = [

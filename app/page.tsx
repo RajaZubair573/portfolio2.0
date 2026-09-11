@@ -8,6 +8,7 @@ import CallToAction from "@/components/call-to-action";
 import SectionNav from "@/components/section-nav";
 import PageLoader from "@/components/page-loader";
 
+
 export default function Home() {
   return (
     <>
