@@ -57,6 +57,13 @@ export const projects: Project[] = [
     desc: "A modern construction and renovation experience focused on residential and commercial projects, including kitchen and bathroom improvements.",
     link: "",
   },
+    {
+    id: 36,
+    name: "Light House",
+    imagePath: "/projects/Lighthouse/Lighthouse-Mockup.png",
+    desc: "Light House is a premium lighting brand offering decorative and architectural lighting solutions.",
+    link: "",
+  },
   {
     id: 24,
     name: "Pablo Marbles and Granite",
@@ -70,6 +77,13 @@ export const projects: Project[] = [
     imagePath: "/projects/Jibola-Mockup.jpg",
     desc: "A unified music platform experience created by merging two distinct websites into one cohesive and engaging digital experience.",
     link: "",
+  },
+  {
+    id: 13,
+    name: "Axion Lighting Collection",
+    imagePath: "/projects/Axion/Axion-Mockup.png",
+    desc: "Axion is a sleek eCommerce platform showcasing curated lighting collections with an elegant and user-friendly shopping experience.",
+    link: "https://www.figma.com/design/9f0Zx8QtkreC2pR7xTk6ut/Axion-Landing-Pages?node-id=99-88&t=x23Vp5gOW6NUTELI-1",
   },
   {
     id: 26,
@@ -92,13 +106,7 @@ export const projects: Project[] = [
     desc: "An elegant Italian-focused experience designed to showcase premium costumes and their craftsmanship.",
     link: "",
   },
-  {
-    id: 13,
-    name: "Axion Lighting Collection",
-    imagePath: "/projects/Axion/Axion-Mockup.png",
-    desc: "Axion is a sleek eCommerce platform showcasing curated lighting collections with an elegant and user-friendly shopping experience.",
-    link: "https://www.figma.com/design/9f0Zx8QtkreC2pR7xTk6ut/Axion-Landing-Pages?node-id=99-88&t=x23Vp5gOW6NUTELI-1",
-  },
+
   {
     id: 33,
     name: "Prestige Deneigement",
