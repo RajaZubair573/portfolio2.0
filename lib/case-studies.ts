@@ -41,6 +41,30 @@ export const caseStudies: CaseStudy[] = [
     liveUrl: "https://cyberrey.com/"
   },
   {
+    id: 7,
+    title: "Light House E-commerce Website",
+    slug: "light-house-ecommerce-website",
+    overview: "Light House is a premium lighting brand offering decorative and architectural lighting solutions. The website was designed to showcase its products, highlight completed lighting projects, and provide customers with a seamless online shopping experience.",
+    challenge: "Design a sophisticated e-commerce experience that communicates the brand's premium identity while making it easy for customers to discover lighting products, explore categories, view project inspirations, and navigate the purchasing journey across devices.",
+    solution: "Designed a premium, responsive website featuring a visually immersive landing page, structured product categories, detailed product pages with selectable variants, project showcases, editorial blog layouts, and dedicated brand and contact pages. Developed a consistent visual language using deep navy tones, warm lighting imagery, refined typography, and spacious layouts. Also designed the shopping journey, including cart, checkout, payment, order review, and confirmation screens.",
+    results: [
+    "Created a cohesive visual identity across the website's key pages",
+    "Designed a responsive experience for desktop and mobile users",
+    "Developed a complete e-commerce interface covering product discovery through order confirmation"
+    ],
+    gallery: ["/projects/Lighthouse/Lighthouse-Mockup.png", "/projects/Lighthouse/Lighthouse-Desktop.png", "/projects/Lighthouse/Lighthouse-Mobile.png"],
+    previews: {
+      desktop: "/projects/Lighthouse/Landing-Page_Lighthouse.png",
+    },
+    tags: [    "UI/UX Design",
+    "E-commerce",
+    "Web Design",
+    "Responsive Design",
+    "Lighting"],
+    link: "https://www.figma.com/design/xpokrtxgP4akM88XI3Rcej/Lighthouse-isb?node-id=4-44&t=XUhQDwMzUf0UlC31-1",
+    featured: true
+  },
+  {
     id: 2,
     title: "CWESD Learning Platform",
     slug: "cwesd-learning-platform",
