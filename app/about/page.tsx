@@ -88,7 +88,7 @@ export default function AboutPage() {
                   That Matter
                 </h1>
                 <p className="font-sans text-lg md:text-xl text-slate-400 max-w-3xl mx-auto leading-relaxed">
-                  UI/UX Designer & Webflow Developer passionate about creating beautiful, functional digital products
+                  AI-Powered Product Designer &amp; UI/UX Designer passionate about creating beautiful, functional digital products
                 </p>
               </div>
             </div>
@@ -121,17 +121,23 @@ export default function AboutPage() {
               <div className="order-1 md:order-2 space-y-6">
                 <div className="space-y-5 font-sans text-base md:text-lg leading-[1.8] text-slate-300">
                   <p>
-                    I&apos;m <span className="text-orange-400 font-semibold">Raja Zubair</span>, a passionate{" "}
-                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-orange-500 font-semibold">UI/UX Designer</span>
+                    I&apos;m <span className="text-orange-400 font-semibold">Raja Zubair</span>, an{" "}
+                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-orange-500 font-semibold">AI-Powered Product Designer</span>
                     {" "}and{" "}
-                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-orange-500 font-semibold">Webflow Developer</span>
-                    {" "}with 2 years of design experience and nearly a year in development.
+                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-orange-500 font-semibold">UI/UX Designer</span>
+                    {" "}creating modern, user-focused digital experiences.
                   </p>
                   <p className="text-slate-400">
-                    I specialize in crafting clean, modern, user-focused websites and digital products that balance aesthetics with performance. My work spans from initial concept and design to final development and deployment.
+                    I specialize in <span className="text-orange-400">Figma, Webflow, and Framer</span>, combining product design with AI-powered workflows for research, ideation, and prototyping.
                   </p>
                   <p className="text-slate-400">
-                    I&apos;ve collaborated with international clients on projects like <span className="text-orange-400">Cyberrey, Pablo Marbles and Granite</span> and <span className="text-orange-400">Prime Renovations</span>, and worked with Synctom on products including Axion Lighting and CWESD. I completed my Bachelor&apos;s in Computer Science From National University of Modern Languages (June 2026) with <span className="text-orange-400">CGPA = 3.49.</span>
+                    I&apos;ve designed <span className="text-orange-400">40+ projects</span> across websites, web apps, and mobile experiences for international clients and teams. My experience includes <span className="text-orange-400">Flow Cubo Studio, Synctom, and Devcubix</span>, with projects such as <span className="text-orange-400">Cyberrey, Prime Renovations, Axion Lighting, and CWESD</span>.
+                  </p>
+                  <p className="rounded-sm bg-gradient-to-r from-orange-500/[0.12] via-orange-500/[0.05] to-transparent px-4 py-3 text-slate-300">
+                    I&apos;m a member of <span className="text-orange-400">Toptal&apos;s top 3% global talent network</span>.
+                  </p>
+                  <p className="text-slate-400">
+                    I hold a Bachelor&apos;s degree in Computer Science from NUML (2026), with a <span className="text-orange-400">CGPA of 3.49/4.00</span>.
                   </p>
                 </div>
               </div>

@@ -24,7 +24,7 @@ export default function Footer() {
               </span>
             </h2>
             <p className="font-['Space_Mono'] text-[11px] tracking-[0.15em] uppercase text-slate-500 max-w-xs leading-relaxed">
-              UI/UX Designer & Webflow Developer crafting premium digital experiences.
+              AI-Powered Product Designer & UI/UX Designer crafting premium digital experiences.
             </p>
           </div>
 

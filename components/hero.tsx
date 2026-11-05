@@ -7,7 +7,12 @@ import Image from "next/image";
 
 const headingWords = [
   {
-    text: "UI/UX",
+    text: "AI-Powered",
+    class:
+      "text-transparent bg-clip-text bg-gradient-to-r from-orange-300 via-orange-500 to-orange-600 drop-shadow-[0_0_15px_rgba(249,115,22,0.3)]",
+  },
+  {
+    text: "Product",
     class:
       "text-transparent bg-clip-text bg-gradient-to-r from-orange-300 via-orange-500 to-orange-600 drop-shadow-[0_0_15px_rgba(249,115,22,0.3)]",
   },
@@ -17,12 +22,12 @@ const headingWords = [
       "text-transparent bg-clip-text bg-gradient-to-r from-orange-300 via-orange-500 to-orange-600 drop-shadow-[0_0_15px_rgba(249,115,22,0.3)]",
   },
   { text: "&", class: "text-slate-100" },
-  { text: "Webflow", class: "text-slate-100" },
-  { text: "Developer", class: "text-slate-100" },
+  { text: "UI/UX", class: "text-slate-100" },
+  { text: "Designer", class: "text-slate-100" },
 ];
 
 const subtextString =
-  "I design intuitive, user-focused interfaces and develop them in Webflow — helping businesses create fast, scalable websites that look great and perform even better.";
+  "I design intuitive digital products and transform ideas into polished, production-ready experiences using Figma, AI-powered workflows, Webflow, and Framer.";
 const subtextWords = subtextString
   .split(" ")
   .map((word) => ({ text: word, class: "text-slate-400" }));
@@ -274,10 +279,8 @@ export default function Hero() {
               <defs><linearGradient id="ring3Grad" x1="0" y1="0" x2="400" y2="400"><stop offset="0%" stopColor="#f97316" /><stop offset="100%" stopColor="#ec4899" /></linearGradient></defs>
             </svg>
             <div className="orbit-dot absolute top-[2%] left-1/2 w-1.5 h-1.5 bg-purple-400 rounded-full opacity-40" />
-            <div className="orbit-dot absolute bottom-[8%] right-[18%] w-1 h-1 bg-pink-400 rounded-full opacity-30" />
             <div className="orbit-dot absolute top-[30%] left-[5%] w-1 h-1 bg-orange-400 rounded-full opacity-35" />
             <div className="orbit-dot absolute bottom-[25%] left-[12%] w-1.5 h-1.5 bg-purple-500 rounded-full opacity-25" />
-            <div className="orbit-dot absolute top-[15%] right-[10%] w-1 h-1 bg-orange-300 rounded-full opacity-30" />
           </div>
 
           {/* ── MOBILE LAYOUT ── */}
@@ -297,6 +300,20 @@ export default function Hero() {
 
             {/* Text content — pinned to bottom over the image */}
             <div ref={contentRef} className="absolute bottom-0 left-0 right-0 z-[15] px-6 pb-8">
+              <div className="relative mb-4 w-full overflow-hidden rounded-sm border border-orange-500/25 bg-orange-500/[0.06] px-4 py-3 shadow-[0_0_30px_rgba(249,115,22,0.08)] backdrop-blur-sm">
+                <div className="absolute inset-y-0 left-0 w-[2px] bg-gradient-to-b from-orange-300 via-orange-500 to-orange-600" />
+                <span className="font-['Space_Mono'] text-[9px] tracking-[0.25em] uppercase text-orange-400/80">
+                  Recognition
+                </span>
+                <p className="mt-1 font-['Rajdhani'] text-base font-bold leading-tight text-slate-100">
+                  Proud Member of{" "}
+                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-300 via-orange-500 to-orange-600">
+                    Toptal&apos;s Top 3%
+                  </span>{" "}
+                  Global Talent Network
+                </p>
+              </div>
+
               <div className="flex items-center gap-2 mb-3">
                 <div className="w-5 h-0.5 bg-orange-500" />
                 <span className="font-['Space_Mono'] text-[10px] tracking-[0.2em] uppercase text-orange-500">Available for Projects</span>
@@ -347,7 +364,7 @@ export default function Hero() {
               <Image
                 fill
                 src="/hero.png"
-                alt="Raja Zubair - UI/UX Designer & Webflow Developer"
+                alt="Raja Zubair - AI-Powered Product Designer & UI/UX Designer"
                 className="absolute bottom-0 w-full h-full object-contain object-bottom"
               />
               <div className="absolute bottom-0 left-0 right-0 h-[35%] bg-gradient-to-t from-slate-900 to-transparent z-[11] pointer-events-none" />
@@ -405,7 +422,21 @@ export default function Hero() {
             className="hidden md:flex absolute right-8 top-1/2 z-20 w-[260px] lg:w-[300px] flex-col items-end"
             style={{ transform: "translateY(-50%)" }}
           >
-            <div className="flex flex-col gap-6 w-full text-right mb-10 border-r-2 border-slate-100/10 pr-6">
+            <div className="relative w-full overflow-hidden rounded-sm border border-orange-500/25 bg-orange-500/[0.06] px-5 py-4 shadow-[0_0_30px_rgba(249,115,22,0.08)] backdrop-blur-sm">
+              <div className="absolute inset-y-0 left-0 w-[2px] bg-gradient-to-b from-orange-300 via-orange-500 to-orange-600" />
+              <span className="font-['Space_Mono'] text-[9px] tracking-[0.25em] uppercase text-orange-400/80">
+                Recognition
+              </span>
+              <p className="mt-2 font-['Rajdhani'] text-lg font-bold leading-tight text-slate-100 lg:text-xl">
+                Proud Member of{" "}
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-300 via-orange-500 to-orange-600">
+                  Toptal&apos;s Top 3%
+                </span>{" "}
+                Global Talent Network
+              </p>
+            </div>
+
+            <div className="mt-8 flex flex-col gap-6 w-full text-right border-r-2 border-slate-100/10 pr-6">
               <HoverStat original="40+" label="Real Client Projects" isNumber={true} targetNum={40} suffix="+" hoverColorClass="from-orange-400 to-orange-600" />
               <HoverStat original="Global" label="Clients in PK & Int'l" isNumber={false} hoverColorClass="from-orange-400 to-orange-600" textSizeClass="text-3xl" />
               <HoverStat original="2" label="Years Experience" isNumber={true} targetNum={2} suffix="+" hoverColorClass="from-orange-400 to-orange-600" />

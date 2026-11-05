@@ -67,8 +67,7 @@ export default function AboutSnapshot() {
           mutedColor="rgba(148,163,184,0.17)"
           className="font-['Rajdhani'] text-[2.35rem] font-bold leading-[1.08] text-slate-100 sm:text-4xl md:text-[2.9rem] lg:text-[3.15rem] xl:text-[3.35rem]"
         >
-          I design websites that feel sharp before they say a word: clean structure, confident
-          spacing, fast movement, and visual decisions that make the offer easier to trust.
+          Recognized Among the Top 3% of Global Talent
         </TypographyReveal>
 
         <div className="my-10 h-px w-full overflow-hidden">
@@ -89,9 +88,10 @@ export default function AboutSnapshot() {
           mutedColor="rgba(148,163,184,0.16)"
           className="max-w-[720px] font-sans text-lg font-medium leading-8 text-slate-300 md:text-[1.15rem] md:leading-[1.75]"
         >
-          My work sits between UI/UX and Webflow development, so the idea does not get lost between
-          design and build. Every section has a job. Every interaction has restraint. The final
-          site should feel premium, but more importantly, it should feel clear.
+          Proud to be part of Toptal&apos;s exclusive global talent network, representing the top
+          3% of talent worldwide. Joining Toptal in November 2026 marks a significant milestone
+          in my journey as a Product Designer and reflects my commitment to delivering
+          high-quality digital experiences.
         </TypographyReveal>
 
         <div

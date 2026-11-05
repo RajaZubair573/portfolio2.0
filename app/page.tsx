@@ -5,7 +5,6 @@ import FeaturedWork from "@/components/featured-work";
 import ExperienceTimeline from "@/components/experience-timeline";
 import Skills from "@/components/skills";
 import CallToAction from "@/components/call-to-action";
-import SectionNav from "@/components/section-nav";
 import PageLoader from "@/components/page-loader";
 
 
@@ -22,7 +21,6 @@ export default function Home() {
         <Skills />
         <CallToAction />
       </main>
-      <SectionNav />
     </>
   );
 }

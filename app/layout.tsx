@@ -9,7 +9,7 @@ import DisableScrollRestoration from "@/components/disable-scroll-restoration";
 export const metadata: Metadata = {
   title: "Raja Zubair | Portfolio",
   description:
-    "UI/UX Designer & Webflow Developer crafting premium digital experiences.",
+    "AI-Powered Product Designer & UI/UX Designer crafting premium digital experiences.",
   openGraph: {
     images: [
       {
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Raja Zubair | Portfolio",
-    description: "UI/UX Designer & Webflow Developer crafting premium digital experiences.",
+    description: "AI-Powered Product Designer & UI/UX Designer crafting premium digital experiences.",
     images: ["/og-image.png"],
   },
   icons: {

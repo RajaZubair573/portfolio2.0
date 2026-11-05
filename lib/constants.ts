@@ -347,6 +347,15 @@ export const testimonials: Testimonial[] = [
 
 export const experience: Experience[] = [
   {
+    company: "Toptal",
+    role: "Product Designer · Toptal Talent Network",
+    period: "November 2026 – Present",
+    type: "International · Remote",
+    points: [
+      "Selected to join Toptal's exclusive global talent network, recognized among the top 3% of talent worldwide, following successful completion of its talent evaluation process.",
+    ],
+  },
+  {
     company: "DevCubix",
     role: "UI/UX Designer",
     period: "Aug 2026 - Sep 2026",
