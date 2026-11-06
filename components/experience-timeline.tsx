@@ -75,36 +75,64 @@ export default function ExperienceTimeline() {
         </h2>
 
         <div className="grid gap-9 lg:grid-cols-[220px_1fr]">
-          <div className="relative">
-            <div className="absolute bottom-0 left-0 top-0 hidden w-px bg-slate-100/10 md:block" />
-            <div className="flex gap-2 overflow-x-auto pb-2 md:flex-col md:overflow-visible md:pb-0">
-              {experience.map((item, index) => {
-                const isActive = activeIndex === index;
+          <div className="relative min-w-0">
+            <div className="mb-2.5 flex items-center justify-between md:hidden">
+              <span className="font-['Space_Mono'] text-[9px] uppercase tracking-[0.22em] text-slate-600">
+                Companies
+              </span>
+              <span className="flex items-center gap-1 font-['Space_Mono'] text-[9px] uppercase tracking-[0.22em] text-orange-500/60">
+                Swipe
+                <svg
+                  width="10"
+                  height="10"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  className="text-orange-500/70"
+                >
+                  <path
+                    d="M5 12h14M13 6l6 6-6 6"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                </svg>
+              </span>
+            </div>
 
-                return (
-                  <button
-                    key={item.company}
-                    type="button"
-                    onClick={() => setActiveIndex(index)}
-                    className={`relative min-w-max border-0 bg-transparent px-5 py-4 text-left font-['Space_Mono'] text-sm transition-colors duration-300 md:min-w-0 md:pl-7 ${
-                      isActive ? "text-orange-300" : "text-slate-500 hover:text-slate-300"
-                    }`}
-                  >
-                    <span
-                      className={`absolute bottom-0 left-0 h-px w-full transition-all duration-300 md:bottom-auto md:top-0 md:h-full md:w-0.5 ${
-                        isActive ? "bg-orange-400 shadow-[0_0_14px_rgba(249,115,22,0.55)]" : "bg-white/0"
+            <div className="relative min-w-0 rounded-sm border border-white/[0.06] bg-white/[0.015] p-1.5 md:border-0 md:bg-transparent md:p-0">
+              <div className="absolute bottom-0 left-0 top-0 hidden w-px bg-slate-100/10 md:block" />
+              <div className="experience-scroller flex w-full min-w-0 snap-x snap-mandatory items-center gap-1.5 overflow-x-auto overscroll-x-contain scroll-smooth md:flex-col md:items-stretch md:gap-0 md:overflow-visible">
+                {experience.map((item, index) => {
+                  const isActive = activeIndex === index;
+
+                  return (
+                    <button
+                      key={item.company}
+                      type="button"
+                      onClick={() => setActiveIndex(index)}
+                      className={`relative shrink-0 snap-start whitespace-nowrap rounded-sm border px-4 py-2.5 text-left font-['Space_Mono'] text-[10px] uppercase tracking-[0.14em] transition-all duration-300 md:min-w-0 md:rounded-none md:border-0 md:bg-transparent md:px-5 md:py-4 md:pl-7 md:text-sm md:normal-case md:tracking-normal ${
+                        isActive
+                          ? "border-orange-500/40 bg-orange-500/10 text-orange-300 shadow-[0_0_18px_rgba(249,115,22,0.12)] md:shadow-none"
+                          : "border-white/[0.07] bg-white/[0.02] text-slate-500 hover:border-white/15 hover:text-slate-300"
                       }`}
-                    />
-                    {item.company}
-                  </button>
-                );
-              })}
+                    >
+                      <span
+                        className={`absolute bottom-0 left-0 hidden h-px w-full transition-all duration-300 md:block md:bottom-auto md:top-0 md:h-full md:w-0.5 ${
+                          isActive ? "bg-orange-400 shadow-[0_0_14px_rgba(249,115,22,0.55)]" : "bg-white/0"
+                        }`}
+                      />
+                      {item.company}
+                    </button>
+                  );
+                })}
+              </div>
             </div>
           </div>
 
           <div
             key={activeExperience.company}
-            className="relative overflow-hidden px-0 py-1 md:px-2"
+            className="relative min-w-0 overflow-hidden px-0 py-1 md:px-2"
           >
             <div className="mb-4 flex flex-col gap-2 md:flex-row md:items-baseline md:gap-3">
               <h3 className="font-['Rajdhani'] text-3xl font-bold leading-tight text-slate-100 md:text-4xl">
@@ -124,7 +152,7 @@ export default function ExperienceTimeline() {
               {activeExperience.points.map((point) => (
                 <li key={point} className="grid grid-cols-[18px_1fr] gap-4 font-sans text-lg leading-8 text-slate-400">
                   <span className="mt-2 font-['Space_Mono'] text-sm text-orange-300">▹</span>
-                  <span>{point}</span>
+                  <span className="min-w-0 break-words">{point}</span>
                 </li>
               ))}
             </ul>

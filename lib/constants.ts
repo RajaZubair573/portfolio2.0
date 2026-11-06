@@ -319,29 +319,29 @@ export const testimonials: Testimonial[] = [
   {
     id: 1,
     quote:
-      "Raja understood the product fast and turned a messy brief into a site that felt clear, premium, and ready to sell. The final Webflow build matched the design without losing the small details.",
-    name: "Cyberrey Team",
-    role: "Cybersecurity Platform",
-    project: "Cyberrey",
-    service: "UI/UX + Webflow",
+      "A creative and dedicated UI/UX Designer with strong attention to detail, a great eye for design, and a professional approach. Always cooperative, open to feedback, and committed to delivering quality work.",
+    name: "Nimra Kanwal",
+    role: "Recruitment Specialist · HR Operations",
+    project: "Senior Colleague",
+    service: "Recommendation",
   },
   {
     id: 2,
     quote:
-      "The design direction felt polished without becoming complicated. Every section had a purpose, and the final layout made our offer much easier to explain.",
-    name: "CWESD Team",
-    role: "Learning Platform",
-    project: "CWESD",
-    service: "Website Design",
+      "Raja is a talented UI/UX Designer with good Figma/Webflow skills, attention to detail, and clear communication. He is reliable, professional, and consistently delivers thoughtful, high-quality design work.",
+    name: "Jawad Yousaf",
+    role: "Senior Android & Flutter Engineer",
+    project: "Mentorship",
+    service: "Recommendation",
   },
   {
     id: 3,
     quote:
-      "He brought structure, taste, and speed to the process. The result felt modern, responsive, and much closer to the kind of brand experience we wanted.",
-    name: "Synctom Team",
-    role: "Software Company",
-    project: "Synctom",
-    service: "UI Design",
+      "Zubair combines creativity with user-focused thinking to create intuitive digital experiences. He understands people, solves design challenges, and is professional, collaborative, and committed to quality.",
+    name: "Ali Taqi",
+    role: "Founder @ Synctom",
+    project: "Direct Manager",
+    service: "Recommendation",
   },
 ];
 

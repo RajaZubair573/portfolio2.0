@@ -298,22 +298,23 @@ export default function Hero() {
               <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/70 to-transparent pointer-events-none" style={{ top: "45%" }} />
             </div>
 
+            {/* Recognition badge — pinned below the fixed header, clear of the face */}
+            <div className="absolute top-[84px] left-4 right-4 z-20 overflow-hidden rounded-sm border border-orange-500/40 bg-slate-950/85 px-3 py-2 shadow-[0_0_30px_rgba(249,115,22,0.15)] backdrop-blur-md">
+              <div className="absolute inset-y-0 left-0 w-[2px] bg-gradient-to-b from-orange-300 via-orange-500 to-orange-600" />
+              <span className="font-['Space_Mono'] text-[8px] tracking-[0.25em] uppercase text-orange-400/80">
+                Recognition
+              </span>
+              <p className="mt-0.5 font-['Rajdhani'] text-sm font-bold leading-tight text-slate-100">
+                Proud Member of{" "}
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-300 via-orange-500 to-orange-600">
+                  Toptal&apos;s Top 3%
+                </span>{" "}
+                Global Talent Network
+              </p>
+            </div>
+
             {/* Text content — pinned to bottom over the image */}
             <div ref={contentRef} className="absolute bottom-0 left-0 right-0 z-[15] px-6 pb-8">
-              <div className="relative mb-4 w-full overflow-hidden rounded-sm border border-orange-500/25 bg-orange-500/[0.06] px-4 py-3 shadow-[0_0_30px_rgba(249,115,22,0.08)] backdrop-blur-sm">
-                <div className="absolute inset-y-0 left-0 w-[2px] bg-gradient-to-b from-orange-300 via-orange-500 to-orange-600" />
-                <span className="font-['Space_Mono'] text-[9px] tracking-[0.25em] uppercase text-orange-400/80">
-                  Recognition
-                </span>
-                <p className="mt-1 font-['Rajdhani'] text-base font-bold leading-tight text-slate-100">
-                  Proud Member of{" "}
-                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-300 via-orange-500 to-orange-600">
-                    Toptal&apos;s Top 3%
-                  </span>{" "}
-                  Global Talent Network
-                </p>
-              </div>
-
               <div className="flex items-center gap-2 mb-3">
                 <div className="w-5 h-0.5 bg-orange-500" />
                 <span className="font-['Space_Mono'] text-[10px] tracking-[0.2em] uppercase text-orange-500">Available for Projects</span>
