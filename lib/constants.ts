@@ -367,17 +367,6 @@ export const experience: Experience[] = [
     ],
   },
   {
-    company: "Freelance",
-    role: "UI/UX Designer & Webflow Developer",
-    period: "2022 - Present",
-    type: "Independent",
-    points: [
-      "Designed landing pages, portfolio sites, SaaS pages, and business websites with a focus on clarity, trust, and conversion.",
-      "Built responsive Webflow experiences that preserve the design details while staying easy for clients to update.",
-      "Worked directly with clients from brief to final handoff, shaping structure, visuals, interactions, and launch polish.",
-    ],
-  },
-  {
     company: "FlowCubo",
     role: "UI/UX Designer & Webflow Developer",
     period: "Feb 2025 - Present",
