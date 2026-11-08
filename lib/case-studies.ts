@@ -36,10 +36,55 @@ export const caseStudies: CaseStudy[] = [
       // mobile: "/projects/Cyberrey/Cyberrey Mockup.png"
     },
     tags: ["UI/UX", "Webflow", "Cybersecurity", "Web Design"],
-    link: "https://www.figma.com/design/zVgjqRKZdXfZZ5vREeBkqk/Cyberrey-New?node-id=0-1&t=OZsJfQbaAWpAAWyH-1",
+    link: "https://www.figma.com/proto/zVgjqRKZdXfZZ5vREeBkqk/Cyberrey-New?node-id=330-2441&p=f&viewport=2571%2C260%2C0.03&t=iNsf4dFXvkq6qVSc-1&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=330%3A2441&page-id=318%3A188",
     featured: true,
     liveUrl: "https://cyberrey.com/"
   },
+  
+{
+  id: 8,
+  title: "Reclaim - Data Recovery App",
+  slug: "reclaim-data-recovery-app",
+  overview: "Reclaim is a sleek and reliable mobile data recovery app designed to help users recover lost or accidentally deleted files. The app provides a seamless experience for scanning, discovering, previewing, and restoring photos, videos, audio files, and documents through an intuitive and user-friendly interface.",
+
+  challenge: "Design a reliable and effortless mobile experience that simplifies the process of recovering lost files. The challenge was to make file recovery accessible to users with different technical backgrounds while creating a clear navigation structure, intuitive scanning flows, and an interface that communicates speed, security, and reliability throughout the recovery journey.",
+
+  solution: "Designed a comprehensive mobile application featuring an intuitive onboarding experience, structured file categories, deleted file scanning, file preview, and recovery workflows for photos, videos, audio files, and documents. Developed a clean and modern visual language using a light color palette, refined typography, and spacious layouts to create a trustworthy and approachable experience. Created 25+ screens supported by a consistent design system, detailed wireframes, user flows, and interactive prototypes. Conducted user research and usability testing to inform design decisions and refine the overall user experience.",
+
+  results: [
+    "Designed a complete mobile data recovery experience covering the core file recovery journey",
+    "Created 25+ high-fidelity screens supported by a consistent design system",
+    "Developed intuitive scanning, file preview, and recovery workflows for multiple file types",
+    "Delivered interactive prototypes and a cohesive UI/UX design ready for development"
+  ],
+
+  gallery: [
+    "/projects/Reclaim/Reclaim-Mockup.png",
+    "/projects/Reclaim/Design-System.png",
+    "/projects/Reclaim/Screen-1.png",
+    "/projects/Reclaim/Screen-2.png",
+    "/projects/Reclaim/Screen-3.png",
+    "/projects/Reclaim/Full-Design.png"
+  ],
+
+  previews: {
+    desktop: "/projects/Reclaim/Reclaim-Mockup.png",
+    mobile: "",
+  },
+
+  tags: [
+    "UI/UX Design",
+    "Mobile App",
+    "Data Recovery",
+    "User Research",
+    "Prototyping",
+    "Design System"
+  ],
+
+  link: "",
+  featured: false
+},
+
   {
     id: 7,
     title: "Light House E-commerce Website",
@@ -61,7 +106,7 @@ export const caseStudies: CaseStudy[] = [
     "Web Design",
     "Responsive Design",
     "Lighting"],
-    link: "https://www.figma.com/design/xpokrtxgP4akM88XI3Rcej/Lighthouse-isb?node-id=4-44&t=XUhQDwMzUf0UlC31-1",
+    link: "https://www.figma.com/proto/xpokrtxgP4akM88XI3Rcej/Lighthouse-isb?node-id=187-2543&p=f&viewport=-403%2C50%2C0.06&t=9JasNXrElqMa9Kwu-1&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=187%3A2543&page-id=4%3A44",
     featured: true
   },
   {
@@ -81,7 +126,7 @@ export const caseStudies: CaseStudy[] = [
       desktop: "/projects/CWESD/CWESD Landing Page.png",
     },
     tags: ["UI/UX", "Education", "Web Design", "Mobile-First", "Community"],
-    link: "https://www.figma.com/design/9Nv6z5mVXXUn2KzwMK1d5V/CWESD?node-id=0-1&t=Bnl38CVdCQKy85JX-1",
+    link: "https://www.figma.com/proto/9Nv6z5mVXXUn2KzwMK1d5V/CWESD?node-id=124-707&viewport=431%2C25%2C0.1&t=W0hMRftf6JdoHNrR-1&scaling=min-zoom&content-scaling=fixed&page-id=13%3A2",
     featured: true
   },
   {
@@ -102,7 +147,7 @@ export const caseStudies: CaseStudy[] = [
       mobile: "/projects/Axion/axion Mobile Landing Page.png"
     },
     tags: ["E-Commerce", "UI/UX", "Product Design", "Conversion Optimization", "Web Design"],
-    link: "https://www.figma.com/design/9f0Zx8QtkreC2pR7xTk6ut/Axion-Landing-Pages?node-id=99-88&t=x23Vp5gOW6NUTELI-1",
+    link: "https://www.figma.com/proto/9f0Zx8QtkreC2pR7xTk6ut/Axion-Landing-Pages?node-id=622-4523&p=f&viewport=261%2C279%2C0.02&t=wWShF8wyKCKlWKpL-1&scaling=scale-down-width&content-scaling=fixed&starting-point-node-id=622%3A4523&page-id=99%3A88",
     featured: true,
     liveUrl: "https://axionlights.com/"
   },
@@ -123,7 +168,7 @@ export const caseStudies: CaseStudy[] = [
       desktop: "/projects/Prime Renovations/Prime Renovations Landing Page.png"
     },
     tags: ["Web Design", "Luxury Branding", "Webflow", "Portfolio"],
-    link: "https://www.figma.com/design/FeOzf3wjda23O4VP7gkblb/Redesign-Prime-Renovations?node-id=0-1&t=NUTmH5mg5fhqMcwf-1",
+    link: "https://www.figma.com/proto/FeOzf3wjda23O4VP7gkblb/Redesign-Prime-Renovations?node-id=160-661&viewport=-25%2C190%2C0.03&t=ZgO5iDSbZORmOcOt-1&scaling=scale-down-width&content-scaling=fixed&starting-point-node-id=160%3A661&page-id=111%3A273",
     featured: false,
     liveUrl: "https://www.primerenovationsnyc.com/"
   },
@@ -144,7 +189,7 @@ export const caseStudies: CaseStudy[] = [
       desktop: "/projects/Synctom/Landing-Page_Synctom.png",
     },
     tags: ["Web Design", "Figma", "Luxury Branding", "UI/UX"],
-    link: "https://www.figma.com/design/5q5JMJqUHSxyByIGSiw25p/Pablo-Marbles?node-id=527-2221&t=zA0zz6kk9kOubyb5-1",
+    link: "https://www.figma.com/proto/nNVEhHLiLztlMH6HROW7be/Synctom?node-id=583-5127&p=f&viewport=40%2C81%2C0.06&t=x82BWFAlISZ7RFjV-1&scaling=scale-down-width&content-scaling=fixed&page-id=583%3A3746",
     featured: false,
     liveUrl: "https://www.synctom.com/"
   },
@@ -165,7 +210,7 @@ export const caseStudies: CaseStudy[] = [
       desktop: "/projects/Pablo Marbles and Granite/Pablo Landing Page.png",
     },
     tags: ["Web Design", "Figma", "Luxury Branding", "UI/UX"],
-    link: "https://www.figma.com/design/5q5JMJqUHSxyByIGSiw25p/Pablo-Marbles?node-id=527-2221&t=zA0zz6kk9kOubyb5-1",
+    link: "https://www.figma.com/proto/5q5JMJqUHSxyByIGSiw25p/Pablo-Marbles?node-id=527-2221&p=f&viewport=340%2C-55%2C0.02&t=PMT0eEGkyrYPjK1D-1&scaling=min-zoom&content-scaling=fixed&page-id=28%3A491",
     featured: false
   },
 ];
