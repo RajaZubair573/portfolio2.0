@@ -440,7 +440,7 @@ export default function Hero() {
             <div className="mt-8 flex flex-col gap-6 w-full text-right border-r-2 border-slate-100/10 pr-6">
               <HoverStat original="40+" label="Real Client Projects" isNumber={true} targetNum={40} suffix="+" hoverColorClass="from-orange-400 to-orange-600" />
               <HoverStat original="Global" label="Clients in PK & Int'l" isNumber={false} hoverColorClass="from-orange-400 to-orange-600" textSizeClass="text-3xl" />
-              <HoverStat original="2" label="Years Experience" isNumber={true} targetNum={2} suffix="+" hoverColorClass="from-orange-400 to-orange-600" />
+              <HoverStat original="3" label="Years Experience" isNumber={true} targetNum={3} suffix="+" hoverColorClass="from-orange-400 to-orange-600" />
             </div>
           </div>
         </main>
