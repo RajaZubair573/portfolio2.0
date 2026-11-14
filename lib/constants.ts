@@ -86,6 +86,13 @@ export const projects: Project[] = [
     link: "",
   },
   {
+    id: 12,
+    name: "Reclaim",
+    imagePath: "/projects/Reclaim-2.png",
+    desc: "A sleek and reliable app design focused on effortlessly recovering lost files with speed and security.",
+    link: "",
+  },
+  {
     id: 26,
     name: "Edmonton Kitchen Countertops",
     imagePath: "/projects/Edmonton-Mockup.jpg",
@@ -178,10 +185,10 @@ export const projects: Project[] = [
     link: "",
   },
   {
-    id: 12,
-    name: "Reclaim",
-    imagePath: "/projects/Reclaim-2.png",
-    desc: "A sleek and reliable app design focused on effortlessly recovering lost files with speed and security.",
+    id: 37,
+    name: "Zenora",
+    imagePath: "/projects/Zenora-Mockup.png",
+    desc: "A modern fintech mobile banking app designed to simplify digital payments, card management, and personal finance tracking through an intuitive interface.",
     link: "",
   },
   {
@@ -370,7 +377,7 @@ export const experience: Experience[] = [
   {
     company: "FlowCubo",
     role: "UI/UX Designer & Webflow Developer",
-    period: "Feb 2025 - Present",
+    period: "Feb 2024 - July 2026",
     type: "Project Basis · Nevada, USA",
     points: [
       "Working with an international Webflow agency based in Nevada, USA, designing and developing high-performance websites for clients across the globe.",
@@ -382,7 +389,7 @@ export const experience: Experience[] = [
   {
     company: "Synctom",
     role: "UI/UX Designer",
-    period: "June 2025 - July 2026",
+    period: "June 2025 - Oct 2026",
     type: "Full-Time · Islamabad, Pakistan",
     points: [
       "Worked as a UI/UX Designer at Synctom, a software house based in Islamabad, contributing to the design of multiple large-scale digital products.",
