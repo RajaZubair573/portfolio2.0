@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import { Toaster } from "react-hot-toast";
 import "./globals.css";
 import Header from "@/components/header";
 import Footer from "@/components/footer";
-import DisableScrollRestoration from "@/components/disable-scroll-restoration";
 
 
 export const metadata: Metadata = {
@@ -46,11 +46,14 @@ export default function RootLayout({
           crossOrigin="anonymous"
         />
         <link
-          href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Rajdhani:wght@400;500;600;700&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Rajdhani:wght@400;500;600;700&display=swap"
           rel="stylesheet"
         />
       </head>
       <body className="bg-[#06060a] text-slate-200 min-h-screen font-mono">
+        <Script id="manual-scroll-restoration" strategy="beforeInteractive">
+          {`if ("scrollRestoration" in window.history) window.history.scrollRestoration = "manual";`}
+        </Script>
         <Header />
         {children}
         <Footer />

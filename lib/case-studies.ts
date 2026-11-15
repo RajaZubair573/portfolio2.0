@@ -9,7 +9,6 @@ export interface CaseStudy {
   gallery: string[];
   previews: {
     desktop: string;
-    mobile?: string;
   };
   tags: string[];
   link: string;
@@ -24,16 +23,16 @@ export const caseStudies: CaseStudy[] = [
     slug: "cyberrey-platform",
     overview: "CyberRey is a cybersecurity solutions provider redesigned to better communicate trust, clarity, and enterprise-grade protection to modern organizations.",
     challenge: "The existing website lacked a clear visual hierarchy and failed to communicate the credibility and trust expected from a cybersecurity brand. The interface felt outdated, with unclear messaging and weak value positioning, leading to low user engagement and poor conversion performance.",
-    solution: "Redesigned the experience with a modern, security-focused approach centered on clarity and trust. Introduced strong typography, structured layouts, and refined iconography to guide users through key offerings. Established a consistent visual system with clear CTAs and improved content hierarchy. Built the site in Webflow with fully responsive behavior and subtle interactions to reinforce credibility without distraction.",
+    solution: "Redesigned the experience with a modern, security-focused approach centered on clarity and trust. Introduced strong typography, structured layouts, and refined iconography to guide users through key offerings. Established a consistent visual system with clear CTAs, improved content hierarchy, and responsive layouts designed to reinforce credibility without distraction.",
     results: [
-      "Increased conversion rate by 45% through clearer messaging and optimized user flow",
-      "IImproved user engagement by 60%, with better navigation and content structure",
-      "Elevated brand perception, positioning CyberRey as a premium, enterprise-grade cybersecurity partner"
+      "Established a clearer visual hierarchy across the core marketing pages",
+      "Created a more credible, consistent visual language for a trust-sensitive category",
+      "Improved how complex cybersecurity services are grouped and explained",
+      "Delivered a responsive design foundation and a reusable design system"
     ],
     gallery: ["/projects/Cyberrey/Cyberrey Mockup.png","/projects/Cyberrey/Cyberrey_typography.png","/projects/Cyberrey/Cyberrey_Colorpalette.webp","/projects/Cyberrey/Cyberrey_Navbars.webp","/projects/Cyberrey/Cyberrey_Vendor.webp","/projects/Cyberrey/Cyberrey_Solutions.webp","/projects/Cyberrey/Cyberrey_Abouts.webp","/projects/Cyberrey/Cyberrey_Blogs.webp","/projects/Cyberrey/Cyberrey_Contact.webp"],
     previews: {
       desktop: "/projects/Cyberrey/Cyberrey Landing Page.png",
-      // mobile: "/projects/Cyberrey/Cyberrey Mockup.png"
     },
     tags: ["UI/UX", "Webflow", "Cybersecurity", "Web Design"],
     link: "https://www.figma.com/proto/zVgjqRKZdXfZZ5vREeBkqk/Cyberrey-New?node-id=330-2441&p=f&viewport=2571%2C260%2C0.03&t=iNsf4dFXvkq6qVSc-1&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=330%3A2441&page-id=318%3A188",
@@ -69,7 +68,6 @@ export const caseStudies: CaseStudy[] = [
 
   previews: {
     desktop: "/projects/Reclaim/Reclaim-Mockup.png",
-    mobile: "",
   },
 
   tags: [
@@ -144,7 +142,6 @@ export const caseStudies: CaseStudy[] = [
     gallery: ["/projects/Axion/Axion-Mockup.png", "/projects/Axion/Axion_typography.png", "/projects/Axion/Axion_colorpalette.png","/projects/Axion/Axion_Products_Pages.webp","/projects/Axion/Axion_Projects_Pages.webp","/projects/Axion/Axion_Blogs_Pages.webp","/projects/Axion/Axion_AC_Pages.webp","/projects/Axion/Axion_Order_Pages.webp","/projects/Axion/Axion_Profile_Pages.webp","/projects/Axion/Axion_Mobile_View.webp","/projects/Axion/Axion_Dashboards.webp"],
     previews: {
       desktop: "/projects/Axion/Axion Main Landing Page.png",
-      mobile: "/projects/Axion/axion Mobile Landing Page.png"
     },
     tags: ["E-Commerce", "UI/UX", "Product Design", "Conversion Optimization", "Web Design"],
     link: "https://www.figma.com/proto/9f0Zx8QtkreC2pR7xTk6ut/Axion-Landing-Pages?node-id=622-4523&p=f&viewport=261%2C279%2C0.02&t=wWShF8wyKCKlWKpL-1&scaling=scale-down-width&content-scaling=fixed&starting-point-node-id=622%3A4523&page-id=99%3A88",
