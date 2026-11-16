@@ -14,6 +14,7 @@ import { CaseStudyScrollToTop } from "@/components/case-study/case-study-scroll-
 import { CaseStudyShowcase } from "@/components/case-study/case-study-showcase";
 import { ClassicCaseStudy } from "@/components/case-study/classic-case-study";
 import { CwesdCaseStudy } from "@/components/case-study/cwesd-case-study";
+import { LighthouseCaseStudy } from "@/components/case-study/lighthouse-case-study";
 import { MonivaCaseStudy } from "@/components/case-study/moniva-case-study";
 import { ReclaimCaseStudy } from "@/components/case-study/reclaim-case-study";
 import { ReadingProgress } from "@/components/case-study/reading-progress";
@@ -111,6 +112,20 @@ export default async function CaseStudyPage({
       <>
         <CaseStudyScrollToTop />
         <CwesdCaseStudy
+          caseStudy={caseStudy}
+          index={index}
+          next={next}
+          previous={previous}
+        />
+      </>
+    );
+  }
+
+  if (caseStudy.slug === "light-house-ecommerce-website") {
+    return (
+      <>
+        <CaseStudyScrollToTop />
+        <LighthouseCaseStudy
           caseStudy={caseStudy}
           index={index}
           next={next}

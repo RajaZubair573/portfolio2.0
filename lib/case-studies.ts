@@ -118,19 +118,22 @@ export const caseStudies: CaseStudy[] = [
     challenge: "Design a sophisticated e-commerce experience that communicates the brand's premium identity while making it easy for customers to discover lighting products, explore categories, view project inspirations, and navigate the purchasing journey across devices.",
     solution: "Designed a premium, responsive website featuring a visually immersive landing page, structured product categories, detailed product pages with selectable variants, project showcases, editorial blog layouts, and dedicated brand and contact pages. Developed a consistent visual language using deep navy tones, warm lighting imagery, refined typography, and spacious layouts. Also designed the shopping journey, including cart, checkout, payment, order review, and confirmation screens.",
     results: [
-    "Created a cohesive visual identity across the website's key pages",
-    "Designed a responsive experience for desktop and mobile users",
-    "Developed a complete e-commerce interface covering product discovery through order confirmation"
+      "Created a cohesive visual identity across the website's key pages",
+      "Designed a responsive experience for desktop and mobile users",
+      "Developed a complete e-commerce interface covering product discovery through order confirmation"
     ],
-    gallery: ["/projects/Lighthouse/Lighthouse-Mockup.png", "/projects/Lighthouse/Lighthouse-Desktop.png", "/projects/Lighthouse/Lighthouse-Mobile.png"],
+    gallery: [
+      "/projects/Lighthouse/Lighthouse-Mockup.png",
+      "/projects/Lighthouse/Lighthouse-Desktop.png",
+      "/projects/Lighthouse/Lighthouse-Mobile.png",
+      "/projects/Lighthouse/Lighthouse-Colorpalette.webp",
+      "/projects/Lighthouse/Lighthouse-Typography.webp",
+      "/projects/Lighthouse/Landing-Page_Lighthouse.png"
+    ],
     previews: {
       desktop: "/projects/Lighthouse/Landing-Page_Lighthouse.png",
     },
-    tags: [    "UI/UX Design",
-    "E-commerce",
-    "Web Design",
-    "Responsive Design",
-    "Lighting"],
+    tags: ["UI/UX Design", "E-commerce", "Web Design", "Responsive Design", "Lighting"],
     link: "https://www.figma.com/proto/xpokrtxgP4akM88XI3Rcej/Lighthouse-isb?node-id=187-2543&p=f&viewport=-403%2C50%2C0.06&t=9JasNXrElqMa9Kwu-1&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=187%3A2543&page-id=4%3A44",
     featured: true
   },
