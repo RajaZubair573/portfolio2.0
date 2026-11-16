@@ -13,7 +13,9 @@ import { CaseStudyResponsive } from "@/components/case-study/case-study-responsi
 import { CaseStudyScrollToTop } from "@/components/case-study/case-study-scroll-to-top";
 import { CaseStudyShowcase } from "@/components/case-study/case-study-showcase";
 import { ClassicCaseStudy } from "@/components/case-study/classic-case-study";
+import { CwesdCaseStudy } from "@/components/case-study/cwesd-case-study";
 import { MonivaCaseStudy } from "@/components/case-study/moniva-case-study";
+import { ReclaimCaseStudy } from "@/components/case-study/reclaim-case-study";
 import { ReadingProgress } from "@/components/case-study/reading-progress";
 import {
   SectionRail,
@@ -90,6 +92,34 @@ export default async function CaseStudyPage({
     );
   }
 
+  if (caseStudy.slug === "reclaim-data-recovery-app") {
+    return (
+      <>
+        <CaseStudyScrollToTop />
+        <ReclaimCaseStudy
+          caseStudy={caseStudy}
+          index={index}
+          next={next}
+          previous={previous}
+        />
+      </>
+    );
+  }
+
+  if (caseStudy.slug === "cwesd-learning-platform") {
+    return (
+      <>
+        <CaseStudyScrollToTop />
+        <CwesdCaseStudy
+          caseStudy={caseStudy}
+          index={index}
+          next={next}
+          previous={previous}
+        />
+      </>
+    );
+  }
+
   if (!detail) {
     return (
       <>
@@ -117,7 +147,7 @@ export default async function CaseStudyPage({
       <CaseStudyShowcase caseStudy={caseStudy} detail={detail} />
       <CaseStudyResponsive detail={detail} />
       <CaseStudyOutcomes detail={detail} />
-      <CaseStudyNextProject next={next} />
+      <CaseStudyNextProject next={next} previous={previous} />
     </main>
   );
 }

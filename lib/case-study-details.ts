@@ -1,7 +1,6 @@
 export interface CaseStudyMetaItem {
   label: string;
   value: string;
-  placeholder?: boolean;
 }
 
 export interface CaseStudyFigure {

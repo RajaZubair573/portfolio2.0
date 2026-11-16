@@ -147,14 +147,7 @@ export function BackLink() {
   );
 }
 
-export function PlaceholderTag({ children }: { children: ReactNode }) {
-  return (
-    <span className="inline-flex items-center gap-1.5 rounded-full border border-amber-400/20 bg-amber-400/[0.06] px-2.5 py-1 font-['Space_Mono'] text-[9px] uppercase tracking-[0.16em] text-amber-300/80">
-      <span className="h-1 w-1 rounded-full bg-amber-400/70" />
-      {children}
-    </span>
-  );
-}
+
 
 export function AssetFrame({
   src,
@@ -267,13 +260,13 @@ export function ComponentButton({
   external?: boolean;
   className?: string;
 }) {
-  const classes = cn(
-    "group inline-flex items-center justify-center gap-2.5 rounded-sm px-6 py-3.5 font-['Space_Mono'] text-[10px] uppercase tracking-[0.16em] no-underline transition-all duration-300",
-    variant === "primary"
-      ? "bg-orange-500 text-slate-950 hover:bg-orange-400 hover:shadow-[0_0_36px_rgba(249,115,22,0.3)]"
-      : "border border-white/15 bg-white/[0.02] text-slate-200 hover:border-orange-400/40 hover:bg-white/[0.05] hover:text-orange-300",
-    className
-  );
+    const classes = cn(
+      "group inline-flex w-full items-center justify-center gap-2.5 rounded-sm px-5 py-3 text-center font-['Space_Mono'] text-[10px] uppercase tracking-[0.14em] no-underline transition-all duration-300 sm:w-auto sm:px-6 sm:py-3.5",
+      variant === "primary"
+        ? "bg-orange-500 text-slate-950 hover:bg-orange-400 hover:shadow-[0_0_36px_rgba(249,115,22,0.3)]"
+        : "border border-white/15 bg-white/[0.02] text-slate-200 hover:border-orange-400/40 hover:bg-white/[0.05] hover:text-orange-300",
+      className
+    );
 
   const content = (
     <>

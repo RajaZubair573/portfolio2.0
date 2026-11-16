@@ -300,63 +300,36 @@ export function ClassicCaseStudy({
             </div>
           </div>
 
-          <div className="border-t border-slate-100/10 py-12">
-            <div className="flex flex-col items-center justify-between gap-6 sm:flex-row">
-              <div>
-                <h3 className="mb-2 font-['Rajdhani'] text-2xl font-bold text-slate-100">
-                  Ready to explore the design details?
-                </h3>
-                <p className="font-sans text-slate-400">
-                  View the full design on Figma or Dribbble
-                </p>
-              </div>
-
-              <div className="flex flex-wrap items-center gap-3">
-                {caseStudy.liveUrl ? (
-                  <a
-                    href={caseStudy.liveUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="group inline-flex items-center gap-3 whitespace-nowrap rounded-sm border border-orange-500 bg-orange-500 px-6 py-3 font-['Space_Mono'] text-xs uppercase tracking-[0.12em] text-slate-950 no-underline transition-all duration-200 hover:bg-orange-600 hover:shadow-[0_0_20px_rgba(255,87,34,0.4)]"
-                  >
-                    Live Site
-                    <svg
-                      className="transition-transform group-hover:-translate-y-1 group-hover:translate-x-1"
-                      width="12"
-                      height="12"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2.5"
-                      viewBox="0 0 24 24"
-                    >
-                      <path d="M7 17L17 7M17 7H7M17 7v10" />
-                    </svg>
-                  </a>
-                ) : null}
-                {caseStudy.link ? (
-                  <a
-                    href={caseStudy.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="group inline-flex items-center gap-3 whitespace-nowrap rounded-sm border border-orange-500 bg-orange-500 px-6 py-3 font-['Space_Mono'] text-xs uppercase tracking-[0.12em] text-slate-950 no-underline transition-all duration-200 hover:bg-orange-600 hover:shadow-[0_0_20px_rgba(255,87,34,0.4)]"
-                  >
-                    View Full Design
-                    <svg
-                      className="transition-transform group-hover:-translate-y-1 group-hover:translate-x-1"
-                      width="12"
-                      height="12"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2.5"
-                      viewBox="0 0 24 24"
-                    >
-                      <path d="M7 17L17 7M17 7H7M17 7v10" />
-                    </svg>
-                  </a>
-                ) : null}
-              </div>
+          {(caseStudy.liveUrl || caseStudy.link) ? (
+            <div className="flex w-full flex-col items-stretch gap-3 border-t border-slate-100/10 py-12 sm:flex-row sm:flex-wrap sm:items-center">
+              {caseStudy.liveUrl ? (
+                <a
+                  href={caseStudy.liveUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group inline-flex w-full items-center justify-center gap-2.5 rounded-sm bg-orange-500 px-5 py-3 font-['Space_Mono'] text-[10px] uppercase tracking-[0.14em] text-slate-950 no-underline transition-all duration-300 hover:bg-orange-400 hover:shadow-[0_0_36px_rgba(249,115,22,0.3)] sm:w-auto sm:px-6 sm:py-3.5"
+                >
+                  Live Site
+                  <svg className="transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" width="12" height="12" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
+                    <path d="M7 17L17 7M17 7H7M17 7v10" />
+                  </svg>
+                </a>
+              ) : null}
+              {caseStudy.link ? (
+                <a
+                  href={caseStudy.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`group inline-flex w-full items-center justify-center gap-2.5 rounded-sm px-5 py-3 font-['Space_Mono'] text-[10px] uppercase tracking-[0.14em] no-underline transition-all duration-300 sm:w-auto sm:px-6 sm:py-3.5 ${caseStudy.liveUrl ? "border border-white/15 bg-white/[0.02] text-slate-200 hover:border-orange-400/40 hover:bg-white/[0.05] hover:text-orange-300" : "bg-orange-500 text-slate-950 hover:bg-orange-400 hover:shadow-[0_0_36px_rgba(249,115,22,0.3)]"}`}
+                >
+                  View Full Design
+                  <svg className="transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" width="12" height="12" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
+                    <path d="M7 17L17 7M17 7H7M17 7v10" />
+                  </svg>
+                </a>
+              ) : null}
             </div>
-          </div>
+          ) : null}
         </div>
       </section>
 

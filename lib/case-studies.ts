@@ -71,27 +71,27 @@ export const caseStudies: CaseStudy[] = [
 
 {
   id: 8,
-  title: "Reclaim - Data Recovery App",
+  title: "Reclaim — Data Recovery App",
   slug: "reclaim-data-recovery-app",
-  overview: "Reclaim is a sleek and reliable mobile data recovery app designed to help users recover lost or accidentally deleted files. The app provides a seamless experience for scanning, discovering, previewing, and restoring photos, videos, audio files, and documents through an intuitive and user-friendly interface.",
+  overview: "Reclaim is a mobile data recovery application designed to help users recover lost or accidentally deleted files. The experience focuses on making file discovery, scanning, previewing, and recovery simple through an intuitive and approachable interface.",
 
-  challenge: "Design a reliable and effortless mobile experience that simplifies the process of recovering lost files. The challenge was to make file recovery accessible to users with different technical backgrounds while creating a clear navigation structure, intuitive scanning flows, and an interface that communicates speed, security, and reliability throughout the recovery journey.",
+  challenge: "Recovering deleted files can be confusing, especially for users who are unfamiliar with file systems and recovery tools. The challenge was to create an interface that makes file discovery and recovery understandable without overwhelming users with technical complexity.",
 
-  solution: "Designed a comprehensive mobile application featuring an intuitive onboarding experience, structured file categories, deleted file scanning, file preview, and recovery workflows for photos, videos, audio files, and documents. Developed a clean and modern visual language using a light color palette, refined typography, and spacious layouts to create a trustworthy and approachable experience. Created 25+ screens supported by a consistent design system, detailed wireframes, user flows, and interactive prototypes. Conducted user research and usability testing to inform design decisions and refine the overall user experience.",
+  solution: "Designed the core mobile application experience across onboarding, file discovery, scanning, file previews, recovery interactions, and supporting interface states, supported by a reusable visual system and an interactive prototype.",
 
   results: [
-    "Designed a complete mobile data recovery experience covering the core file recovery journey",
-    "Created 25+ high-fidelity screens supported by a consistent design system",
-    "Developed intuitive scanning, file preview, and recovery workflows for multiple file types",
-    "Delivered interactive prototypes and a cohesive UI/UX design ready for development"
+    "Structured recovery journey from discovery to recovery outcome",
+    "Clear organization for different file categories and recovery interactions",
+    "Consistent mobile interface across core flows and supporting states",
+    "Comprehensive UI coverage with 25+ mobile screens, a design system, and an interactive prototype"
   ],
 
   gallery: [
     "/projects/Reclaim/Reclaim-Mockup.png",
-    "/projects/Reclaim/Design-System.png",
     "/projects/Reclaim/Screen-1.png",
     "/projects/Reclaim/Screen-2.png",
     "/projects/Reclaim/Screen-3.png",
+    "/projects/Reclaim/Design-System.png",
     "/projects/Reclaim/Full-Design.png"
   ],
 
@@ -103,9 +103,7 @@ export const caseStudies: CaseStudy[] = [
     "UI/UX Design",
     "Mobile App",
     "Data Recovery",
-    "User Research",
-    "Prototyping",
-    "Design System"
+    "Product Design"
   ],
 
   link: "",
@@ -140,19 +138,20 @@ export const caseStudies: CaseStudy[] = [
     id: 2,
     title: "CWESD Learning Platform",
     slug: "cwesd-learning-platform",
-    overview: "CWESD is a modern learning platform designed to empower women in tech through comprehensive courses, mentorship, and community building.",
+    overview: "CWESD is a learning platform designed to empower women in technology through educational opportunities, structured learning experiences, mentorship, and community building.",
     challenge: "Create an inclusive, engaging platform that appeals to women in tech while maintaining professional credibility and ease of navigation for diverse user groups.",
-    solution: "Developed a clean, feminine yet professional design with warm color palettes, intuitive navigation, and interactive elements. Focused on accessibility and mobile-first responsive design.",
+    solution: "Designed a welcoming, responsive website experience with clear content presentation, intuitive navigation, and a cohesive visual direction to help visitors explore learning opportunities and community-related information.",
     results: [
-      "Achieved 78% user satisfaction rate",
-      "Increased course enrollment by 120%",
-      "Built a strong community with 5000+ active members"
+      "Clearer Content Presentation — organized platform information into a more structured visual experience",
+      "Consistent Visual Identity — established a cohesive presentation through typography, color, and layout",
+      "Improved Information Discoverability — focused on making important learning and platform information easier to explore",
+      "Responsive Design Direction — designed the website experience with consideration for different screen sizes"
     ],
     gallery: ["/projects/CWESD/CWESD - Mockup.png","/projects/CWESD/CWESD_typography.png","/projects/CWESD/CWESD_Colorpalette.webp","/projects/CWESD/CWESD_Landingpage.webp"],
     previews: {
       desktop: "/projects/CWESD/CWESD Landing Page.png",
     },
-    tags: ["UI/UX", "Education", "Web Design", "Mobile-First", "Community"],
+    tags: ["UI/UX Design", "Education", "Web Design", "Mobile-First", "Community"],
     link: "https://www.figma.com/proto/9Nv6z5mVXXUn2KzwMK1d5V/CWESD?node-id=124-707&viewport=431%2C25%2C0.1&t=W0hMRftf6JdoHNrR-1&scaling=min-zoom&content-scaling=fixed&page-id=13%3A2",
     featured: true
   },

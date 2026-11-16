@@ -116,60 +116,22 @@ export function CaseStudyOutcomes({ detail }: { detail: CaseStudyDetail }) {
           </div>
         </div>
 
-        <Reveal delay={80}>
-          <div className="relative mt-14 overflow-hidden rounded-2xl border border-white/[0.09] bg-[#0a1120] p-7 md:p-10">
-            <div
-              aria-hidden="true"
-              className="pointer-events-none absolute -right-24 -top-24 h-[300px] w-[300px] rounded-full opacity-60 blur-[90px]"
-              style={{
-                background:
-                  "radial-gradient(circle, rgba(124,58,237,0.38), transparent 70%)",
-              }}
-            />
-            <div
-              aria-hidden="true"
-              className="pointer-events-none absolute -bottom-28 -left-16 h-[260px] w-[260px] rounded-full opacity-50 blur-[90px]"
-              style={{
-                background:
-                  "radial-gradient(circle, rgba(249,115,22,0.2), transparent 70%)",
-              }}
-            />
-
-            <div className="relative z-10 flex flex-col gap-7 lg:flex-row lg:items-end lg:justify-between">
-              <div className="max-w-2xl">
-                <div className="flex items-center gap-3">
-                  <span className="h-1.5 w-1.5 rounded-full bg-orange-500" />
-                  <span className="font-['Space_Mono'] text-[9px] uppercase tracking-[0.22em] text-orange-400/80">
-                    Project links
-                  </span>
-                </div>
-                <h2 className="mt-4 font-['Rajdhani'] text-[clamp(1.8rem,3.6vw,2.8rem)] font-bold leading-[1.05] text-slate-50">
-                  {outcomes.cta.title}
-                </h2>
-                <p className="mt-3 max-w-xl font-sans text-sm leading-relaxed text-slate-400">
-                  {outcomes.cta.body}
-                </p>
-              </div>
-
-              <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap lg:justify-end">
-                {outcomes.cta.primary ? (
-                  <ComponentButton href={outcomes.cta.primary.href} external>
-                    {outcomes.cta.primary.label}
-                  </ComponentButton>
-                ) : null}
-                {outcomes.cta.secondary ? (
-                  <ComponentButton
-                    href={outcomes.cta.secondary.href}
-                    variant="outline"
-                    external
-                  >
-                    {outcomes.cta.secondary.label}
-                  </ComponentButton>
-                ) : null}
-              </div>
+        {(outcomes.cta.primary || outcomes.cta.secondary) ? (
+          <Reveal delay={80}>
+            <div className="mt-14 flex w-full flex-col items-stretch gap-3 sm:flex-row sm:flex-wrap sm:items-center">
+              {outcomes.cta.primary ? (
+                <ComponentButton href={outcomes.cta.primary.href} external>
+                  {outcomes.cta.primary.label}
+                </ComponentButton>
+              ) : null}
+              {outcomes.cta.secondary ? (
+                <ComponentButton href={outcomes.cta.secondary.href} variant={outcomes.cta.primary ? "outline" : "primary"} external>
+                  {outcomes.cta.secondary.label}
+                </ComponentButton>
+              ) : null}
             </div>
-          </div>
-        </Reveal>
+          </Reveal>
+        ) : null}
       </Container>
     </section>
   );
