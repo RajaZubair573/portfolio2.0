@@ -13,6 +13,7 @@ import { CaseStudyResponsive } from "@/components/case-study/case-study-responsi
 import { CaseStudyScrollToTop } from "@/components/case-study/case-study-scroll-to-top";
 import { CaseStudyShowcase } from "@/components/case-study/case-study-showcase";
 import { ClassicCaseStudy } from "@/components/case-study/classic-case-study";
+import { MonivaCaseStudy } from "@/components/case-study/moniva-case-study";
 import { ReadingProgress } from "@/components/case-study/reading-progress";
 import {
   SectionRail,
@@ -74,6 +75,20 @@ export default async function CaseStudyPage({
   const detail = caseStudyDetails[caseStudy.slug];
   const next = caseStudies[(index + 1) % caseStudies.length];
   const previous = index > 0 ? caseStudies[index - 1] : null;
+
+  if (caseStudy.slug === "moniva-financial-app") {
+    return (
+      <>
+        <CaseStudyScrollToTop />
+        <MonivaCaseStudy
+          caseStudy={caseStudy}
+          index={index}
+          next={next}
+          previous={previous}
+        />
+      </>
+    );
+  }
 
   if (!detail) {
     return (

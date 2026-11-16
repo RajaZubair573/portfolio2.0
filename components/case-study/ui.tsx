@@ -69,7 +69,7 @@ export function SectionHeading({
         </SectionLabel>
       </Reveal>
       <Reveal delay={80}>
-        <h2 className="mt-6 font-['Rajdhani'] text-[clamp(2.1rem,4.6vw,3.5rem)] font-bold leading-[1.04] tracking-tight text-slate-100">
+        <h2 className="mt-6 font-['Rajdhani'] text-[clamp(1.8rem,3.6vw,2.8rem)] font-bold leading-[1.05] tracking-tight text-slate-100">
           {title}
         </h2>
       </Reveal>

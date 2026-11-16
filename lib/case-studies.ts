@@ -39,7 +39,36 @@ export const caseStudies: CaseStudy[] = [
     featured: true,
     liveUrl: "https://cyberrey.com/"
   },
-  
+  {
+    id: 9,
+    title: "Moniva",
+    slug: "moniva-financial-app",
+    overview: "An all-in-one mobile financial experience designed to simplify wallet management, personal lending, and everyday bill payments.",
+    challenge: "Combining wallet management, borrowing, and everyday payments within one application introduces different interaction requirements that must feel connected without overwhelming users.",
+    solution: "Designed a unified mobile financial-services experience across onboarding, identity verification, wallet management, personal lending, bill payments, transaction records, and account settings with consistent patterns and clear feedback.",
+    results: [
+      "Unified financial experience across core money-management services",
+      "Structured user journeys for account setup, funding, borrowing, and payments",
+      "Clear financial information for balances, repayments, and transaction outcomes",
+      "Consistent interface system across 88 mobile screens and states"
+    ],
+    gallery: [
+      "/projects/Moniva/Moniva-Mockup.jpg",
+      "/projects/Moniva/Home - Verified.png",
+      "/projects/Moniva/Add moneysuccess.png",
+      "/projects/Moniva/Loan Approved.png",
+      "/projects/Moniva/Bills - Recent.png",
+      "/projects/Moniva/Onboarding 4.png",
+      "/projects/Moniva/Moniva-Fulldesign.png"
+    ],
+    previews: {
+      desktop: "/projects/Moniva/Moniva-Mockup.jpg",
+    },
+    tags: ["UI/UX Design", "Fintech", "Mobile App", "Product Design"],
+    link: "",
+    featured: true
+  },
+
 {
   id: 8,
   title: "Reclaim - Data Recovery App",

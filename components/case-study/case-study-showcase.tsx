@@ -27,7 +27,7 @@ export function CaseStudyShowcase({
               <SectionLabel index="06">Final design showcase</SectionLabel>
             </Reveal>
             <Reveal delay={70}>
-              <h2 className="mt-5 font-['Rajdhani'] text-[clamp(3.2rem,8vw,6.5rem)] font-bold leading-[0.88] tracking-[-0.02em] text-slate-50">
+              <h2 className="mt-5 font-['Rajdhani'] text-[clamp(2rem,4.2vw,3.4rem)] font-bold leading-[1.02] tracking-[-0.02em] text-slate-50">
                 The final
                 <br />
                 design<span className="text-orange-500">.</span>

@@ -87,13 +87,13 @@ export function CaseStudyHero({
             </div>
 
             <h1
-              className="hero-in mt-5 font-['Rajdhani'] text-[clamp(3.6rem,9vw,7.5rem)] font-bold leading-[0.88] tracking-[-0.02em] text-slate-50"
+              className="hero-in mt-5 font-['Rajdhani'] text-[clamp(2.8rem,6vw,4.8rem)] font-bold leading-[0.92] tracking-[-0.02em] text-slate-50"
               style={{ animationDelay: "160ms" }}
             >
               CyberRey
             </h1>
             <p
-              className="hero-in mt-3 max-w-2xl font-['Rajdhani'] text-[clamp(1.4rem,3.2vw,2.4rem)] font-medium leading-[1.1] text-slate-400"
+              className="hero-in mt-3 max-w-2xl font-['Rajdhani'] text-[clamp(1.15rem,2.4vw,1.8rem)] font-medium leading-[1.15] text-slate-400"
               style={{ animationDelay: "220ms" }}
             >
               Cybersecurity Website Redesign

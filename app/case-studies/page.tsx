@@ -118,15 +118,17 @@ function CaseStudyCard({ caseStudy, index, cardRef }: CaseStudyCardProps) {
                   <LuArrowUpRight/>
                 </a>
               )}
-              <a
-                href={caseStudy.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover:text-white transition-colors duration-300"
-                title="Figma Design"
-              >
-                <LuFigma />
-              </a>
+              {caseStudy.link ? (
+                <a
+                  href={caseStudy.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-white transition-colors duration-300"
+                  title="Figma Design"
+                >
+                  <LuFigma />
+                </a>
+              ) : null}
             </div>
           </div>
         </div>
