@@ -162,19 +162,22 @@ export const caseStudies: CaseStudy[] = [
     id: 3,
     title: "Axion Lighting E-Commerce",
     slug: "axion-lighting-ecommerce",
-    overview: "Axion is a premium lighting e-commerce platform showcasing curated collections with an elegant shopping experience.",
-    challenge: "Design a luxurious yet user-friendly e-commerce experience that highlights product aesthetics while maintaining conversion optimization principles.",
-    solution: "Created a sophisticated design with high-quality product imagery, smooth animations, and a streamlined checkout process. Implemented advanced filtering and personalization features.",
+    overview: "Axion is a premium lighting e-commerce platform with a complete digital ecosystem spanning brand identity, a full online store, a responsive mobile experience, and a dashboard.",
+    challenge: "Design a complete digital experience from scratch, establishing the brand before extending it across a storefront, mobile experience, and dashboard.",
+    solution: "Built the brand foundation first, then designed the e-commerce website, responsive mobile experience, and dashboard around one consistent visual language and a connected shopping journey.",
     results: [
-      "Boosted average order value by 35%",
-      "Reduced cart abandonment by 50%",
-      "Achieved 4.8/5 customer satisfaction rating"
+      "A complete brand identity and visual foundation",
+      "A full e-commerce website covering product discovery through purchase",
+      "A responsive mobile experience with consistent brand expression",
+      "A complete dashboard interface within the same ecosystem",
+      "A consistent design language across the digital experience",
+      "A website that now serves as a source of new client acquisition"
     ],
-    gallery: ["/projects/Axion/Axion-Mockup.png", "/projects/Axion/Axion_typography.png", "/projects/Axion/Axion_colorpalette.png","/projects/Axion/Axion_Products_Pages.webp","/projects/Axion/Axion_Projects_Pages.webp","/projects/Axion/Axion_Blogs_Pages.webp","/projects/Axion/Axion_AC_Pages.webp","/projects/Axion/Axion_Order_Pages.webp","/projects/Axion/Axion_Profile_Pages.webp","/projects/Axion/Axion_Mobile_View.webp","/projects/Axion/Axion_Dashboards.webp"],
+    gallery: ["/projects/Axion/Axion-Mockup.png", "/projects/Axion/Axion_colorpalette.png", "/projects/Axion/Axion_typography.png", "/projects/Axion/Axion_Products_Pages.webp", "/projects/Axion/Axion_Projects_Pages.webp", "/projects/Axion/Axion_Blogs_Pages.webp", "/projects/Axion/Axion_AC_Pages.webp", "/projects/Axion/Axion_Order_Pages.webp", "/projects/Axion/Axion_Profile_Pages.webp", "/projects/Axion/Axion_Mobile_View.webp", "/projects/Axion/Axion_Dashboards.webp", "/projects/Axion/Axion Main Landing Page.png", "/projects/Axion/axion Mobile Landing Page.png"],
     previews: {
       desktop: "/projects/Axion/Axion Main Landing Page.png",
     },
-    tags: ["E-Commerce", "UI/UX", "Product Design", "Conversion Optimization", "Web Design"],
+    tags: ["Brand Identity", "E-commerce", "UI/UX Design", "Product Design", "Responsive Design", "Dashboard Design"],
     link: "https://www.figma.com/proto/9f0Zx8QtkreC2pR7xTk6ut/Axion-Landing-Pages?node-id=622-4523&p=f&viewport=261%2C279%2C0.02&t=wWShF8wyKCKlWKpL-1&scaling=scale-down-width&content-scaling=fixed&starting-point-node-id=622%3A4523&page-id=99%3A88",
     featured: true,
     liveUrl: "https://axionlights.com/"
@@ -183,15 +186,17 @@ export const caseStudies: CaseStudy[] = [
     id: 4,
     title: "Prime Renovations Website",
     slug: "prime-renovations",
-    overview: "Prime Renovations needed a website that reflects their precision craftsmanship and premium home renovation services.",
-    challenge: "Communicate luxury and quality through design while making the booking process simple and trustworthy for high-value clients.",
-    solution: "Designed a minimalist, elegant website with before/after galleries, testimonial integration, and a sophisticated booking system. Used subtle animations to showcase craftsmanship.",
+    overview: "Prime Renovations is a New York-based renovation company specializing in high-end residential work. The website was designed to present the craftsmanship, process, and brand story behind that work with the clarity and restraint expected by high-value clients.",
+    challenge: "Communicate luxury and quality through design while keeping the inquiry process clear and trustworthy for high-value clients.",
+    solution: "Designed a refined, image-led website that presents completed renovation work, explains the project process, supports the brand story, and provides a direct path for prospective clients to request a consultation or quote.",
     results: [
-      "Increased qualified leads by 85%",
-      "Improved brand positioning in premium market",
-      "Reduced inquiry response time by 70%"
+      "A refined digital presentation aligned with premium renovation work",
+      "Clearer project and process storytelling across the website",
+      "A more direct and approachable inquiry path",
+      "Consistent visual language across project, process, about, and editorial pages",
+      "A responsive foundation verified across desktop and mobile widths"
     ],
-    gallery: ["/projects/Prime Renovations/Prime Renovations Mockup.png","/projects/Prime Renovations/Prime_Renovations_Typography.png","/projects/Prime Renovations/Prime_Colorpalette.webp","/projects/Prime Renovations/Prime_Projects.webp","/projects/Prime Renovations/Prime_Process.webp","/projects/Prime Renovations/Prime_Blogs.webp","/projects/Prime Renovations/Prime_About.webp"],
+    gallery: ["/projects/Prime Renovations/Prime Renovations Mockup.png","/projects/Prime Renovations/Prime_Colorpalette.webp","/projects/Prime Renovations/Prime_Renovations_Typography.png","/projects/Prime Renovations/Prime_Projects.webp","/projects/Prime Renovations/Prime_Process.webp","/projects/Prime Renovations/Prime_Blogs.webp","/projects/Prime Renovations/Prime_About.webp","/projects/Prime Renovations/Prime Renovations Landing Page.png"],
     previews: {
       desktop: "/projects/Prime Renovations/Prime Renovations Landing Page.png"
     },
@@ -204,19 +209,21 @@ export const caseStudies: CaseStudy[] = [
     id: 5,
     title: "Synctom - Digital Solutions That Drive Innovation",
     slug: "synctom-digital-solutions",
-    overview: "Synctom is a software development company that wanted its website to better reflect the quality of its services and expertise. The project focused on redesigning their existing website into a complete digital experience that would strengthen their brand identity, showcase their capabilities, and encourage potential clients to get in touch.",
-    challenge: "The existing website was limited to a single landing page with outdated visuals, minimal content, and little information about the company's services. It lacked the credibility, structure, and user experience needed to attract and convert potential clients, making it difficult for visitors to understand the value Synctom could provide.",
-    solution: "I redesigned the website from the ground up, creating a modern and professional experience that aligned with Synctom's vision. The new design introduced a stronger visual identity, dedicated service pages, improved content hierarchy, clear calls-to-action, and a user-friendly layout that effectively communicated the company's expertise and built trust with visitors.",
+    overview: "Synctom needed a stronger brand presence and a complete website experience to communicate its software development services and expertise. I handled the full visual and design experience, from the logo, typography, color palette, and visual identity through the complete website design.",
+    challenge: "The existing website was limited to a single landing page with outdated visuals, minimal content, and insufficient information about the company's services, making it difficult for potential clients to understand Synctom's capabilities, explore its services, recognize its expertise, build confidence in the brand, and find clear ways to get in touch.",
+    solution: "I established the brand identity first, then translated it into a complete website with dedicated service pages, improved content hierarchy and navigation, clear calls-to-action, consistent UI styling, and a professional presentation of Synctom's software development expertise.",
     results: [
-      "Established a stronger and more professional brand presence.",
-      "Improved user engagement through a modern website experience.",
-      "Increased client interest with clearer service presentation and messaging."
+      "A stronger and more professional brand presence",
+      "A modern website experience with clearer service presentation",
+      "A more complete digital presence built on a consistent visual identity",
+      "Clearer navigation and calls-to-action for prospective clients",
+      "A coherent brand foundation carried through the full website"
     ],
-    gallery: ["/projects/Synctom/Synctom.png","/projects/Synctom/Synctom_typography.png","/projects/Synctom/Synctom_Colorpalette.webp","/projects/Synctom/Synctom_LandingPage.webp","/projects/Synctom/Synctom_ServicePage.webp","/projects/Synctom/Synctom_Project.webp","/projects/Synctom/Synctom_About.webp"],
+    gallery: ["/projects/Synctom/Synctom.png","/projects/Synctom/Synctom_Colorpalette.webp","/projects/Synctom/Synctom_typography.png","/projects/Synctom/Synctom_LandingPage.webp","/projects/Synctom/Synctom_ServicePage.webp","/projects/Synctom/Synctom_Project.webp","/projects/Synctom/Synctom_About.webp"],
     previews: {
       desktop: "/projects/Synctom/Landing-Page_Synctom.png",
     },
-    tags: ["Web Design", "Figma", "Luxury Branding", "UI/UX"],
+    tags: ["Brand Identity", "Web Design", "UI/UX", "Figma"],
     link: "https://www.figma.com/proto/nNVEhHLiLztlMH6HROW7be/Synctom?node-id=583-5127&p=f&viewport=40%2C81%2C0.06&t=x82BWFAlISZ7RFjV-1&scaling=scale-down-width&content-scaling=fixed&page-id=583%3A3746",
     featured: false,
     liveUrl: "https://www.synctom.com/"
@@ -225,9 +232,9 @@ export const caseStudies: CaseStudy[] = [
     id: 6,
     title: "Pablo Marble & Granite",
     slug: "pablo-marbles-granite",
-    overview: "A modern website redesign for a premium stone fabrication company, showcasing materials, projects, and services with a clean, luxury-focused experience.",
+    overview: "A website redesign for a premium stone fabrication company, created to present materials, craftsmanship, completed projects, and services through a cleaner, more polished digital experience.",
     challenge: "The old website felt outdated and cluttered, making it difficult to showcase materials, projects, and services in a premium and user-friendly way.",
-    solution: "Redesigned the website with a clean layout, gallery-focused sections, modern typography, improved page structure, and a premium appointment booking experience aligned with the brand.",
+    solution: "Redesigned the experience with a clean layout, gallery-focused sections, clearer page structure, stronger material and project presentation, and a dedicated appointment form as the next step.",
     results: [
       "Created a modern and premium digital presence",
       "Improved navigation and overall user experience",

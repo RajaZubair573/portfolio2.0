@@ -123,6 +123,7 @@ export function BrowserMockup({
               width={width}
               height={height}
               priority={priority}
+              sizes={sizes}
               className="h-auto w-full"
             />
             <div

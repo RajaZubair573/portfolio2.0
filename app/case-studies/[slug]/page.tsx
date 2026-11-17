@@ -12,12 +12,16 @@ import { CaseStudyPersona } from "@/components/case-study/case-study-persona";
 import { CaseStudyResponsive } from "@/components/case-study/case-study-responsive";
 import { CaseStudyScrollToTop } from "@/components/case-study/case-study-scroll-to-top";
 import { CaseStudyShowcase } from "@/components/case-study/case-study-showcase";
+import { AxionCaseStudy } from "@/components/case-study/axion-case-study";
 import { ClassicCaseStudy } from "@/components/case-study/classic-case-study";
 import { CwesdCaseStudy } from "@/components/case-study/cwesd-case-study";
 import { LighthouseCaseStudy } from "@/components/case-study/lighthouse-case-study";
 import { MonivaCaseStudy } from "@/components/case-study/moniva-case-study";
+import { PabloCaseStudy } from "@/components/case-study/pablo-case-study";
+import { PrimeRenovationsCaseStudy } from "@/components/case-study/prime-renovations-case-study";
 import { ReclaimCaseStudy } from "@/components/case-study/reclaim-case-study";
 import { ReadingProgress } from "@/components/case-study/reading-progress";
+import { SynctomCaseStudy } from "@/components/case-study/synctom-case-study";
 import {
   SectionRail,
   type RailItem,
@@ -126,6 +130,62 @@ export default async function CaseStudyPage({
       <>
         <CaseStudyScrollToTop />
         <LighthouseCaseStudy
+          caseStudy={caseStudy}
+          index={index}
+          next={next}
+          previous={previous}
+        />
+      </>
+    );
+  }
+
+  if (caseStudy.slug === "axion-lighting-ecommerce") {
+    return (
+      <>
+        <CaseStudyScrollToTop />
+        <AxionCaseStudy
+          caseStudy={caseStudy}
+          index={index}
+          next={next}
+          previous={previous}
+        />
+      </>
+    );
+  }
+
+  if (caseStudy.slug === "prime-renovations") {
+    return (
+      <>
+        <CaseStudyScrollToTop />
+        <PrimeRenovationsCaseStudy
+          caseStudy={caseStudy}
+          index={index}
+          next={next}
+          previous={previous}
+        />
+      </>
+    );
+  }
+
+  if (caseStudy.slug === "synctom-digital-solutions") {
+    return (
+      <>
+        <CaseStudyScrollToTop />
+        <SynctomCaseStudy
+          caseStudy={caseStudy}
+          index={index}
+          next={next}
+          previous={previous}
+        />
+      </>
+    );
+  }
+
+  if (caseStudy.slug === "pablo-marbles-granite") {
+    return (
+      <>
+        <CaseStudyScrollToTop />
+        <PabloCaseStudy
           caseStudy={caseStudy}
           index={index}
           next={next}
