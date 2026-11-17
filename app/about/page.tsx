@@ -36,8 +36,8 @@ export default function AboutPage() {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      gsap.set(heroRef.current, { opacity: 0, y: 30 });
-      gsap.set(imageRef.current, { opacity: 0, scale: 0.95 });
+      gsap.set([heroRef.current, imageRef.current], { opacity: 0, y: 24 });
+      gsap.set(".about-highlight-line", { scaleX: 0 });
       gsap.set(statsRef.current, { opacity: 0, y: 20 });
       gsap.set(skillsRef.current, { opacity: 0, y: 30 });
       gsap.set(connectRef.current, { opacity: 0, y: 40 });
@@ -46,8 +46,15 @@ export default function AboutPage() {
         scrollTrigger: { trigger: sectionRef.current, start: "top 80%", toggleActions: "play none none reverse" },
       });
 
-      tl.to(heroRef.current, { opacity: 1, y: 0, duration: 0.9, ease: "power3.out" })
-        .to(imageRef.current, { opacity: 1, scale: 1, duration: 1, ease: "power3.out" }, "-=0.6")
+      tl.to(
+        [heroRef.current, imageRef.current],
+        { opacity: 1, y: 0, duration: 0.8, stagger: 0.1, ease: "power3.out" }
+      )
+        .to(
+          ".about-highlight-line",
+          { scaleX: 1, duration: 0.7, stagger: 0.12, ease: "power2.out" },
+          "-=0.35"
+        )
         .to(statsRef.current, { opacity: 1, y: 0, duration: 0.7, ease: "power3.out" }, "-=0.5")
         .to(skillsRef.current, { opacity: 1, y: 0, duration: 0.8, ease: "power3.out" }, "-=0.4")
         .to(connectRef.current, { opacity: 1, y: 0, duration: 0.8, ease: "power3.out" }, "-=0.4");
@@ -64,83 +71,77 @@ export default function AboutPage() {
           className="relative w-full py-28 md:py-40 overflow-hidden min-h-screen"
           style={{ background: "linear-gradient(180deg, #0f172a 0%, #0d1424 40%, #0b1120 80%, #0a0f1e 100%)" }}
         >
-          {/* Background effects */}
-          <div className="absolute inset-0 pointer-events-none opacity-[0.025] z-0" style={{ backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")` }} />
-          <div className="absolute top-[15%] left-[5%] w-[600px] h-[600px] bg-orange-500/[0.02] rounded-full blur-[140px] pointer-events-none z-0" />
-          <div className="absolute bottom-[20%] right-[5%] w-[500px] h-[500px] bg-purple-500/[0.015] rounded-full blur-[120px] pointer-events-none z-0" />
-          <div className="absolute inset-0 pointer-events-none z-[1]" style={{ background: "repeating-linear-gradient(0deg, transparent, transparent 3px, rgba(0,0,0,0.05) 3px, rgba(0,0,0,0.05) 4px)" }} />
-
-          <div className="relative z-10 w-[90%] max-w-[1200px] mx-auto space-y-20 md:space-y-32">
-            {/* Hero Section */}
-            <div className="text-center">
-              <div className="flex items-center justify-center gap-4 mb-8">
-                <div className="w-12 h-px" style={{ background: "linear-gradient(to right, transparent, rgba(249,115,22,0.5))" }} />
-                <span className="font-['Space_Mono'] text-[11px] tracking-[0.3em] uppercase text-orange-500/40">About Me</span>
-                <div className="w-12 h-px" style={{ background: "linear-gradient(to left, transparent, rgba(249,115,22,0.5))" }} />
+          <div className="relative z-10 mx-auto w-[90%] max-w-[1200px] space-y-20 md:space-y-32">
+            <div className="grid gap-12 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.1fr)] lg:gap-16 xl:gap-24">
+              <div ref={imageRef} className="h-full">
+                <figure className="flex h-full flex-col border border-white/10 bg-[#0b1120] p-2.5">
+                  <div className="relative min-h-[220px] flex-1 overflow-hidden bg-slate-900">
+                    <Image
+                      src="/og-image.png"
+                      alt="Raja Zubair portfolio preview"
+                      fill
+                      sizes="(max-width: 1024px) 100vw, 520px"
+                      className="object-cover object-center"
+                    />
+                  </div>
+                  <figcaption className="flex items-center justify-between gap-4 px-1 pb-1 pt-3 font-['Space_Mono'] text-[9px] uppercase tracking-[0.16em] text-slate-500">
+                    <span>Portfolio preview</span>
+                    <span>2026</span>
+                  </figcaption>
+                </figure>
               </div>
 
               <div ref={heroRef}>
-                <h1 className="font-['Rajdhani'] text-4xl md:text-6xl lg:text-7xl font-bold text-slate-100 mb-6 leading-tight">
-                  Crafting{" "}
-                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-300 via-orange-500 to-orange-600 drop-shadow-[0_0_20px_rgba(249,115,22,0.4)]">
-                    Digital Experiences
+                <div className="mb-6 flex items-center gap-3">
+                  <span className="h-px w-8 bg-orange-500/70" />
+                  <span className="font-['Space_Mono'] text-[10px] uppercase tracking-[0.24em] text-orange-400/80">
+                    Product designer · Islamabad, Pakistan
                   </span>
-                  <br />
-                  That Matter
+                </div>
+
+                <h1 className="font-['Rajdhani'] text-[1.75rem] font-semibold leading-[1.12] text-slate-100 sm:text-[2.25rem] lg:text-[2.75rem]">
+                  I&apos;m Raja Zubair. I design products people actually understand.
                 </h1>
-                <p className="font-sans text-lg md:text-xl text-slate-400 max-w-3xl mx-auto leading-relaxed">
-                  AI-Powered Product Designer &amp; UI/UX Designer passionate about creating beautiful, functional digital products
-                </p>
-              </div>
-            </div>
 
-            {/* Image + Bio Section */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 items-center">
-              <div ref={imageRef} className="order-2 md:order-1">
-                <div className="relative group">
-                  {/* Glow effect */}
-                  <div className="absolute -inset-6 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none rounded-2xl" style={{ background: "radial-gradient(ellipse at center, rgba(249,115,22,0.12) 0%, transparent 70%)", filter: "blur(30px)" }} />
-                  
-                  {/* Image container */}
-                  <div className="relative overflow-hidden rounded-2xl" style={{ boxShadow: "inset 0 0 0 1px rgba(255,255,255,0.08), 0 20px 60px rgba(0,0,0,0.4)" }}>
-                    <Image
-                      src="/og-image.png"
-                      alt="Raja Zubair - Designer"
-                      width={600}
-                      height={700}
-                      className="w-full transition-transform duration-700 group-hover:scale-105"
-                      priority
-                    />
-                    {/* Gradient overlay */}
-                    <div className="absolute inset-0 pointer-events-none" style={{ background: "linear-gradient(to top, rgba(9,9,15,0.6) 0%, transparent 50%)" }} />
-                    {/* Border glow */}
-                    <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none rounded-2xl" style={{ boxShadow: "inset 0 0 0 1px rgba(249,115,22,0.3)" }} />
-                  </div>
-                </div>
-              </div>
+                <div className="my-8 h-px w-full bg-white/10" />
 
-              <div className="order-1 md:order-2 space-y-6">
-                <div className="space-y-5 font-sans text-base md:text-lg leading-[1.8] text-slate-300">
+                <div className="space-y-5 font-sans text-[15px] leading-7 text-slate-400 md:text-base md:leading-[1.85]">
+                  <p className="text-slate-300">
+                    I work at the point where{" "}
+                    <span className="about-highlight">
+                      product thinking meets interface design
+                      <span className="about-highlight-line" aria-hidden="true" />
+                    </span>{" "}
+                    — taking a vague problem and turning it into a{" "}
+                    <span className="about-highlight">
+                      clear, usable product
+                      <span className="about-highlight-line" aria-hidden="true" />
+                    </span>
+                    . Most of that work starts in Figma before it becomes
+                    something real in Webflow, React, or Framer.
+                  </p>
                   <p>
-                    I&apos;m <span className="text-orange-400 font-semibold">Raja Zubair</span>, an{" "}
-                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-orange-500 font-semibold">AI-Powered Product Designer</span>
-                    {" "}and{" "}
-                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-orange-500 font-semibold">UI/UX Designer</span>
-                    {" "}creating modern, user-focused digital experiences.
+                    Over the last three years I&apos;ve shipped{" "}
+                    <span className="about-highlight">
+                      more than 40 projects
+                      <span className="about-highlight-line" aria-hidden="true" />
+                    </span>{" "}
+                    for studios and clients in Pakistan and abroad, including
+                    Flow Cubo Studio, Synctom, and Devcubix. Cyberrey, Prime
+                    Renovations, Axion Lighting, and CWESD are a few I&apos;m
+                    proud of.
                   </p>
-                  <p className="text-slate-400">
-                    I specialize in <span className="text-orange-400">Figma, Webflow, and Framer</span>, combining product design with AI-powered workflows for research, ideation, and prototyping.
-                  </p>
-                  <p className="text-slate-400">
-                    I&apos;ve designed <span className="text-orange-400">40+ projects</span> across websites, web apps, and mobile experiences for international clients and teams. My experience includes <span className="text-orange-400">Flow Cubo Studio, Synctom, and Devcubix</span>, with projects such as <span className="text-orange-400">Cyberrey, Prime Renovations, Axion Lighting, and CWESD</span>.
-                  </p>
-                  <p className="rounded-sm bg-gradient-to-r from-orange-500/[0.12] via-orange-500/[0.05] to-transparent px-4 py-3 text-slate-300">
-                    I&apos;m a member of <span className="text-orange-400">Toptal&apos;s top 3% global talent network</span>.
-                  </p>
-                  <p className="text-slate-400">
-                    I hold a Bachelor&apos;s degree in Computer Science from NUML (2026), with a <span className="text-orange-400">CGPA of 3.49/4.00</span>.
+                  <p>
+                    I hold a Computer Science degree from NUML (2026) with a
+                    CGPA of 3.49/4.00, and I&apos;m part of{" "}
+                    <span className="about-highlight">
+                      Toptal&apos;s top 3% global talent network
+                      <span className="about-highlight-line" aria-hidden="true" />
+                    </span>
+                    .
                   </p>
                 </div>
+
               </div>
             </div>
 
