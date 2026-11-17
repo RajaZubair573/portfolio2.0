@@ -4,6 +4,7 @@ import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import ContactForm from "@/components/contact-form";
+import CallToAction from "@/components/call-to-action";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -92,7 +93,7 @@ export default function ContactPage() {
       <main>
         <section
           ref={sectionRef}
-          className="relative w-full py-28 md:py-40 overflow-hidden min-h-screen"
+          className="relative w-full py-20 md:py-28 overflow-hidden min-h-screen"
           style={{ background: "linear-gradient(180deg, #0f172a 0%, #0d1424 40%, #0b1120 80%, #0a0f1e 100%)" }}
         >
           {/* Background effects */}
@@ -109,12 +110,12 @@ export default function ContactPage() {
                 <span className="font-['Space_Mono'] text-[11px] tracking-[0.3em] uppercase text-orange-500/40">Contact</span>
                 <div className="w-12 h-px" style={{ background: "linear-gradient(to left, transparent, rgba(249,115,22,0.5))" }} />
               </div>
-              <h1 className="font-['Rajdhani'] text-4xl md:text-6xl lg:text-7xl font-bold text-slate-100 mb-4 leading-tight">
+              <h2 className="font-['Rajdhani'] text-4xl md:text-6xl lg:text-7xl font-bold text-slate-100 mb-4 leading-tight">
                 Let&apos;s Work{" "}
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-300 via-orange-500 to-orange-600 drop-shadow-[0_0_20px_rgba(249,115,22,0.4)]">
                   Together
                 </span>
-              </h1>
+              </h2>
               <p className="font-sans text-lg text-slate-400 max-w-xl mx-auto">
                 Have a project in mind? I&apos;d love to hear about it. Let&apos;s create something great.
               </p>
@@ -195,6 +196,7 @@ export default function ContactPage() {
             </div>
           </div>
         </section>
+        <CallToAction />
       </main>
     </>
   );

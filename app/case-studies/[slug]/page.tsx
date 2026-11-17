@@ -14,6 +14,7 @@ import { CaseStudyScrollToTop } from "@/components/case-study/case-study-scroll-
 import { CaseStudyShowcase } from "@/components/case-study/case-study-showcase";
 import { AxionCaseStudy } from "@/components/case-study/axion-case-study";
 import { ClassicCaseStudy } from "@/components/case-study/classic-case-study";
+import CallToAction from "@/components/call-to-action";
 import { CwesdCaseStudy } from "@/components/case-study/cwesd-case-study";
 import { LighthouseCaseStudy } from "@/components/case-study/lighthouse-case-study";
 import { MonivaCaseStudy } from "@/components/case-study/moniva-case-study";
@@ -83,146 +84,49 @@ export default async function CaseStudyPage({
   const next = caseStudies[(index + 1) % caseStudies.length];
   const previous = index > 0 ? caseStudies[index - 1] : null;
 
+  let content;
+
   if (caseStudy.slug === "moniva-financial-app") {
-    return (
-      <>
-        <CaseStudyScrollToTop />
-        <MonivaCaseStudy
-          caseStudy={caseStudy}
-          index={index}
-          next={next}
-          previous={previous}
-        />
-      </>
-    );
-  }
-
-  if (caseStudy.slug === "reclaim-data-recovery-app") {
-    return (
-      <>
-        <CaseStudyScrollToTop />
-        <ReclaimCaseStudy
-          caseStudy={caseStudy}
-          index={index}
-          next={next}
-          previous={previous}
-        />
-      </>
-    );
-  }
-
-  if (caseStudy.slug === "cwesd-learning-platform") {
-    return (
-      <>
-        <CaseStudyScrollToTop />
-        <CwesdCaseStudy
-          caseStudy={caseStudy}
-          index={index}
-          next={next}
-          previous={previous}
-        />
-      </>
-    );
-  }
-
-  if (caseStudy.slug === "light-house-ecommerce-website") {
-    return (
-      <>
-        <CaseStudyScrollToTop />
-        <LighthouseCaseStudy
-          caseStudy={caseStudy}
-          index={index}
-          next={next}
-          previous={previous}
-        />
-      </>
-    );
-  }
-
-  if (caseStudy.slug === "axion-lighting-ecommerce") {
-    return (
-      <>
-        <CaseStudyScrollToTop />
-        <AxionCaseStudy
-          caseStudy={caseStudy}
-          index={index}
-          next={next}
-          previous={previous}
-        />
-      </>
-    );
-  }
-
-  if (caseStudy.slug === "prime-renovations") {
-    return (
-      <>
-        <CaseStudyScrollToTop />
-        <PrimeRenovationsCaseStudy
-          caseStudy={caseStudy}
-          index={index}
-          next={next}
-          previous={previous}
-        />
-      </>
-    );
-  }
-
-  if (caseStudy.slug === "synctom-digital-solutions") {
-    return (
-      <>
-        <CaseStudyScrollToTop />
-        <SynctomCaseStudy
-          caseStudy={caseStudy}
-          index={index}
-          next={next}
-          previous={previous}
-        />
-      </>
-    );
-  }
-
-  if (caseStudy.slug === "pablo-marbles-granite") {
-    return (
-      <>
-        <CaseStudyScrollToTop />
-        <PabloCaseStudy
-          caseStudy={caseStudy}
-          index={index}
-          next={next}
-          previous={previous}
-        />
-      </>
-    );
-  }
-
-  if (!detail) {
-    return (
-      <>
-        <CaseStudyScrollToTop />
-        <ClassicCaseStudy
-          caseStudy={caseStudy}
-          index={index}
-          next={next}
-          previous={previous}
-        />
-      </>
+    content = <MonivaCaseStudy caseStudy={caseStudy} index={index} />;
+  } else if (caseStudy.slug === "reclaim-data-recovery-app") {
+    content = <ReclaimCaseStudy caseStudy={caseStudy} index={index} />;
+  } else if (caseStudy.slug === "cwesd-learning-platform") {
+    content = <CwesdCaseStudy caseStudy={caseStudy} index={index} />;
+  } else if (caseStudy.slug === "light-house-ecommerce-website") {
+    content = <LighthouseCaseStudy caseStudy={caseStudy} index={index} />;
+  } else if (caseStudy.slug === "axion-lighting-ecommerce") {
+    content = <AxionCaseStudy caseStudy={caseStudy} index={index} />;
+  } else if (caseStudy.slug === "prime-renovations") {
+    content = <PrimeRenovationsCaseStudy caseStudy={caseStudy} index={index} />;
+  } else if (caseStudy.slug === "synctom-digital-solutions") {
+    content = <SynctomCaseStudy caseStudy={caseStudy} index={index} />;
+  } else if (caseStudy.slug === "pablo-marbles-granite") {
+    content = <PabloCaseStudy caseStudy={caseStudy} index={index} />;
+  } else if (!detail) {
+    content = <ClassicCaseStudy caseStudy={caseStudy} index={index} />;
+  } else {
+    content = (
+      <main className="relative w-full overflow-hidden bg-[#080d1a]">
+        <ReadingProgress />
+        <SectionRail items={railItems} />
+        <CaseStudyHero caseStudy={caseStudy} detail={detail} index={index} />
+        <CaseStudyOverview detail={detail} />
+        <CaseStudyChallenge detail={detail} />
+        <CaseStudyPersona detail={detail} />
+        <CaseStudyDirection detail={detail} />
+        <CaseStudyShowcase caseStudy={caseStudy} detail={detail} />
+        <CaseStudyResponsive detail={detail} />
+        <CaseStudyOutcomes detail={detail} />
+      </main>
     );
   }
 
   return (
-    <main className="relative w-full overflow-hidden bg-[#080d1a]">
+    <>
       <CaseStudyScrollToTop />
-      <ReadingProgress />
-      <SectionRail items={railItems} />
-      <CaseStudyHero caseStudy={caseStudy} detail={detail} index={index} />
-      <CaseStudyOverview detail={detail} />
-      <CaseStudyChallenge detail={detail} />
-      <CaseStudyPersona detail={detail} />
-      <CaseStudyDirection detail={detail} />
-      <CaseStudyShowcase caseStudy={caseStudy} detail={detail} />
-      <CaseStudyResponsive detail={detail} />
-      <CaseStudyOutcomes detail={detail} />
+      {content}
       <CaseStudyNextProject next={next} previous={previous} />
-    </main>
+      <CallToAction />
+    </>
   );
 }

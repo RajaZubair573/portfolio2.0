@@ -71,7 +71,7 @@ export function EditorialGallery({ items, title }: EditorialGalleryProps) {
       aria-label={`${title} project gallery`}
       tabIndex={0}
       onKeyDown={handleKeyDown}
-      className="relative rounded-2xl border border-white/10 bg-[#080d18] p-4 outline-none sm:p-6 md:p-8"
+      className="relative w-full rounded-xl border border-white/10 bg-[#080d18] p-3 outline-none sm:p-4"
     >
       <div className="flex items-center justify-between gap-4">
         <div className="flex items-center gap-3">
@@ -88,8 +88,8 @@ export function EditorialGallery({ items, title }: EditorialGalleryProps) {
         </span>
       </div>
 
-      <div className="relative mt-5 overflow-hidden rounded-xl border border-white/[0.07] bg-[#050810]">
-        <div className="relative aspect-[16/11] w-full sm:aspect-[16/9]">
+      <div className="relative mt-3 overflow-hidden rounded-xl border border-white/[0.07] bg-[#050810]">
+        <div className="relative aspect-[16/9] w-full">
           {items.map((item, index) => (
             <div
               key={item.src}
@@ -105,8 +105,8 @@ export function EditorialGallery({ items, title }: EditorialGalleryProps) {
                 src={item.src}
                 alt={item.alt}
                 fill
-                sizes="(max-width: 768px) 92vw, (max-width: 1200px) 86vw, 1050px"
-                className="object-contain p-1.5 sm:p-3 md:p-4"
+                sizes="(max-width: 768px) 92vw, (max-width: 1200px) 76vw, 900px"
+                className="object-cover object-top"
                 priority={index === 0}
               />
             </div>
@@ -158,16 +158,13 @@ export function EditorialGallery({ items, title }: EditorialGalleryProps) {
         </div>
       </div>
 
-      <div className="mt-5 flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between sm:gap-8">
+      <div className="mt-3 flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between sm:gap-6">
         <div className="min-w-0">
           <p className="font-['Space_Mono'] text-[9px] uppercase tracking-[0.22em] text-orange-400/70">
             {current.label}
           </p>
           <p className="mt-2 max-w-xl font-sans text-[13px] leading-relaxed text-slate-400 md:text-sm">
             {current.caption}
-          </p>
-          <p className="mt-3 hidden font-['Space_Mono'] text-[9px] uppercase tracking-[0.16em] text-slate-600 sm:block">
-            Use ← → keys to browse
           </p>
         </div>
 
@@ -215,7 +212,7 @@ export function EditorialGallery({ items, title }: EditorialGalleryProps) {
         </div>
       </div>
 
-      <div className="mt-5 flex gap-2 overflow-x-auto pb-1 hide-scrollbar">
+      <div className="mt-3 flex gap-2 overflow-x-auto pb-1 hide-scrollbar">
         {items.map((item, index) => (
           <button
             key={item.src}
@@ -227,7 +224,7 @@ export function EditorialGallery({ items, title }: EditorialGalleryProps) {
             aria-label={`View ${item.label}`}
             aria-current={index === active}
             className={cn(
-              "relative aspect-[4/3] w-[84px] shrink-0 overflow-hidden rounded-md border transition-all duration-300 sm:w-[104px]",
+              "relative aspect-[16/10] w-[64px] shrink-0 overflow-hidden rounded-md border transition-all duration-300 sm:w-[84px]",
               index === active
                 ? "border-orange-400/80 opacity-100 shadow-[0_0_0_1px_rgba(251,146,60,0.35)]"
                 : "border-white/[0.08] opacity-55 hover:opacity-90"

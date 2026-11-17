@@ -1,7 +1,6 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
 import { useState } from "react";
 import type { CaseStudy } from "@/lib/case-studies";
 import { BrowserMockup } from "./browser-mockup";
@@ -9,7 +8,6 @@ import { ReadingProgress } from "./reading-progress";
 import { Reveal } from "./reveal";
 import { SectionRail, type RailItem } from "./section-rail";
 import {
-  ArrowUpRight,
   AssetFrame,
   BackLink,
   ComponentButton,
@@ -340,7 +338,7 @@ function SynctomGallery() {
       role="region"
       aria-roledescription="carousel"
       aria-label="Synctom project gallery"
-      className="mt-12 rounded-2xl border border-white/[0.08] bg-[#080d18] p-4 md:p-6"
+      className="mt-8 w-full rounded-xl border border-white/[0.08] bg-[#080d18] p-3 sm:p-4"
     >
       <div className="flex flex-wrap items-end justify-between gap-4">
         <SectionLabel>Project gallery</SectionLabel>
@@ -350,14 +348,14 @@ function SynctomGallery() {
       </div>
 
       <div className="relative mt-5 overflow-hidden rounded-xl border border-white/[0.08] bg-[#05080f]">
-        <div className="relative aspect-[16/11] w-full sm:aspect-[16/9]">
+        <div className="relative aspect-[16/9] w-full">
           <div aria-hidden className="pointer-events-none absolute inset-0 bg-dot-subtle opacity-[0.12]" />
           <Image
             src={item.src}
             alt={item.alt}
             fill
-            sizes="(max-width: 1200px) 100vw, 1100px"
-            className="relative z-10 object-contain p-5 sm:p-8"
+            sizes="(max-width: 768px) 92vw, (max-width: 1200px) 76vw, 900px"
+            className="relative z-10 object-cover object-top"
           />
         </div>
         <div className="pointer-events-none absolute inset-x-0 bottom-0 z-20 bg-gradient-to-t from-[#05080f] to-transparent p-4 pt-12">
@@ -385,7 +383,7 @@ function SynctomGallery() {
         </button>
       </div>
 
-      <div className="hide-scrollbar mt-5 flex gap-2 overflow-x-auto pb-1">
+      <div className="hide-scrollbar mt-3 flex gap-2 overflow-x-auto pb-1">
         {galleryItems.map((galleryItem, index) => (
           <button
             key={galleryItem.src}
@@ -393,7 +391,7 @@ function SynctomGallery() {
             onClick={() => setActive(index)}
             aria-label={`View ${galleryItem.label}`}
             aria-current={active === index}
-            className={`relative aspect-[4/3] w-[84px] shrink-0 overflow-hidden rounded-md border transition-all duration-300 sm:w-[104px] ${
+            className={`relative aspect-[16/10] w-[64px] shrink-0 overflow-hidden rounded-md border transition-all duration-300 sm:w-[84px] ${
               active === index
                 ? "border-[#0383CA]/80 opacity-100 shadow-[0_0_0_1px_rgba(3,131,202,0.35)]"
                 : "border-white/[0.08] opacity-55 hover:opacity-90"
@@ -415,13 +413,9 @@ function SynctomGallery() {
 
 export function SynctomCaseStudy({
   caseStudy,
-  next,
-  previous,
 }: {
   caseStudy: CaseStudy;
   index?: number;
-  next?: CaseStudy;
-  previous?: CaseStudy | null;
 }) {
   return (
     <main className="relative w-full overflow-hidden bg-[#080d1a]">
@@ -460,10 +454,10 @@ export function SynctomCaseStudy({
                 <span className="h-px w-10" style={{ background: "linear-gradient(90deg,#0383CA,transparent)" }} />
                 <span className="font-['Space_Mono'] text-[10px] uppercase tracking-[0.28em] text-[#5aa7e8]">Brand Identity / Web Design / UI/UX / Figma</span>
               </div>
-              <h1 className="hero-in mt-5 font-['Rajdhani'] text-[clamp(2.5rem,5.7vw,4.6rem)] font-bold leading-[0.94] tracking-[-0.02em] text-slate-50">
+              <h1 className="hero-in mt-5 font-['Rajdhani'] text-[clamp(2.3rem,4.8vw,3.8rem)] font-bold leading-[0.94] tracking-[-0.02em] text-slate-50">
                 Synctom - Digital Solutions That Drive Innovation
               </h1>
-              <p className="hero-in mt-5 max-w-2xl font-['Rajdhani'] text-[clamp(1.15rem,2.4vw,1.8rem)] font-medium leading-[1.15] text-slate-400">
+              <p className="hero-in mt-5 max-w-2xl font-['Rajdhani'] text-[clamp(1.1rem,2vw,1.5rem)] font-medium leading-[1.15] text-slate-400">
                 Complete brand identity and website design.
               </p>
               <p className="hero-in mt-6 max-w-2xl font-sans text-base leading-relaxed text-slate-300 md:text-lg">
@@ -576,7 +570,7 @@ export function SynctomCaseStudy({
           <div className="mt-12 grid gap-10 lg:grid-cols-12 lg:gap-14">
             <div className="lg:col-span-4">
               <Reveal>
-                <p className="font-['Rajdhani'] text-[clamp(1.45rem,2.6vw,2rem)] font-semibold leading-tight text-slate-200">
+                <p className="font-['Rajdhani'] text-[clamp(1.2rem,2.1vw,1.65rem)] font-semibold leading-tight text-slate-200">
                   I owned the design from the brand up.
                 </p>
               </Reveal>
@@ -877,7 +871,7 @@ export function SynctomCaseStudy({
               <Reveal key={card.n} delay={35 * cardIndex}>
                 <div className="border-t border-white/[0.1] pt-4">
                   <span className="font-['Space_Mono'] text-[9px] tracking-[0.16em] text-[#5aa7e8]">{card.n}</span>
-                  <h3 className="mt-3 font-['Rajdhani'] text-lg font-semibold text-slate-100">{card.title}</h3>
+                  <h3 className="mt-3 font-['Rajdhani'] text-xl font-semibold text-slate-100">{card.title}</h3>
                   <p className="mt-1.5 font-sans text-[12px] leading-relaxed text-slate-500">{card.body}</p>
                 </div>
               </Reveal>
@@ -970,7 +964,7 @@ export function SynctomCaseStudy({
               alt="Full Synctom desktop landing page design"
               url="synctom.com"
               scroll
-              heightClass="h-[440px] sm:h-[560px] lg:h-[700px]"
+              heightClass="h-[320px] sm:h-[420px] lg:h-[500px]"
               width={1920}
               height={9216}
               sizes="(max-width: 1200px) 100vw, 1100px"
@@ -997,7 +991,7 @@ export function SynctomCaseStudy({
                   <Reveal key={check.t} delay={35 * checkIndex}>
                     <div className="h-full rounded-xl border border-white/[0.08] bg-white/[0.02] p-5">
                       <span className="font-['Space_Mono'] text-[8px] tracking-[0.16em] text-[#5aa7e8]">{String(checkIndex + 1).padStart(2, "0")}</span>
-                      <h3 className="mt-2 font-['Rajdhani'] text-lg font-semibold text-slate-100">{check.t}</h3>
+                      <h3 className="mt-2 font-['Rajdhani'] text-xl font-semibold text-slate-100">{check.t}</h3>
                       <p className="mt-1.5 font-sans text-[12px] leading-relaxed text-slate-500">{check.b}</p>
                     </div>
                   </Reveal>
@@ -1043,7 +1037,7 @@ export function SynctomCaseStudy({
               <Reveal key={outcome.n} delay={35 * outcomeIndex}>
                 <div className="border-t border-white/[0.1] pt-4">
                   <span className="font-['Space_Mono'] text-[9px] tracking-[0.16em] text-[#5aa7e8]">{outcome.n}</span>
-                  <h3 className="mt-3 font-['Rajdhani'] text-lg font-semibold text-slate-100">{outcome.title}</h3>
+                  <h3 className="mt-3 font-['Rajdhani'] text-xl font-semibold text-slate-100">{outcome.title}</h3>
                   <p className="mt-1.5 font-sans text-[12px] leading-relaxed text-slate-500">{outcome.body}</p>
                 </div>
               </Reveal>
@@ -1089,40 +1083,6 @@ export function SynctomCaseStudy({
             </Reveal>
           ) : null}
 
-          <Reveal delay={100}>
-            <div className="mt-16 border-t border-white/[0.08] pt-10">
-              <div className="flex flex-wrap items-center justify-between gap-4">
-                <span className="font-['Space_Mono'] text-[9px] uppercase tracking-[0.24em] text-slate-500">Case study navigation</span>
-                <Link href="/case-studies" className="inline-flex items-center gap-2 font-['Space_Mono'] text-[9px] uppercase tracking-[0.18em] text-slate-500 no-underline transition-colors duration-300 hover:text-[#5aa7e8]">
-                  All case studies <ArrowUpRight />
-                </Link>
-              </div>
-              <div className="mt-8 grid gap-6 md:grid-cols-2">
-                {previous ? (
-                  <Link href={`/case-studies/${previous.slug}`} className="group rounded-xl border border-white/[0.08] bg-[#080d18] p-6 no-underline transition-colors duration-300 hover:border-[#0383CA]/40">
-                    <div className="font-['Space_Mono'] text-[9px] uppercase tracking-[0.2em] text-slate-500">Previous</div>
-                    <h3 className="mt-3 font-['Rajdhani'] text-2xl font-bold text-slate-100 transition-colors group-hover:text-[#5aa7e8]">{previous.title}</h3>
-                  </Link>
-                ) : (
-                  <div />
-                )}
-                {next ? (
-                  <Link href={`/case-studies/${next.slug}`} className="group rounded-xl border border-white/[0.08] bg-[#080d18] p-6 text-right no-underline transition-colors duration-300 hover:border-[#EF3A61]/40">
-                    <div className="font-['Space_Mono'] text-[9px] uppercase tracking-[0.2em] text-slate-500">Next</div>
-                    <h3 className="mt-3 font-['Rajdhani'] text-2xl font-bold text-slate-100 transition-colors group-hover:text-[#ef7b96]">{next.title}</h3>
-                  </Link>
-                ) : null}
-              </div>
-              <div className="mt-10 text-center">
-                <Link
-                  href="/case-studies"
-                  className="inline-flex items-center gap-2 rounded-sm border border-white/10 bg-white/[0.02] px-6 py-3 font-['Space_Mono'] text-[10px] uppercase tracking-[0.14em] text-slate-300 no-underline transition-all duration-300 hover:border-[#0383CA]/50 hover:text-[#5aa7e8]"
-                >
-                  View All Case Studies <ArrowUpRight />
-                </Link>
-              </div>
-            </div>
-          </Reveal>
         </Container>
       </section>
     </main>

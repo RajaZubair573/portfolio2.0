@@ -1,14 +1,13 @@
 ﻿"use client";
 
 import Image from "next/image";
-import Link from "next/link";
 import type { CaseStudy } from "@/lib/case-studies";
 import { BrowserMockup } from "./browser-mockup";
 import { EditorialGallery, type GalleryItem } from "./editorial-gallery";
 import { ReadingProgress } from "./reading-progress";
 import { Reveal } from "./reveal";
 import { SectionRail, type RailItem } from "./section-rail";
-import { ArrowUpRight, BackLink, ComponentButton, Container, SectionHeading, SectionLabel } from "./ui";
+import { BackLink, ComponentButton, Container, SectionHeading, SectionLabel } from "./ui";
 
 const railItems: RailItem[] = [
   { id: "hero", label: "Intro" },
@@ -66,13 +65,9 @@ const outcomes = [
 export function LighthouseCaseStudy({
   caseStudy,
   index,
-  next,
-  previous,
 }: {
   caseStudy: CaseStudy;
   index: number;
-  next?: CaseStudy;
-  previous?: CaseStudy | null;
 }) {
   return (
     <main className="relative w-full overflow-hidden bg-[#080d1a]">
@@ -93,8 +88,8 @@ export function LighthouseCaseStudy({
           <div className="mt-12 grid items-end gap-10 lg:grid-cols-12 lg:gap-14">
             <div className="lg:col-span-7">
               <div className="hero-in flex items-center gap-3"><span className="h-px w-10 bg-gradient-to-r from-orange-500/70 to-transparent" /><span className="font-['Space_Mono'] text-[10px] uppercase tracking-[0.28em] text-orange-400/80">UI/UX Design / E-commerce / Web Design</span></div>
-              <h1 className="hero-in mt-5 font-['Rajdhani'] text-[clamp(2.6rem,6vw,4.8rem)] font-bold leading-[0.92] tracking-[-0.02em] text-slate-50">Light House — E-commerce Website</h1>
-              <p className="hero-in mt-4 max-w-2xl font-['Rajdhani'] text-[clamp(1.15rem,2.4vw,1.8rem)] font-medium leading-[1.15] text-slate-400">A premium digital shopping experience for an architectural lighting brand.</p>
+              <h1 className="hero-in mt-5 font-['Rajdhani'] text-[clamp(2.3rem,4.8vw,3.8rem)] font-bold leading-[0.92] tracking-[-0.02em] text-slate-50">Light House — E-commerce Website</h1>
+              <p className="hero-in mt-4 max-w-2xl font-['Rajdhani'] text-[clamp(1.1rem,2vw,1.5rem)] font-medium leading-[1.15] text-slate-400">A premium digital shopping experience for an architectural lighting brand.</p>
               <p className="hero-in mt-6 max-w-2xl font-sans text-base leading-relaxed text-slate-300 md:text-lg">This project transforms a limited website experience into a more complete online shopping experience for a premium lighting brand—bringing product discovery, storytelling, and purchase flow into one cohesive interface.</p>
             </div>
             <aside className="hero-in lg:col-span-5 lg:border-l lg:border-white/10 lg:pl-10">
@@ -249,7 +244,7 @@ export function LighthouseCaseStudy({
               alt="Full Light House desktop landing page"
               url="lighthouse"
               scroll
-              heightClass="h-[420px] sm:h-[520px] lg:h-[640px]"
+              heightClass="h-[320px] sm:h-[420px] lg:h-[500px]"
               width={1440}
               height={8219}
               sizes="(max-width: 1200px) 100vw, 1100px"
@@ -257,11 +252,8 @@ export function LighthouseCaseStudy({
             />
             <p className="mt-4 text-center font-['Space_Mono'] text-[9px] uppercase tracking-[0.2em] text-slate-500">Image-based scrollable preview - full desktop landing page</p>
           </Reveal>
-          <Reveal delay={80} className="mt-12">
-            <SectionLabel>Project gallery</SectionLabel>
-            <div className="mt-4">
-              <EditorialGallery items={showcaseItems} title="Light House" />
-            </div>
+          <Reveal delay={80} className="mt-8">
+            <EditorialGallery items={showcaseItems} title="Light House" />
           </Reveal>
           <Reveal delay={120} className="mt-8">
             <div className="rounded-xl border border-white/[0.08] bg-white/[0.02] p-5">
@@ -301,7 +293,7 @@ export function LighthouseCaseStudy({
           <SectionHeading index="08" label="Outcomes & reflection" title="A cohesive foundation for premium lighting e-commerce." />
           <div className="mt-12 grid gap-x-8 gap-y-8 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
             {outcomes.map((o, i) => (
-              <Reveal key={o.t} delay={35 * i}><div className="border-t border-white/[0.1] pt-4"><span className="font-['Space_Mono'] text-[9px] tracking-[0.14em] text-orange-400/70">{String(i + 1).padStart(2, "0")}</span><h3 className="mt-3 font-['Rajdhani'] text-lg font-semibold text-slate-100">{o.t}</h3><p className="mt-1.5 font-sans text-[12px] leading-relaxed text-slate-500">{o.b}</p></div></Reveal>
+              <Reveal key={o.t} delay={35 * i}><div className="border-t border-white/[0.1] pt-4"><span className="font-['Space_Mono'] text-[9px] tracking-[0.14em] text-orange-400/70">{String(i + 1).padStart(2, "0")}</span><h3 className="mt-3 font-['Rajdhani'] text-xl font-semibold text-slate-100">{o.t}</h3><p className="mt-1.5 font-sans text-[12px] leading-relaxed text-slate-500">{o.b}</p></div></Reveal>
             ))}
           </div>
           <div className="mt-14 grid gap-10 border-t border-white/[0.08] pt-10 lg:grid-cols-12">
@@ -334,18 +326,6 @@ export function LighthouseCaseStudy({
         </Container>
       </section>
 
-      <nav aria-label="Case study navigation" className="border-t border-white/[0.06] py-16 md:py-20" style={{ background: "#05080f" }}>
-        <Container>
-          <div className="flex flex-wrap items-center justify-between gap-4">
-            <span className="font-['Space_Mono'] text-[9px] uppercase tracking-[0.24em] text-slate-500">Case study navigation</span>
-            <Link href="/case-studies" className="inline-flex items-center gap-2 font-['Space_Mono'] text-[9px] uppercase tracking-[0.18em] text-slate-500 no-underline transition-colors duration-300 hover:text-orange-300">All case studies <ArrowUpRight /></Link>
-          </div>
-          <div className="mt-8 grid gap-6 md:grid-cols-2">
-            {previous ? (<Link href={`/case-studies/${previous.slug}`} className="group rounded-xl border border-white/[0.08] bg-[#080d18] p-6 no-underline"><div className="font-['Space_Mono'] text-[9px] uppercase tracking-[0.2em] text-slate-500">Previous</div><h3 className="mt-3 font-['Rajdhani'] text-2xl font-bold text-slate-100 transition-colors group-hover:text-orange-300">{previous.title}</h3></Link>) : <div />}
-            {next ? (<Link href={`/case-studies/${next.slug}`} className="group rounded-xl border border-white/[0.08] bg-[#080d18] p-6 text-right no-underline"><div className="font-['Space_Mono'] text-[9px] uppercase tracking-[0.2em] text-slate-500">Next</div><h3 className="mt-3 font-['Rajdhani'] text-2xl font-bold text-slate-100 transition-colors group-hover:text-orange-300">{next.title}</h3></Link>) : null}
-          </div>
-        </Container>
-      </nav>
     </main>
   );
 }

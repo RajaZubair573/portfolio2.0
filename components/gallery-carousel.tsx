@@ -28,14 +28,14 @@ export default function GalleryCarousel({ images, title }: GalleryCarouselProps)
   }
 
   return (
-    <div className="mb-20">
-      <h2 className="font-['Rajdhani'] text-3xl font-bold text-slate-100 mb-8 flex items-center gap-3">
+    <div className="mb-12">
+      <h2 className="font-['Rajdhani'] text-[1.75rem] font-bold text-slate-100 mb-5 flex items-center gap-3">
         <div className="w-12 h-px" style={{ background: "linear-gradient(to right, rgba(249,115,22,0.5), transparent)" }} />
         Project Gallery
       </h2>
 
-      <div className="relative rounded-xl overflow-hidden border border-slate-800 bg-slate-950/70 shadow-[0_0_80px_rgba(0,0,0,0.12)] mb-6">
-        <div className="relative h-[420px] sm:h-[520px] bg-slate-900 overflow-hidden">
+      <div className="relative rounded-xl overflow-hidden border border-slate-800 bg-slate-950/70 shadow-[0_0_80px_rgba(0,0,0,0.12)] mb-4">
+        <div className="relative h-[280px] sm:h-[360px] lg:h-[420px] bg-slate-900 overflow-hidden">
           <div
             className="absolute inset-0 flex transition-transform duration-700 ease-out"
             style={{ transform: `translateX(-${activeIndex * 100}%)` }}
@@ -77,8 +77,8 @@ export default function GalleryCarousel({ images, title }: GalleryCarouselProps)
           </div>
         </div>
 
-        <div className="p-4 bg-slate-950/90">
-          <div className="flex items-center gap-3 overflow-x-auto overflow-y-hidden scroll-container py-2 px-3">
+        <div className="p-3 bg-slate-950/90">
+          <div className="flex items-center gap-3 overflow-x-auto overflow-y-hidden scroll-container py-1.5 px-2">
             {images.map((image, index) => (
               <button
                 key={`${image}-${index}`}
@@ -88,7 +88,7 @@ export default function GalleryCarousel({ images, title }: GalleryCarouselProps)
                 type="button"
                 onClick={() => setActiveIndex(index)}
                 aria-label={`View gallery image ${index + 1}`}
-                className={`relative min-w-[120px] flex-shrink-0 overflow-hidden rounded-lg border transition duration-300 focus:outline-none ${
+                className={`relative min-w-[88px] flex-shrink-0 overflow-hidden rounded-lg border transition duration-300 focus:outline-none ${
                   activeIndex === index
                     ? "border-orange-400 shadow-[0_0_0_3px_rgba(249,115,22,0.28)] ring-2 ring-orange-400 ring-offset-2 ring-offset-slate-950 scale-[1.02]"
                     : "border-transparent hover:border-slate-500"

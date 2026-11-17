@@ -149,7 +149,7 @@ export function CaseStudyPersona({ detail }: { detail: CaseStudyDetail }) {
                   </div>
 
                   <div className="min-w-0">
-                    <h3 className="font-['Rajdhani'] text-[1.75rem] font-bold leading-none tracking-tight text-slate-100">
+                    <h3 className="font-['Rajdhani'] text-2xl font-bold leading-none tracking-tight text-slate-100">
                       {persona.name}
                     </h3>
                     <p className="mt-2 font-['Space_Mono'] text-[9px] uppercase leading-relaxed tracking-[0.14em] text-orange-300/80">

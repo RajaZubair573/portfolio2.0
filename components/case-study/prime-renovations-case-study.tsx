@@ -1,7 +1,6 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
 import type { CaseStudy } from "@/lib/case-studies";
 import { BrowserMockup } from "./browser-mockup";
 import { ReadingProgress } from "./reading-progress";
@@ -332,13 +331,9 @@ function ResponsiveBlueprint() {
 
 export function PrimeRenovationsCaseStudy({
   caseStudy,
-  next,
-  previous,
 }: {
   caseStudy: CaseStudy;
   index?: number;
-  next?: CaseStudy;
-  previous?: CaseStudy | null;
 }) {
   return (
     <main className="relative w-full overflow-hidden bg-[#080d1a]">
@@ -381,10 +376,10 @@ export function PrimeRenovationsCaseStudy({
                 <span className="h-px w-10" style={{ background: "linear-gradient(90deg,#fb923c,transparent)" }} />
                 <span className="font-['Space_Mono'] text-[10px] uppercase tracking-[0.28em] text-orange-300/90">Web Design / Luxury Branding / Webflow</span>
               </div>
-              <h1 className="hero-in mt-5 font-['Rajdhani'] text-[clamp(2.6rem,6vw,4.8rem)] font-bold leading-[0.92] tracking-[-0.02em] text-slate-50">
+              <h1 className="hero-in mt-5 font-['Rajdhani'] text-[clamp(2.3rem,4.8vw,3.8rem)] font-bold leading-[0.92] tracking-[-0.02em] text-slate-50">
                 Prime Renovations Website
               </h1>
-              <p className="hero-in mt-5 max-w-2xl font-['Rajdhani'] text-[clamp(1.15rem,2.4vw,1.8rem)] font-medium leading-[1.15] text-slate-400">
+              <p className="hero-in mt-5 max-w-2xl font-['Rajdhani'] text-[clamp(1.1rem,2vw,1.5rem)] font-medium leading-[1.15] text-slate-400">
                 A refined digital home for premium renovation craftsmanship.
               </p>
               <p className="hero-in mt-6 max-w-2xl font-sans text-base leading-relaxed text-slate-300 md:text-lg">
@@ -457,7 +452,7 @@ export function PrimeRenovationsCaseStudy({
           <div className="mt-12 grid gap-10 lg:grid-cols-12 lg:gap-14">
             <div className="lg:col-span-4">
               <Reveal>
-                <p className="font-['Rajdhani'] text-[clamp(1.45rem,2.6vw,2rem)] font-semibold leading-tight text-slate-200">
+                <p className="font-['Rajdhani'] text-[clamp(1.2rem,2.1vw,1.65rem)] font-semibold leading-tight text-slate-200">
                   The work, the process, and the next step.
                 </p>
               </Reveal>
@@ -669,7 +664,7 @@ export function PrimeRenovationsCaseStudy({
               <Reveal key={feature.n} delay={35 * featureIndex}>
                 <div className="border-t border-white/[0.1] pt-4">
                   <span className="font-['Space_Mono'] text-[9px] tracking-[0.16em] text-orange-300/70">{feature.n}</span>
-                  <h3 className="mt-3 font-['Rajdhani'] text-lg font-semibold text-slate-100">{feature.title}</h3>
+                  <h3 className="mt-3 font-['Rajdhani'] text-xl font-semibold text-slate-100">{feature.title}</h3>
                   <p className="mt-1.5 font-sans text-[12px] leading-relaxed text-slate-500">{feature.body}</p>
                 </div>
               </Reveal>
@@ -712,7 +707,7 @@ export function PrimeRenovationsCaseStudy({
                   <Reveal key={check.title} delay={35 * checkIndex}>
                     <div className="h-full rounded-xl border border-white/[0.08] bg-white/[0.02] p-5">
                       <span className="font-['Space_Mono'] text-[8px] tracking-[0.16em] text-orange-300/70">{String(checkIndex + 1).padStart(2, "0")}</span>
-                      <h3 className="mt-2 font-['Rajdhani'] text-lg font-semibold text-slate-100">{check.title}</h3>
+                      <h3 className="mt-2 font-['Rajdhani'] text-xl font-semibold text-slate-100">{check.title}</h3>
                       <p className="mt-1.5 font-sans text-[12px] leading-relaxed text-slate-500">{check.body}</p>
                     </div>
                   </Reveal>
@@ -762,7 +757,7 @@ export function PrimeRenovationsCaseStudy({
               alt="Full Prime Renovations desktop landing page design"
               url="primerenovationsnyc.com"
               scroll
-              heightClass="h-[440px] sm:h-[560px] lg:h-[700px]"
+              heightClass="h-[320px] sm:h-[420px] lg:h-[500px]"
               width={1920}
               height={10406}
               sizes="(max-width: 1200px) 100vw, 1100px"
@@ -843,7 +838,7 @@ export function PrimeRenovationsCaseStudy({
               <Reveal key={outcome.n} delay={35 * outcomeIndex}>
                 <div className="border-t border-white/[0.1] pt-4">
                   <span className="font-['Space_Mono'] text-[9px] tracking-[0.16em] text-orange-300/70">{outcome.n}</span>
-                  <h3 className="mt-3 font-['Rajdhani'] text-lg font-semibold text-slate-100">{outcome.title}</h3>
+                  <h3 className="mt-3 font-['Rajdhani'] text-xl font-semibold text-slate-100">{outcome.title}</h3>
                   <p className="mt-1.5 font-sans text-[12px] leading-relaxed text-slate-500">{outcome.body}</p>
                 </div>
               </Reveal>
@@ -889,40 +884,6 @@ export function PrimeRenovationsCaseStudy({
             </Reveal>
           ) : null}
 
-          <Reveal delay={100}>
-            <div className="mt-16 border-t border-white/[0.08] pt-10">
-              <div className="flex flex-wrap items-center justify-between gap-4">
-                <span className="font-['Space_Mono'] text-[9px] uppercase tracking-[0.24em] text-slate-500">Case study navigation</span>
-                <Link href="/case-studies" className="inline-flex items-center gap-2 font-['Space_Mono'] text-[9px] uppercase tracking-[0.18em] text-slate-500 no-underline transition-colors duration-300 hover:text-orange-300">
-                  All case studies <ArrowUpRight />
-                </Link>
-              </div>
-              <div className="mt-8 grid gap-6 md:grid-cols-2">
-                {previous ? (
-                  <Link href={`/case-studies/${previous.slug}`} className="group rounded-xl border border-white/[0.08] bg-[#080d18] p-6 no-underline transition-colors duration-300 hover:border-orange-400/30">
-                    <div className="font-['Space_Mono'] text-[9px] uppercase tracking-[0.2em] text-slate-500">Previous</div>
-                    <h3 className="mt-3 font-['Rajdhani'] text-2xl font-bold text-slate-100 transition-colors group-hover:text-orange-300">{previous.title}</h3>
-                  </Link>
-                ) : (
-                  <div />
-                )}
-                {next ? (
-                  <Link href={`/case-studies/${next.slug}`} className="group rounded-xl border border-white/[0.08] bg-[#080d18] p-6 text-right no-underline transition-colors duration-300 hover:border-orange-400/30">
-                    <div className="font-['Space_Mono'] text-[9px] uppercase tracking-[0.2em] text-slate-500">Next</div>
-                    <h3 className="mt-3 font-['Rajdhani'] text-2xl font-bold text-slate-100 transition-colors group-hover:text-orange-300">{next.title}</h3>
-                  </Link>
-                ) : null}
-              </div>
-              <div className="mt-10 text-center">
-                <Link
-                  href="/case-studies"
-                  className="inline-flex items-center gap-2 rounded-sm border border-white/10 bg-white/[0.02] px-6 py-3 font-['Space_Mono'] text-[10px] uppercase tracking-[0.14em] text-slate-300 no-underline transition-all duration-300 hover:border-orange-400/40 hover:text-orange-300"
-                >
-                  View All Case Studies <ArrowUpRight />
-                </Link>
-              </div>
-            </div>
-          </Reveal>
         </Container>
       </section>
     </main>

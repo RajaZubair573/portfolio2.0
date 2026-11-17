@@ -4,6 +4,7 @@ import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Image from "next/image";
+import CallToAction from "@/components/call-to-action";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -251,6 +252,7 @@ export default function AboutPage() {
             </div>
           </div>
         </section>
+        <CallToAction />
       </main>
     </>
   );

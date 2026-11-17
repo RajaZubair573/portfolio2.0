@@ -6,6 +6,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { projects } from "@/lib/constants";
 import Header from "@/components/header";
 import Footer from "@/components/footer";
+import CallToAction from "@/components/call-to-action";
 import Image from "next/image";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -109,6 +110,7 @@ export default function ProjectsPage() {
           </div>
         </div>
       </section>
+      <CallToAction />
     </>
   );
 }

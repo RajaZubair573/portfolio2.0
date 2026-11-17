@@ -36,7 +36,7 @@ export function CaseStudyResponsive({ detail }: { detail: CaseStudyDetail }) {
                 <Reveal key={point.title} delay={45 * index}>
                   <div className="border-t border-white/[0.08] pt-4">
                     <div className="flex items-baseline justify-between gap-4">
-                      <h3 className="font-['Rajdhani'] text-lg font-semibold text-slate-200 md:text-xl">
+                      <h3 className="font-['Rajdhani'] text-xl font-semibold text-slate-200 md:text-2xl">
                         {point.title}
                       </h3>
                       <span className="font-['Space_Mono'] text-[9px] tracking-[0.12em] text-slate-600">

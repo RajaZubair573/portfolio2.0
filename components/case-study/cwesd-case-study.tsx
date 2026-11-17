@@ -1,13 +1,12 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
 import type { CaseStudy } from "@/lib/case-studies";
 import { EditorialGallery, type GalleryItem } from "./editorial-gallery";
 import { ReadingProgress } from "./reading-progress";
 import { Reveal } from "./reveal";
 import { SectionRail, type RailItem } from "./section-rail";
-import { ArrowUpRight, BackLink, ComponentButton, Container, SectionHeading, SectionLabel } from "./ui";
+import { BackLink, ComponentButton, Container, SectionHeading, SectionLabel } from "./ui";
 
 const railItems: RailItem[] = [
   { id: "hero", label: "Intro" },
@@ -57,7 +56,7 @@ const outcomes = [
   { t: "04 — Responsive Design Direction", b: "Designed the website experience with consideration for different screen sizes." },
 ];
 
-export function CwesdCaseStudy({ caseStudy, index, next, previous }: { caseStudy: CaseStudy; index: number; next?: CaseStudy; previous?: CaseStudy | null }) {
+export function CwesdCaseStudy({ caseStudy, index }: { caseStudy: CaseStudy; index: number }) {
   return (
     <main className="relative w-full overflow-hidden bg-[#080d1a]">
       <ReadingProgress />
@@ -74,8 +73,8 @@ export function CwesdCaseStudy({ caseStudy, index, next, previous }: { caseStudy
           <div className="mt-12 grid items-end gap-10 lg:grid-cols-12 lg:gap-14">
             <div className="lg:col-span-7">
               <div className="hero-in flex flex-wrap items-center gap-3"><span className="h-px w-10 bg-gradient-to-r from-orange-500/70 to-transparent" /><span className="font-['Space_Mono'] text-[10px] uppercase tracking-[0.28em] text-orange-400/80">UI/UX Design · Education · Web Design · Mobile-First · Community</span></div>
-              <h1 className="hero-in mt-5 font-['Rajdhani'] text-[clamp(2.6rem,6vw,4.8rem)] font-bold leading-[0.92] tracking-[-0.02em] text-slate-50">CWESD Learning Platform</h1>
-              <p className="hero-in mt-4 max-w-2xl font-['Rajdhani'] text-[clamp(1.15rem,2.4vw,1.8rem)] font-medium leading-[1.15] text-slate-400">Designing an inclusive learning experience that empowers women in technology.</p>
+              <h1 className="hero-in mt-5 font-['Rajdhani'] text-[clamp(2.3rem,4.8vw,3.8rem)] font-bold leading-[0.92] tracking-[-0.02em] text-slate-50">CWESD Learning Platform</h1>
+              <p className="hero-in mt-4 max-w-2xl font-['Rajdhani'] text-[clamp(1.1rem,2vw,1.5rem)] font-medium leading-[1.15] text-slate-400">Designing an inclusive learning experience that empowers women in technology.</p>
               <p className="hero-in mt-6 max-w-2xl font-sans text-base leading-relaxed text-slate-300 md:text-lg">CWESD is a modern learning platform designed to make technology education more accessible through structured learning opportunities, mentorship, and community building.</p>
             </div>
             <aside className="hero-in lg:col-span-5 lg:border-l lg:border-white/10 lg:pl-10">
@@ -140,7 +139,7 @@ export function CwesdCaseStudy({ caseStudy, index, next, previous }: { caseStudy
                     <div className="flex h-20 w-20 items-center justify-center rounded-full border border-white/10 bg-gradient-to-br from-orange-500/30 to-sky-500/30 font-['Rajdhani'] text-2xl font-bold text-slate-100">AM</div>
                     <div>
                       <p className="font-['Space_Mono'] text-[9px] uppercase tracking-[0.18em] text-orange-300/80">The aspiring woman in tech</p>
-                      <h3 className="mt-1 font-['Rajdhani'] text-3xl font-bold text-slate-100">Ayesha Malik</h3>
+                      <h3 className="mt-1 font-['Rajdhani'] text-2xl font-bold text-slate-100">Ayesha Malik</h3>
                       <p className="font-sans text-sm text-slate-400">Aspiring Technology Professional</p>
                     </div>
                   </div>
@@ -221,10 +220,10 @@ export function CwesdCaseStudy({ caseStudy, index, next, previous }: { caseStudy
           </Reveal>
 
           <Reveal delay={80} className="mt-10">
-            <div className="rounded-3xl border border-white/10 bg-[#080d18] p-4 md:p-7">
-              <SectionLabel>Part B — Project gallery</SectionLabel>
+            <div className="rounded-3xl border border-white/10 bg-[#080d18] p-3 md:p-5">
+              <SectionLabel>Part B — Visual system</SectionLabel>
               <p className="mt-3 max-w-2xl font-sans text-sm leading-relaxed text-slate-400">Supplied CWESD visual assets presented as a complementary gallery.</p>
-              <div className="mt-6"><EditorialGallery items={galleryItems} title="CWESD" /></div>
+              <div className="mt-4"><EditorialGallery items={galleryItems} title="CWESD" /></div>
             </div>
           </Reveal>
 
@@ -263,15 +262,6 @@ export function CwesdCaseStudy({ caseStudy, index, next, previous }: { caseStudy
         </Container>
       </section>
 
-      <nav aria-label="Case study navigation" className="border-t border-white/[0.06] py-16 md:py-20" style={{ background: "#05080f" }}>
-        <Container>
-          <div className="flex flex-wrap items-center justify-between gap-4"><span className="font-['Space_Mono'] text-[9px] uppercase tracking-[0.24em] text-slate-500">Case study navigation</span><Link href="/case-studies" className="inline-flex items-center gap-2 font-['Space_Mono'] text-[9px] uppercase tracking-[0.18em] text-slate-500 no-underline transition-colors duration-300 hover:text-orange-300">All case studies <ArrowUpRight /></Link></div>
-          <div className="mt-8 grid gap-6 md:grid-cols-2">
-            {previous ? (<Link href={`/case-studies/${previous.slug}`} className="group rounded-xl border border-white/[0.08] bg-[#080d18] p-6 no-underline"><div className="font-['Space_Mono'] text-[9px] uppercase tracking-[0.2em] text-slate-500">Previous: {previous.title}</div><h3 className="mt-3 font-['Rajdhani'] text-2xl font-bold text-slate-100 transition-colors group-hover:text-orange-300">{previous.title}</h3></Link>) : <div />}
-            {next ? (<Link href={`/case-studies/${next.slug}`} className="group rounded-xl border border-white/[0.08] bg-[#080d18] p-6 text-right no-underline"><div className="font-['Space_Mono'] text-[9px] uppercase tracking-[0.2em] text-slate-500">Next: {next.title}</div><h3 className="mt-3 font-['Rajdhani'] text-2xl font-bold text-slate-100 transition-colors group-hover:text-orange-300">{next.title}</h3></Link>) : null}
-          </div>
-        </Container>
-      </nav>
     </main>
   );
 }

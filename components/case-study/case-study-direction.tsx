@@ -34,7 +34,7 @@ export function CaseStudyDirection({ detail }: { detail: CaseStudyDetail }) {
                 <span className="font-['Space_Mono'] text-[10px] tracking-[0.14em] text-orange-400/70">
                   {String(index + 1).padStart(2, "0")}
                 </span>
-                <h3 className="mt-3 font-['Rajdhani'] text-lg font-semibold leading-snug text-slate-100">
+                <h3 className="mt-3 font-['Rajdhani'] text-xl font-semibold leading-snug text-slate-100">
                   {principle.title}
                 </h3>
                 <p className="mt-2 font-sans text-[12px] leading-relaxed text-slate-500">

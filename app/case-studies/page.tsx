@@ -7,6 +7,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { caseStudies } from "@/lib/case-studies";
 import Image from "next/image";
 import { cn } from "@/lib/utils";
+import CallToAction from "@/components/call-to-action";
 import { CgArrowTopRight, CgFigma } from "react-icons/cg";
 import { LuArrowUpLeft, LuArrowUpRight, LuFigma } from "react-icons/lu";
 
@@ -336,6 +337,7 @@ export default function CaseStudiesPage() {
             )}
           </div>
         </section>
+        <CallToAction />
       </main>
     </>
   );

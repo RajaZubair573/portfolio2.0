@@ -50,7 +50,7 @@ export function CaseStudyOutcomes({ detail }: { detail: CaseStudyDetail }) {
                     className="h-1 w-1 rounded-full bg-violet-400/60"
                   />
                 </div>
-                <h3 className="mt-3 font-['Rajdhani'] text-lg font-semibold leading-snug text-slate-100">
+                <h3 className="mt-3 font-['Rajdhani'] text-xl font-semibold leading-snug text-slate-100">
                   {item.title}
                 </h3>
                 <p className="mt-1.5 font-sans text-[12px] leading-relaxed text-slate-500">

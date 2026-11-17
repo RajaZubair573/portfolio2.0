@@ -11,13 +11,9 @@ import DesktopFrame from "@/components/device-frames/desktop-frame";
 export function ClassicCaseStudy({
   caseStudy,
   index,
-  next,
-  previous,
 }: {
   caseStudy: CaseStudy;
   index: number;
-  next?: CaseStudy;
-  previous?: CaseStudy | null;
 }) {
   const contentRef = useRef<HTMLDivElement>(null);
 
@@ -91,7 +87,7 @@ export function ClassicCaseStudy({
               </span>
             </div>
 
-            <h1 className="mb-6 font-['Rajdhani'] text-5xl font-bold leading-tight text-slate-100 md:text-6xl">
+            <h1 className="mb-6 font-['Rajdhani'] text-[clamp(2.3rem,4.8vw,3.8rem)] font-bold leading-tight text-slate-100">
               {caseStudy.title}
             </h1>
 
@@ -226,7 +222,7 @@ export function ClassicCaseStudy({
           </div>
 
           <div className="mb-20">
-            <h2 className="mb-8 flex items-center gap-3 font-['Rajdhani'] text-3xl font-bold text-slate-100">
+            <h2 className="mb-8 flex items-center gap-3 font-['Rajdhani'] text-[1.75rem] font-bold text-slate-100">
               <div
                 className="h-px w-12"
                 style={{
@@ -270,7 +266,7 @@ export function ClassicCaseStudy({
           <GalleryCarousel images={caseStudy.gallery} title={caseStudy.title} />
 
           <div className="mb-20">
-            <h2 className="mb-12 flex items-center gap-3 font-['Rajdhani'] text-3xl font-bold text-slate-100">
+            <h2 className="mb-12 flex items-center gap-3 font-['Rajdhani'] text-[1.75rem] font-bold text-slate-100">
               <div
                 className="h-px w-12"
                 style={{
@@ -333,108 +329,6 @@ export function ClassicCaseStudy({
         </div>
       </section>
 
-      <section
-        className="relative w-full overflow-hidden py-16 md:py-24"
-        style={{
-          background:
-            "linear-gradient(180deg, #0f172a 0%, #0d1424 40%, #0b1120 80%, #0a0f1e 100%)",
-        }}
-      >
-        <div className="relative z-10 mx-auto w-[90%] max-w-[1000px]">
-          <div className="grid gap-6 md:grid-cols-2">
-            {previous ? (
-              <Link
-                href={`/case-studies/${previous.slug}`}
-                className="group relative block no-underline"
-              >
-                <div
-                  className="relative rounded-lg p-8 transition-all duration-500 ease-out group-hover:-translate-y-1.5"
-                  style={{
-                    background:
-                      "linear-gradient(145deg, rgba(15,15,25,0.8), rgba(10,10,18,0.9))",
-                    boxShadow: "inset 0 0 0 1px rgba(255,255,255,0.04)",
-                  }}
-                >
-                  <div className="mb-3 flex items-center gap-3">
-                    <svg
-                      width="16"
-                      height="16"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      viewBox="0 0 24 24"
-                      className="text-orange-400"
-                    >
-                      <path d="M19 12H5M12 19l-7-7 7-7" />
-                    </svg>
-                    <span className="font-['Space_Mono'] text-[10px] uppercase tracking-[0.2em] text-orange-500/60">
-                      Previous
-                    </span>
-                  </div>
-                  <h3 className="font-['Rajdhani'] text-xl font-bold text-slate-100 transition-colors group-hover:text-orange-400">
-                    {previous.title}
-                  </h3>
-                </div>
-              </Link>
-            ) : null}
-
-            {next ? (
-              <Link
-                href={`/case-studies/${next.slug}`}
-                className="group relative block no-underline md:col-start-2"
-              >
-                <div
-                  className="relative rounded-lg p-8 text-right transition-all duration-500 ease-out group-hover:-translate-y-1.5"
-                  style={{
-                    background:
-                      "linear-gradient(145deg, rgba(15,15,25,0.8), rgba(10,10,18,0.9))",
-                    boxShadow: "inset 0 0 0 1px rgba(255,255,255,0.04)",
-                  }}
-                >
-                  <div className="mb-3 flex items-center justify-end gap-3">
-                    <span className="font-['Space_Mono'] text-[10px] uppercase tracking-[0.2em] text-purple-500/60">
-                      Next
-                    </span>
-                    <svg
-                      width="16"
-                      height="16"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      viewBox="0 0 24 24"
-                      className="text-purple-400"
-                    >
-                      <path d="M5 12h14M12 5l7 7-7 7" />
-                    </svg>
-                  </div>
-                  <h3 className="font-['Rajdhani'] text-xl font-bold text-slate-100 transition-colors group-hover:text-purple-400">
-                    {next.title}
-                  </h3>
-                </div>
-              </Link>
-            ) : null}
-          </div>
-
-          <div className="mt-12 text-center">
-            <Link
-              href="/case-studies"
-              className="inline-flex items-center gap-2 rounded-sm border border-slate-100/10 bg-slate-900/50 px-6 py-3 font-['Space_Mono'] text-xs uppercase tracking-[0.12em] text-slate-300 no-underline backdrop-blur-sm transition-all duration-200 hover:border-slate-100/30 hover:bg-slate-800/50 hover:text-slate-100"
-            >
-              <svg
-                width="16"
-                height="16"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                viewBox="0 0 24 24"
-              >
-                <path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
-              </svg>
-              View All Case Studies
-            </Link>
-          </div>
-        </div>
-      </section>
     </main>
   );
 }

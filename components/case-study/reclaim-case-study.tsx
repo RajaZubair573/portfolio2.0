@@ -2,13 +2,12 @@
 
 import { useMemo } from "react";
 import Image from "next/image";
-import Link from "next/link";
 import type { CaseStudy } from "@/lib/case-studies";
 import { EditorialGallery } from "./editorial-gallery";
 import { ReadingProgress } from "./reading-progress";
 import { Reveal } from "./reveal";
 import { SectionRail, type RailItem } from "./section-rail";
-import { ArrowUpRight, BackLink, ComponentButton, Container, SectionHeading, SectionLabel } from "./ui";
+import { BackLink, ComponentButton, Container, SectionHeading, SectionLabel } from "./ui";
 import { cn } from "@/lib/utils";
 
 const railItems: RailItem[] = [
@@ -85,7 +84,7 @@ const outcomes = [
   { t: "04 — Comprehensive UI coverage", b: "Designed 25+ mobile screens supported by a design system and interactive prototype." },
 ];
 
-export function ReclaimCaseStudy({ caseStudy, index, next, previous }: { caseStudy: CaseStudy; index: number; next?: CaseStudy; previous?: CaseStudy | null }) {
+export function ReclaimCaseStudy({ caseStudy, index }: { caseStudy: CaseStudy; index: number }) {
   const galleryItems = useMemo(() => showcase, []);
 
   return (
@@ -104,8 +103,8 @@ export function ReclaimCaseStudy({ caseStudy, index, next, previous }: { caseStu
           <div className="mt-12 grid items-end gap-10 lg:grid-cols-12 lg:gap-14">
             <div className="lg:col-span-7">
               <div className="hero-in flex items-center gap-3"><span className="h-px w-10 bg-gradient-to-r from-orange-500/70 to-transparent" /><span className="font-['Space_Mono'] text-[10px] uppercase tracking-[0.28em] text-orange-400/80">UI/UX Design / Mobile App</span></div>
-              <h1 className="hero-in mt-5 font-['Rajdhani'] text-[clamp(2.6rem,6vw,4.8rem)] font-bold leading-[0.92] tracking-[-0.02em] text-slate-50">Reclaim — Data Recovery App</h1>
-              <p className="hero-in mt-4 max-w-2xl font-['Rajdhani'] text-[clamp(1.15rem,2.4vw,1.8rem)] font-medium leading-[1.15] text-slate-400">A mobile experience for discovering, previewing, and recovering lost files with clarity.</p>
+              <h1 className="hero-in mt-5 font-['Rajdhani'] text-[clamp(2.3rem,4.8vw,3.8rem)] font-bold leading-[0.92] tracking-[-0.02em] text-slate-50">Reclaim — Data Recovery App</h1>
+              <p className="hero-in mt-4 max-w-2xl font-['Rajdhani'] text-[clamp(1.1rem,2vw,1.5rem)] font-medium leading-[1.15] text-slate-400">A mobile experience for discovering, previewing, and recovering lost files with clarity.</p>
               <p className="hero-in mt-6 max-w-2xl font-sans text-base leading-relaxed text-slate-300 md:text-lg">Reclaim is designed to help users recover accidentally deleted photos, videos, audio, and documents through an intuitive, approachable mobile interface.</p>
             </div>
             <aside className="hero-in lg:col-span-5 lg:border-l lg:border-white/10 lg:pl-10">
@@ -162,7 +161,7 @@ export function ReclaimCaseStudy({ caseStudy, index, next, previous }: { caseStu
       <section id="audience" className="relative overflow-hidden border-t border-white/[0.05] py-20 md:py-28" style={{ background: "#080d1a" }}>
         <Container>
           <SectionHeading index="04" label="Target audience & user personas" title="Designed for people who need to recover important content quickly." intro="Two conceptual personas based on the intended product use cases. These are not personas validated through interviews or formal research." />
-          <div className="mt-12 grid gap-6 lg:grid-cols-2">{personas.map((p, i) => (<Reveal key={p.name} delay={60 * i}><article className="relative h-full overflow-hidden rounded-2xl border border-white/[0.09] bg-[#090f1d] p-6 md:p-7"><div className="flex items-start gap-4"><div className="flex h-16 w-16 items-center justify-center rounded-full border border-white/10 bg-gradient-to-br from-sky-500/40 to-orange-500/30 font-['Rajdhani'] text-xl font-bold text-slate-100">{p.name.split(" ").map(n => n[0]).join("")}</div><div><h3 className="font-['Rajdhani'] text-2xl font-bold text-slate-100">{p.name}</h3><p className="font-['Space_Mono'] text-[9px] uppercase tracking-[0.16em] text-orange-300/80">{p.role}</p></div></div><p className="mt-5 font-sans text-sm leading-relaxed text-slate-400">{p.bio}</p><div className="mt-6 grid gap-4 sm:grid-cols-3">{[["Goals", p.goals, "bg-sky-500/10 border-sky-400/20"], ["Pain points", p.frus, "bg-orange-500/10 border-orange-400/20"], ["Needs", p.needs, "bg-emerald-500/10 border-emerald-400/20"]].map(([title, items, cc]) => (<div key={title as string} className={cn("rounded-xl border p-4", cc as string)}><h4 className="font-['Rajdhani'] text-lg font-semibold text-slate-100">{title as string}</h4><ul className="mt-3 space-y-2">{(items as string[]).map((it) => (<li key={it} className="font-sans text-[12px] leading-relaxed text-slate-400">• {it}</li>))}</ul></div>))}</div></article></Reveal>))}</div>
+          <div className="mt-12 grid gap-6 lg:grid-cols-2">{personas.map((p, i) => (<Reveal key={p.name} delay={60 * i}><article className="relative h-full overflow-hidden rounded-2xl border border-white/[0.09] bg-[#090f1d] p-6 md:p-7"><div className="flex items-start gap-4"><div className="flex h-16 w-16 items-center justify-center rounded-full border border-white/10 bg-gradient-to-br from-sky-500/40 to-orange-500/30 font-['Rajdhani'] text-xl font-bold text-slate-100">{p.name.split(" ").map(n => n[0]).join("")}</div><div><h3 className="font-['Rajdhani'] text-2xl font-bold text-slate-100">{p.name}</h3><p className="font-['Space_Mono'] text-[9px] uppercase tracking-[0.16em] text-orange-300/80">{p.role}</p></div></div><p className="mt-5 font-sans text-sm leading-relaxed text-slate-400">{p.bio}</p><div className="mt-6 grid gap-4 sm:grid-cols-3">{[["Goals", p.goals, "bg-sky-500/10 border-sky-400/20"], ["Pain points", p.frus, "bg-orange-500/10 border-orange-400/20"], ["Needs", p.needs, "bg-emerald-500/10 border-emerald-400/20"]].map(([title, items, cc]) => (<div key={title as string} className={cn("rounded-xl border p-4", cc as string)}><h4 className="font-['Rajdhani'] text-xl font-semibold text-slate-100">{title as string}</h4><ul className="mt-3 space-y-2">{(items as string[]).map((it) => (<li key={it} className="font-sans text-[12px] leading-relaxed text-slate-400">• {it}</li>))}</ul></div>))}</div></article></Reveal>))}</div>
         </Container>
       </section>
 
@@ -197,7 +196,7 @@ export function ReclaimCaseStudy({ caseStudy, index, next, previous }: { caseStu
         </Container>
       </section>
 
-      <section id="showcase" className="border-t border-white/[0.06] py-20 md:py-28" style={{ background: "#060a12" }}>
+      <section id="showcase" className="border-t border-white/[0.06] py-14 md:py-20" style={{ background: "#060a12" }}>
         <Container>
           <Reveal><EditorialGallery items={galleryItems} title="Reclaim" /></Reveal>
         </Container>
@@ -206,7 +205,7 @@ export function ReclaimCaseStudy({ caseStudy, index, next, previous }: { caseStu
       <section id="outcomes" className="relative overflow-hidden border-t border-white/[0.05] py-20 md:py-28" style={{ background: "linear-gradient(180deg,#0b1120 0%,#0c1426 55%,#080d1a 100%)" }}>
         <Container className="relative z-10">
           <SectionHeading index="08" label="Outcomes & reflection" title="A clearer foundation for mobile file recovery." />
-          <div className="mt-12 grid gap-x-8 gap-y-8 sm:grid-cols-2 lg:grid-cols-4">{outcomes.map((o, i) => (<Reveal key={o.t} delay={35 * i}><div className="border-t border-white/[0.1] pt-4"><span className="font-['Space_Mono'] text-[9px] tracking-[0.14em] text-orange-400/70">{String(i + 1).padStart(2, "0")}</span><h3 className="mt-3 font-['Rajdhani'] text-lg font-semibold text-slate-100">{o.t}</h3><p className="mt-1.5 font-sans text-[12px] leading-relaxed text-slate-500">{o.b}</p></div></Reveal>))}</div>
+          <div className="mt-12 grid gap-x-8 gap-y-8 sm:grid-cols-2 lg:grid-cols-4">{outcomes.map((o, i) => (<Reveal key={o.t} delay={35 * i}><div className="border-t border-white/[0.1] pt-4"><span className="font-['Space_Mono'] text-[9px] tracking-[0.14em] text-orange-400/70">{String(i + 1).padStart(2, "0")}</span><h3 className="mt-3 font-['Rajdhani'] text-xl font-semibold text-slate-100">{o.t}</h3><p className="mt-1.5 font-sans text-[12px] leading-relaxed text-slate-500">{o.b}</p></div></Reveal>))}</div>
           <div className="mt-14 grid gap-10 border-t border-white/[0.08] pt-10 lg:grid-cols-12">
             <div className="lg:col-span-7">
               <Reveal><SectionLabel>Key reflection</SectionLabel></Reveal>
@@ -228,15 +227,6 @@ export function ReclaimCaseStudy({ caseStudy, index, next, previous }: { caseStu
         </Container>
       </section>
 
-      <nav aria-label="Case study navigation" className="border-t border-white/[0.06] py-16 md:py-20" style={{ background: "#05080f" }}>
-        <Container>
-          <div className="flex flex-wrap items-center justify-between gap-4"><span className="font-['Space_Mono'] text-[9px] uppercase tracking-[0.24em] text-slate-500">Case study navigation</span><Link href="/case-studies" className="inline-flex items-center gap-2 font-['Space_Mono'] text-[9px] uppercase tracking-[0.18em] text-slate-500 no-underline transition-colors duration-300 hover:text-orange-300">All case studies <ArrowUpRight /></Link></div>
-          <div className="mt-8 grid gap-6 md:grid-cols-2">
-            {previous ? (<Link href={`/case-studies/${previous.slug}`} className="group rounded-xl border border-white/[0.08] bg-[#080d18] p-6 no-underline"><div className="flex items-center gap-2 font-['Space_Mono'] text-[9px] uppercase tracking-[0.2em] text-slate-500">Previous</div><h3 className="mt-3 font-['Rajdhani'] text-2xl font-bold text-slate-100 transition-colors group-hover:text-orange-300">{previous.title}</h3></Link>) : <div />}
-            {next ? (<Link href={`/case-studies/${next.slug}`} className="group rounded-xl border border-white/[0.08] bg-[#080d18] p-6 text-right no-underline"><div className="flex items-center justify-end gap-2 font-['Space_Mono'] text-[9px] uppercase tracking-[0.2em] text-slate-500">Next</div><h3 className="mt-3 font-['Rajdhani'] text-2xl font-bold text-slate-100 transition-colors group-hover:text-orange-300">{next.title}</h3></Link>) : null}
-          </div>
-        </Container>
-      </nav>
     </main>
   );
 }

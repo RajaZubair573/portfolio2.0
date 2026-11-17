@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import type { CaseStudy } from "@/lib/case-studies";
 import { BrowserMockup } from "./browser-mockup";
 import { EditorialGallery, type GalleryItem } from "./editorial-gallery";
@@ -158,13 +157,9 @@ const galleryItems: GalleryItem[] = [
 
 export function PabloCaseStudy({
   caseStudy,
-  next,
-  previous,
 }: {
   caseStudy: CaseStudy;
   index?: number;
-  next?: CaseStudy;
-  previous?: CaseStudy | null;
 }) {
   return (
     <main className="relative w-full overflow-hidden bg-[#080d1a]">
@@ -197,10 +192,10 @@ export function PabloCaseStudy({
                   {caseStudy.tags.join(" / ")}
                 </span>
               </div>
-              <h1 className="hero-in mt-5 font-['Rajdhani'] text-[clamp(2.5rem,5.7vw,4.6rem)] font-bold leading-[0.94] tracking-[-0.02em] text-slate-50">
+              <h1 className="hero-in mt-5 font-['Rajdhani'] text-[clamp(2.3rem,4.8vw,3.8rem)] font-bold leading-[0.94] tracking-[-0.02em] text-slate-50">
                 {caseStudy.title}
               </h1>
-              <p className="hero-in mt-5 max-w-2xl font-['Rajdhani'] text-[clamp(1.15rem,2.4vw,1.8rem)] font-medium leading-[1.15] text-slate-400">
+              <p className="hero-in mt-5 max-w-2xl font-['Rajdhani'] text-[clamp(1.1rem,2vw,1.5rem)] font-medium leading-[1.15] text-slate-400">
                 Premium stone, presented with clarity.
               </p>
               <p className="hero-in mt-6 max-w-2xl font-sans text-base leading-relaxed text-slate-300 md:text-lg">
@@ -282,7 +277,7 @@ export function PabloCaseStudy({
                   <Reveal key={item.n} delay={scopeIndex * 35}>
                     <div className="h-full bg-[#0a101b] p-5">
                       <span className="font-['Space_Mono'] text-[9px] tracking-[0.16em] text-orange-300/70">{item.n}</span>
-                      <h3 className="mt-3 font-['Rajdhani'] text-lg font-semibold text-slate-100">{item.title}</h3>
+                      <h3 className="mt-3 font-['Rajdhani'] text-xl font-semibold text-slate-100">{item.title}</h3>
                       <p className="mt-1.5 font-sans text-[12px] leading-relaxed text-slate-500">{item.body}</p>
                     </div>
                   </Reveal>
@@ -348,7 +343,7 @@ export function PabloCaseStudy({
               <Reveal key={objective.n} delay={objectiveIndex * 30}>
                 <div className="h-full bg-[#0a101b] p-5">
                   <span className="font-['Space_Mono'] text-[9px] tracking-[0.16em] text-orange-300/70">{objective.n}</span>
-                  <h3 className="mt-3 font-['Rajdhani'] text-base font-semibold text-slate-100">{objective.title}</h3>
+                  <h3 className="mt-3 font-['Rajdhani'] text-lg font-semibold text-slate-100">{objective.title}</h3>
                   <p className="mt-1.5 font-sans text-[12px] leading-relaxed text-slate-500">{objective.body}</p>
                 </div>
               </Reveal>
@@ -424,7 +419,7 @@ export function PabloCaseStudy({
               {visualTraits.map((trait) => (
                 <div key={trait.n} className="bg-[#0a101b] p-6">
                   <span className="font-['Space_Mono'] text-[9px] tracking-[0.16em] text-orange-300/70">{trait.n}</span>
-                  <h3 className="mt-3 font-['Rajdhani'] text-lg font-semibold text-slate-100">{trait.title}</h3>
+                  <h3 className="mt-3 font-['Rajdhani'] text-xl font-semibold text-slate-100">{trait.title}</h3>
                   <p className="mt-1.5 font-sans text-[12px] leading-relaxed text-slate-500">{trait.body}</p>
                 </div>
               ))}
@@ -547,7 +542,7 @@ export function PabloCaseStudy({
               ].map((item) => (
                 <div key={item.n} className="bg-[#0b1120] p-6">
                   <span className="font-['Space_Mono'] text-[9px] tracking-[0.16em] text-orange-300/70">{item.n}</span>
-                  <h3 className="mt-3 font-['Rajdhani'] text-lg font-semibold text-slate-100">{item.t}</h3>
+                  <h3 className="mt-3 font-['Rajdhani'] text-xl font-semibold text-slate-100">{item.t}</h3>
                   <p className="mt-1.5 font-sans text-[12px] leading-relaxed text-slate-500">{item.b}</p>
                 </div>
               ))}
@@ -558,19 +553,19 @@ export function PabloCaseStudy({
 
       <section
         id="gallery"
-        className="relative overflow-hidden border-t border-white/[0.06] py-20 md:py-28"
+        className="relative overflow-hidden border-t border-white/[0.06] py-14 md:py-20"
         style={{ background: "linear-gradient(180deg,#060a12 0%,#080d18 55%,#060a12 100%)" }}
       >
         <div aria-hidden className="pointer-events-none absolute inset-0 bg-grid-subtle opacity-15" />
         <Container className="relative z-10 max-w-[1320px]">
           <SectionHeading
             index="06"
-            label="Project gallery & craftsmanship showcase"
+            label="Craftsmanship showcase"
             title="The material is the message."
             intro="The gallery keeps the supplied ten-image set and presents it with larger viewing, clearer captions, and straightforward navigation."
           />
 
-          <Reveal className="mt-12">
+          <Reveal className="mt-8">
             <EditorialGallery items={galleryItems} title="Pablo Marble & Granite" />
           </Reveal>
         </Container>
@@ -601,7 +596,7 @@ export function PabloCaseStudy({
               alt="Full Pablo Marble and Granite desktop landing page design"
               url="full-page design preview"
               scroll
-              heightClass="h-[440px] sm:h-[560px] lg:h-[700px]"
+              heightClass="h-[320px] sm:h-[420px] lg:h-[500px]"
               width={1440}
               height={17304}
               sizes="(max-width: 1200px) 100vw, 1100px"
@@ -726,42 +721,6 @@ export function PabloCaseStudy({
             </div>
           </div>
 
-          <nav
-            aria-label="Case study navigation"
-            className="mt-16 grid gap-4 border-t border-white/[0.08] pt-10 sm:grid-cols-2"
-          >
-            {previous ? (
-              <Link
-                href={`/case-studies/${previous.slug}`}
-                className="group rounded-xl border border-white/[0.08] bg-[#080d18] p-6 no-underline transition-colors duration-300 hover:border-orange-400/30"
-              >
-                <span className="font-['Space_Mono'] text-[9px] uppercase tracking-[0.2em] text-slate-500">Previous</span>
-                <h3 className="mt-3 font-['Rajdhani'] text-xl font-semibold text-slate-100 transition-colors group-hover:text-orange-300">
-                  {previous.title}
-                </h3>
-              </Link>
-            ) : (
-              <div />
-            )}
-
-            {next ? (
-              <Link
-                href={`/case-studies/${next.slug}`}
-                className="group rounded-xl border border-white/[0.08] bg-[#080d18] p-6 text-right no-underline transition-colors duration-300 hover:border-orange-400/30"
-              >
-                <span className="font-['Space_Mono'] text-[9px] uppercase tracking-[0.2em] text-slate-500">Next</span>
-                <h3 className="mt-3 font-['Rajdhani'] text-xl font-semibold text-slate-100 transition-colors group-hover:text-orange-300">
-                  {next.title}
-                </h3>
-              </Link>
-            ) : null}
-          </nav>
-
-          <div className="mt-8 text-center">
-            <ComponentButton href="/case-studies" variant="outline">
-              View All Case Studies
-            </ComponentButton>
-          </div>
         </Container>
       </section>
     </main>

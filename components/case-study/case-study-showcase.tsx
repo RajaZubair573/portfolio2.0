@@ -17,7 +17,7 @@ export function CaseStudyShowcase({
   return (
     <section
       id="showcase"
-      className="relative border-t border-white/[0.06] py-20 md:py-28"
+      className="relative border-t border-white/[0.06] py-14 md:py-20"
       style={{ background: "#060a12" }}
     >
       <Container>
@@ -27,7 +27,7 @@ export function CaseStudyShowcase({
               <SectionLabel index="06">Final design showcase</SectionLabel>
             </Reveal>
             <Reveal delay={70}>
-              <h2 className="mt-5 font-['Rajdhani'] text-[clamp(2rem,4.2vw,3.4rem)] font-bold leading-[1.02] tracking-[-0.02em] text-slate-50">
+              <h2 className="mt-5 font-['Rajdhani'] text-[clamp(1.75rem,3.2vw,2.5rem)] font-bold leading-[1.02] tracking-[-0.02em] text-slate-50">
                 The final
                 <br />
                 design<span className="text-orange-500">.</span>
@@ -44,21 +44,21 @@ export function CaseStudyShowcase({
           </div>
         </div>
 
-        <Reveal delay={80} className="mt-12 lg:mt-16">
+        <Reveal delay={80} className="mt-8 lg:mt-10">
           <BrowserMockup
             src={showcase.desktop.src}
             alt={showcase.desktop.alt}
             url="cyberrey.com"
             scroll
-            heightClass="h-[420px] sm:h-[540px] lg:h-[640px]"
+            heightClass="h-[320px] sm:h-[420px] lg:h-[500px]"
             glow
           />
-          <div className="mt-4 flex flex-col gap-1 sm:flex-row sm:items-baseline sm:justify-between sm:gap-6">
+          <div className="mt-3 flex flex-col gap-1 sm:flex-row sm:items-baseline sm:justify-between sm:gap-6">
             <div className="flex items-baseline gap-3">
               <span className="font-['Space_Mono'] text-[9px] uppercase tracking-[0.2em] text-orange-400/70">
                 {showcase.desktop.label}
               </span>
-              <span className="font-['Rajdhani'] text-lg font-semibold text-slate-200">
+              <span className="font-['Rajdhani'] text-xl font-semibold text-slate-200">
                 {showcase.desktop.title}
               </span>
             </div>
@@ -68,7 +68,7 @@ export function CaseStudyShowcase({
           </div>
         </Reveal>
 
-        <Reveal className="mt-14 lg:mt-16">
+        <Reveal className="mt-8 lg:mt-10">
           <EditorialGallery items={showcase.gallery} title={caseStudy.title} />
         </Reveal>
       </Container>

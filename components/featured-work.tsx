@@ -46,12 +46,12 @@ const featuredProjects: FeaturedProject[] = [
   },
   {
     id: 4,
-    title: "Synctom",
+    title: "Moniva",
     description:
-      "Synctom is a sleek, responsive software house website designed for clear branding and seamless user experience.",
-    tags: ["UI/UX", "Figma", "SaaS"],
-    image: "/projects/Synctom/Synctom.png",
-    link: "/case-studies/synctom-digital-solutions",
+      "Moniva is an all-in-one mobile financial app for wallet management, personal lending, and everyday bill payments.",
+    tags: ["UI/UX", "Fintech", "Mobile App"],
+    image: "/projects/Moniva/Moniva-Mockup.jpg",
+    link: "/case-studies/moniva-financial-app",
   },
 ];
 
@@ -68,19 +68,19 @@ function ProjectCard({ project, index, cardRef }: ProjectCardProps) {
     <a
       href={project.link}
       ref={cardRef}
-      className="group relative block w-full"
+      className="group relative block h-full w-full"
       style={{ textDecoration: "none" }}
     >
       <div
-        className="relative overflow-hidden transition-all duration-500 ease-out group-hover:-translate-y-1.5"
+        className="relative flex h-full flex-col overflow-hidden transition-all duration-500 ease-out group-hover:-translate-y-1.5"
         style={{ boxShadow: "0 1px 2px rgba(0,0,0,0.4), 0 4px 16px rgba(0,0,0,0.3)" }}
       >
         <div
-          className="relative overflow-hidden bg-[#09090f]"
+          className="relative flex h-full flex-1 flex-col overflow-hidden bg-[#09090f]"
           style={{ boxShadow: "inset 0 0 0 1px rgba(255,255,255,0.06)" }}
         >
           {/* Image */}
-          <div className="relative w-full aspect-[16/10] overflow-hidden">
+          <div className="relative w-full shrink-0 aspect-[16/10] overflow-hidden">
             
             <Image
               fill
@@ -113,7 +113,7 @@ function ProjectCard({ project, index, cardRef }: ProjectCardProps) {
           </div>
 
           {/* Content */}
-          <div className="relative px-6 pb-6 pt-0 -mt-1">
+          <div className="relative flex flex-1 flex-col justify-center px-6 pb-6 pt-0 -mt-1">
             <div className="w-full h-px mb-5 transition-all duration-700" style={{ background: "linear-gradient(to right, transparent 0%, rgba(255,255,255,0.05) 20%, rgba(255,255,255,0.05) 80%, transparent 100%)" }} />
             <div className="flex items-end justify-between gap-5">
               <div className="flex-1 min-w-0">
@@ -188,7 +188,7 @@ export default function FeaturedWork() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-7 lg:gap-9">
+        <div className="grid grid-cols-1 auto-rows-fr md:grid-cols-2 gap-7 lg:gap-9">
           {featuredProjects.map((project, index) => (
             <ProjectCard
               key={project.id}

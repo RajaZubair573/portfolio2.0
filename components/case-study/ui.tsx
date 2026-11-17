@@ -69,7 +69,7 @@ export function SectionHeading({
         </SectionLabel>
       </Reveal>
       <Reveal delay={80}>
-        <h2 className="mt-6 font-['Rajdhani'] text-[clamp(1.8rem,3.6vw,2.8rem)] font-bold leading-[1.05] tracking-tight text-slate-100">
+        <h2 className="mt-6 font-['Rajdhani'] text-[clamp(1.75rem,3.2vw,2.5rem)] font-bold leading-[1.05] tracking-tight text-slate-100">
           {title}
         </h2>
       </Reveal>
@@ -152,7 +152,7 @@ export function BackLink() {
 export function AssetFrame({
   src,
   alt,
-  aspect = "aspect-[16/10]",
+  aspect = "aspect-[16/9]",
   priority,
   sizes = "(max-width: 1024px) 100vw, 1100px",
   className,
@@ -200,7 +200,7 @@ export function ShowcaseFigure({
   label,
   title,
   description,
-  aspect = "aspect-[16/10]",
+  aspect = "aspect-[16/9]",
   objectClass = "object-cover",
   imageClassName,
   priority,
@@ -230,12 +230,12 @@ export function ShowcaseFigure({
         priority={priority}
         sizes={sizes}
       />
-      <figcaption className="mt-4 flex flex-col gap-2 sm:flex-row sm:items-baseline sm:gap-10">
+      <figcaption className="mt-3 flex flex-col gap-2 sm:flex-row sm:items-baseline sm:gap-10">
         <div className="sm:w-[42%] sm:shrink-0">
           <p className="font-['Space_Mono'] text-[9px] uppercase tracking-[0.22em] text-orange-400/70">
             {label}
           </p>
-          <p className="mt-1.5 font-['Rajdhani'] text-lg font-semibold leading-snug text-slate-200">
+          <p className="mt-1.5 font-['Rajdhani'] text-xl font-semibold leading-snug text-slate-200">
             {title}
           </p>
         </div>
