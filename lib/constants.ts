@@ -65,6 +65,13 @@ export const projects: Project[] = [
     link: "",
   },
   {
+    id: 38,
+    name: "Moniva",
+    imagePath: "/projects/Moniva/Moniva-Mockup.jpg",
+    desc: "Moniva is an all-in-one digital finance app that simplifies payments, mobile top-ups, personal loans, and everyday money management.",
+    link: "",
+  },
+  {
     id: 24,
     name: "Pablo Marbles and Granite",
     imagePath: "/projects/Pablo Marbles and Granite/Pablo Granite and Marbles.png",
@@ -85,10 +92,11 @@ export const projects: Project[] = [
     desc: "Axion is a sleek eCommerce platform showcasing curated lighting collections with an elegant and user-friendly shopping experience.",
     link: "",
   },
+
   {
     id: 12,
     name: "Reclaim",
-    imagePath: "/projects/Reclaim-2.png",
+    imagePath: "/projects/Reclaim/Reclaim-Mockup.png",
     desc: "A sleek and reliable app design focused on effortlessly recovering lost files with speed and security.",
     link: "",
   },
@@ -106,7 +114,14 @@ export const projects: Project[] = [
     desc: "A modern construction and renovation experience focused on residential and commercial projects, including kitchen and bathroom improvements.",
     link: "",
   },
-   {
+  {
+    id: 37,
+    name: "Zenora",
+    imagePath: "/projects/Zenora.jpg",
+    desc: "A modern fintech mobile banking app designed to simplify digital payments, card management, and personal finance tracking through an intuitive interface.",
+    link: "",
+  },
+  {
     id: 27,
     name: "US4U - Italian",
     imagePath: "/projects/US4U-Mockup.jpg",
@@ -182,13 +197,6 @@ export const projects: Project[] = [
     name: "Ikonic Dev",
     imagePath: "/projects/Ikonic Dev Web Design.png",
     desc: "Ikonic Dev is a software house website designed to attract and convert top-tier clients.",
-    link: "",
-  },
-  {
-    id: 37,
-    name: "Zenora",
-    imagePath: "/projects/Zenora-Mockup.png",
-    desc: "A modern fintech mobile banking app designed to simplify digital payments, card management, and personal finance tracking through an intuitive interface.",
     link: "",
   },
   {
