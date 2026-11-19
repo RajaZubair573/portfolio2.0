@@ -13,6 +13,7 @@ import { CaseStudyResponsive } from "@/components/case-study/case-study-responsi
 import { CaseStudyScrollToTop } from "@/components/case-study/case-study-scroll-to-top";
 import { CaseStudyShowcase } from "@/components/case-study/case-study-showcase";
 import { AxionCaseStudy } from "@/components/case-study/axion-case-study";
+import { CyberReyCaseStudy } from "@/components/case-study/cyberrey-case-study";
 import { ClassicCaseStudy } from "@/components/case-study/classic-case-study";
 import CallToAction from "@/components/call-to-action";
 import { CwesdCaseStudy } from "@/components/case-study/cwesd-case-study";
@@ -85,8 +86,19 @@ export default async function CaseStudyPage({
   const previous = index > 0 ? caseStudies[index - 1] : null;
 
   let content;
+  let standalone = false;
 
-  if (caseStudy.slug === "moniva-financial-app") {
+  if (caseStudy.slug === "cyberrey-platform") {
+    content = (
+      <CyberReyCaseStudy
+        caseStudy={caseStudy}
+        index={index}
+        next={next}
+        previous={previous}
+      />
+    );
+    standalone = true;
+  } else if (caseStudy.slug === "moniva-financial-app") {
     content = <MonivaCaseStudy caseStudy={caseStudy} index={index} />;
   } else if (caseStudy.slug === "reclaim-data-recovery-app") {
     content = <ReclaimCaseStudy caseStudy={caseStudy} index={index} />;
@@ -119,6 +131,10 @@ export default async function CaseStudyPage({
         <CaseStudyOutcomes detail={detail} />
       </main>
     );
+  }
+
+  if (standalone) {
+    return content;
   }
 
   return (

@@ -19,10 +19,10 @@ interface FeaturedProject {
 const featuredProjects: FeaturedProject[] = [
   {
     id: 1,
-    title: "Cyberrey",
+    title: "CyberRey",
     description:
-      "Cyberrey is a cybersecurity website built to showcase trust and enterprise-grade protection.",
-    tags: ["UI/UX", "Webflow", "CMS"],
+      "CyberRey is a cybersecurity website redesigned to communicate its services and credibility with clarity.",
+    tags: ["UI/UX Design", "Information Architecture", "Figma"],
     image: "/projects/Cyberrey/Cyberrey Mockup.png",
     link: "/case-studies/cyberrey-platform",
   },

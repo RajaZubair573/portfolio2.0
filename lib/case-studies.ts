@@ -21,20 +21,23 @@ export const caseStudies: CaseStudy[] = [
     id: 1,
     title: "CyberRey — Cybersecurity Website Redesign",
     slug: "cyberrey-platform",
-    overview: "CyberRey is a cybersecurity solutions provider redesigned to better communicate trust, clarity, and enterprise-grade protection to modern organizations.",
-    challenge: "The existing website lacked a clear visual hierarchy and failed to communicate the credibility and trust expected from a cybersecurity brand. The interface felt outdated, with unclear messaging and weak value positioning, leading to low user engagement and poor conversion performance.",
-    solution: "Redesigned the experience with a modern, security-focused approach centered on clarity and trust. Introduced strong typography, structured layouts, and refined iconography to guide users through key offerings. Established a consistent visual system with clear CTAs, improved content hierarchy, and responsive layouts designed to reinforce credibility without distraction.",
+    overview:
+      "I independently redesigned CyberRey's outdated cybersecurity website into a structured, professional digital experience that communicates its services and expertise with greater clarity.",
+    challenge:
+      "The original website had limited visual presentation and content structure. Service information, credibility signals, and next steps were present but difficult to scan, so the site did not clearly communicate what the company offered or why visitors should trust it.",
+    solution:
+      "I researched the client's requirements, organized the content into a clear sitemap, established the visual direction and design system, and designed the complete website in Figma. Flowcubo Studio developed the approved design in Webflow.",
     results: [
-      "Established a clearer visual hierarchy across the core marketing pages",
-      "Created a more credible, consistent visual language for a trust-sensitive category",
-      "Improved how complex cybersecurity services are grouped and explained",
-      "Delivered a responsive design foundation and a reusable design system"
+      "Clearer service communication across the delivered pages",
+      "A more professional and credibility-focused visual system",
+      "More visible inquiry and contact paths",
+      "A complete Figma design handed off for Webflow development"
     ],
     gallery: ["/projects/Cyberrey/Cyberrey Mockup.png","/projects/Cyberrey/Cyberrey_typography.png","/projects/Cyberrey/Cyberrey_Colorpalette.webp","/projects/Cyberrey/Cyberrey_Navbars.webp","/projects/Cyberrey/Cyberrey_Vendor.webp","/projects/Cyberrey/Cyberrey_Solutions.webp","/projects/Cyberrey/Cyberrey_Abouts.webp","/projects/Cyberrey/Cyberrey_Blogs.webp","/projects/Cyberrey/Cyberrey_Contact.webp"],
     previews: {
       desktop: "/projects/Cyberrey/Cyberrey Landing Page.png",
     },
-    tags: ["UI/UX", "Webflow", "Cybersecurity", "Web Design"],
+    tags: ["UI/UX Design", "Information Architecture", "Design System", "Figma"],
     link: "https://www.figma.com/proto/zVgjqRKZdXfZZ5vREeBkqk/Cyberrey-New?node-id=330-2441&p=f&viewport=2571%2C260%2C0.03&t=iNsf4dFXvkq6qVSc-1&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=330%3A2441&page-id=318%3A188",
     featured: true,
     liveUrl: "https://cyberrey.com/"

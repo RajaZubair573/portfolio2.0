@@ -182,6 +182,43 @@ section[id] {
   }
 }
 
+/* CyberRey comparison ------------------------------------------------ */
+.cyberrey-compare-canvas {
+  aspect-ratio: 1440 / 9620;
+}
+
+.cyberrey-after-layer {
+  clip-path: inset(0 0 0 var(--compare-position, 52%));
+}
+
+.cyberrey-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(249, 115, 22, 0.4) rgba(255, 255, 255, 0.04);
+}
+
+.cyberrey-scroll::-webkit-scrollbar {
+  width: 6px;
+}
+
+.cyberrey-scroll::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.cyberrey-scroll::-webkit-scrollbar-thumb {
+  border-radius: 999px;
+  background: rgba(249, 115, 22, 0.4);
+}
+
+@media (max-width: 639px) {
+  .cyberrey-compare-canvas[data-view="before"] {
+    aspect-ratio: 1440 / 6138;
+  }
+
+  .cyberrey-after-layer {
+    clip-path: none;
+  }
+}
+
 @media (max-width: 767px) {
   .experience-scroller {
     -webkit-mask-image: linear-gradient(

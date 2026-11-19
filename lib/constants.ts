@@ -38,9 +38,9 @@ export interface Experience {
 export const projects: Project[] = [
   {
     id: 19,
-    name: "Cyberrey",
+    name: "CyberRey",
     imagePath: "/projects/Cyberrey/Cyberrey Mockup.png",
-    desc: "Cyberrey is a cybersecurity website built to showcase trust and enterprise-grade protection.",
+    desc: "CyberRey is a cybersecurity website redesigned to communicate its services and credibility with clarity.",
     link: "",
   },
   {
@@ -309,10 +309,10 @@ export const projects: Project[] = [
 
 export const topProjects: TopProject[] = [
   {
-    title: "Cyberrey",
-    image: "/projects/Cyberrey Mockup.png",
+    title: "CyberRey",
+    image: "/projects/Cyberrey/Cyberrey Mockup.png",
     description:
-      "Cyberrey is a cybersecurity website built to showcase trust and enterprise-grade protection.",
+      "CyberRey is a cybersecurity website redesigned to communicate its services and credibility with clarity.",
     link: "https://www.figma.com/proto/zVgjqRKZdXfZZ5vREeBkqk/Cyberrey-New?node-id=330-2441&p=f&viewport=2571%2C260%2C0.03&t=iNsf4dFXvkq6qVSc-1&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=330%3A2441&page-id=318%3A188",
   },
   {
