@@ -9,7 +9,7 @@ import Footer from "@/components/footer";
 export const metadata: Metadata = {
   title: "Raja Zubair | Portfolio",
   description:
-    "AI-Powered Product Designer & UI/UX Designer crafting premium digital experiences.",
+    "UI/UX Designer crafting thoughtful digital experiences through strategy, design, and detail.",
   openGraph: {
     images: [
       {
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Raja Zubair | Portfolio",
-    description: "AI-Powered Product Designer & UI/UX Designer crafting premium digital experiences.",
+    description: "UI/UX Designer crafting thoughtful digital experiences through strategy, design, and detail.",
     images: ["/og-image.png"],
   },
   icons: {

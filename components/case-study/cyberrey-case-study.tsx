@@ -24,129 +24,64 @@ const assets = {
   vendor: "/projects/Cyberrey/Cyberrey_Vendor.webp",
   palette: "/projects/Cyberrey/Cyberrey_Colorpalette.webp",
   typography: "/projects/Cyberrey/Cyberrey_typography.png",
+  navbars: "/projects/Cyberrey/Cyberrey_Navbars.webp",
 };
 
 const railItems: RailItem[] = [
-  { id: "hero", label: "Intro" },
+  { id: "intro", label: "Overview" },
+  { id: "comparison", label: "Before / after" },
   { id: "brief", label: "Brief" },
   { id: "research", label: "Research" },
-  { id: "persona", label: "Persona" },
-  { id: "comparison", label: "Before / after" },
+  { id: "journey", label: "Journey" },
   { id: "system", label: "System" },
   { id: "screens", label: "Screens" },
   { id: "outcome", label: "Outcome" },
   { id: "sources", label: "Sources" },
 ];
 
-const researchSignals = [
+const summary = [
   {
-    value: "83%",
-    label: "self-research before speaking to sales",
-    detail: "B2B decision-makers in the SurveyMonkey × Reddit study.",
-    source: 1,
+    label: "Problem",
+    body: "CyberRey's original website contained the information but did not present it in a clear, structured way for potential buyers.",
   },
   {
-    value: "7",
-    label: "information sources in a recent purchase",
-    detail: "Average reported by buyers in Gartner's 2025 survey.",
-    source: 2,
+    label: "What I did",
+    body: "Redesigned the website in Figma around three important visitor questions: What does the company offer? Why should I trust it? How do I get in touch?",
   },
   {
-    value: "79%",
-    label: "find new security vendors hard to assess",
-    detail: "IT and security decision-makers in Sophos' global study.",
-    source: 3,
-  },
-  {
-    value: "5%",
-    label: "report full trust in cybersecurity vendors",
-    detail: "The same Sophos study found trust is the exception.",
-    source: 3,
+    label: "Result",
+    body: "A clearer presentation of services, company information, and contact options. The client gave the project a five-star review and reported receiving more clients through the website.",
   },
 ];
 
-const personaSnapshot = [
+const comparisonRows = [
   {
-    label: "Working role",
-    value: "IT or operations lead responsible for a vendor shortlist",
-  },
-  {
-    label: "Knowledge",
-    value: "Understands the business risk; may not be a security specialist",
-  },
-  {
-    label: "Arrives with",
-    value: "A rough problem, two or three providers, and several open tabs",
-  },
-  {
-    label: "Loses confidence when",
-    value: "Services are vague, proof is thin, or the next step is hidden",
-  },
-];
-
-const evaluationPath = [
-  {
-    stage: "01 / Scan",
-    question: "Can I understand what this company actually does?",
-    response:
-      "Named services, a direct hero statement, and labels that repeat consistently across the navigation and footer.",
-  },
-  {
-    stage: "02 / Compare",
-    question: "Which service fits the risk I am trying to solve?",
-    response:
-      "Four separate service routes replace a compressed service strip, so each offer has room to be recognised.",
-  },
-  {
-    stage: "03 / Validate",
-    question: "Is there evidence beyond the marketing line?",
-    response:
-      "Numbers, company context, projects, insights, and vendor information are placed in a deliberate sequence.",
-  },
-  {
-    stage: "04 / Act",
-    question: "How do I enquire or register a deal without a sales maze?",
-    response:
-      "Deal Registration, Partner With Us, and Contact Us are visible from the first screen and persist in the header.",
-  },
-];
-
-const anatomyRows = [
-  {
-    moment: "First screen",
-    before: "Home / Vendors / Solution / Company / Blog; Schedule a Call sits inside the hero.",
-    after: "A security-led hero, a Partner With Us action, and direct header routes.",
+    moment: "First impression",
+    before: "Less focused presentation",
+    after: "Clearer service introduction",
   },
   {
     moment: "Services",
-    before: "Broad approach language competes with a compact service strip.",
-    after: "Our Services names four routes; the Solution menu and footer repeat the same structure.",
+    before: "Information competed for attention",
+    after: "More organized service presentation",
   },
   {
-    moment: "Proof",
-    before: "20 Years, 98%, +100 Projects, and vendor logos appear across separate areas.",
-    after: "Our Numbers, About CyberRey, Recent Projects, Insights, and Trusted Vendors follow one reading order.",
+    moment: "Credibility",
+    before: "Important proof spread across the page",
+    after: "Company and partner information presented more clearly",
   },
   {
     moment: "Next step",
-    before: "Contact information lives mainly in the footer.",
-    after: "Contact Us and Deal Registration remain in the header while the hero offers Partner With Us.",
+    before: "Contact route less prominent",
+    after: "Clearer enquiry options",
   },
 ];
 
-const systemRules = [
-  {
-    title: "One accent, used with restraint",
-    body: "Orange marks actions, dividers, and active cues. It is not used as decoration.",
-  },
-  {
-    title: "Two type voices",
-    body: "Rajdhani carries hierarchy; Space Mono carries labels, data, and navigation metadata.",
-  },
-  {
-    title: "Hard edges, quiet depth",
-    body: "One-pixel rules, flat panels, and subtle grids keep the interface calm and legible.",
-  },
+const journeySteps = [
+  { number: "01", title: "Scan", body: "Understand what CyberRey offers." },
+  { number: "02", title: "Compare", body: "Explore relevant services and solutions." },
+  { number: "03", title: "Validate", body: "Review company information and credibility." },
+  { number: "04", title: "Act", body: "Find a clear way to contact the company." },
 ];
 
 const screens = [
@@ -156,8 +91,9 @@ const screens = [
     height: 900,
     alt: "Final CyberRey homepage hero design",
     label: "Homepage",
-    title: "The first viewport",
-    caption: "Offer, atmosphere, and a direct partner enquiry path.",
+    caption: "Services, credibility, and action in the first viewport.",
+    annotation: "Service, partner, and contact routes visible upfront",
+    framed: true,
   },
   {
     src: assets.solutions,
@@ -165,17 +101,17 @@ const screens = [
     height: 2359,
     alt: "Final CyberRey solutions page design",
     label: "Solutions",
-    title: "Service routes",
-    caption: "Four named services with consistent headings and links.",
+    caption: "Four named service routes with consistent headings and links.",
+    annotation: "Named service routes",
   },
   {
     src: assets.about,
     width: 5476,
     height: 2359,
-    alt: "Final CyberRey about page design",
+    alt: "Final CyberRey company page design",
     label: "Company",
-    title: "Credibility in context",
-    caption: "Company information arranged for fast orientation.",
+    caption: "Company information and proof grouped for orientation.",
+    annotation: "Company proof grouped together",
   },
   {
     src: assets.contact,
@@ -183,9 +119,7 @@ const screens = [
     height: 1966,
     alt: "Final CyberRey contact page design",
     label: "Contact",
-    title: "Enquiry route",
     caption: "A focused form with supporting details.",
-    compact: true,
   },
   {
     src: assets.blogs,
@@ -193,9 +127,7 @@ const screens = [
     height: 2359,
     alt: "Final CyberRey blog page design",
     label: "Blog",
-    title: "Insights",
-    caption: "Editorial content with a calmer reading rhythm.",
-    compact: true,
+    caption: "Insights with a calmer reading rhythm.",
   },
   {
     src: assets.vendor,
@@ -203,44 +135,39 @@ const screens = [
     height: 2359,
     alt: "Final CyberRey vendor page design",
     label: "Vendors",
-    title: "Partner proof",
-    caption: "Vendor content uses the same system as the core pages.",
-    compact: true,
+    caption: "Partner information in the same visual system.",
   },
 ];
 
 const sources = [
   {
-    number: "01",
     publisher: "SurveyMonkey × Reddit",
     title: "The hidden B2B journey",
-    detail:
-      "Survey of 1,202 U.S. business decision-makers, conducted 23 December 2025–7 January 2026.",
+    finding: "83% of B2B decision-makers self-research before speaking to sales.",
     url: "https://www.surveymonkey.com/newsroom/surveymonkey-and-reddit-the-hidden-b2b-journey-2026/",
   },
   {
-    number: "02",
     publisher: "Gartner",
-    title:
-      "Gartner Survey Finds 69% of B2B Buyers Turn to Sales Reps to Validate AI-Generated Insights",
-    detail:
-      "Survey of 645 B2B buyers conducted August–September 2025; presented at the Gartner CSO & Sales Leader Conference, May 2026.",
+    title: "B2B buyers turn to sales reps to validate AI-generated insights",
+    finding: "Buyers reported using an average of seven information sources in a recent purchase.",
     url: "https://www.gartner.com/en/newsroom/press-releases/2026-05-20-gartner-survey-finds-sixty-nine-percent-of-b-two-b-buyers-turn-to-sales-reps-to-validate-ai-generated-insights",
   },
   {
-    number: "03",
     publisher: "Sophos",
-    title: "Trust Reality in 2026",
-    detail:
-      "Independent, vendor-agnostic survey of 5,000 IT and security decision-makers across 17 countries, conducted by Vanson Bourne.",
+    title: "The Cybersecurity Trust Reality in 2026",
+    finding: "79% find it challenging to assess new cybersecurity providers.",
     url: "https://assets.sophos.com/X24WTUEQ/at/bhmx4pwtc5vz7scc97jjb4c9/sophos-the-cybersecurity-trust-reality-in-2026.pdf",
   },
   {
-    number: "04",
+    publisher: "Sophos",
+    title: "The Cybersecurity Trust Reality in 2026",
+    finding: "5% of IT leaders say both they and their organization fully trust cybersecurity vendors.",
+    url: "https://assets.sophos.com/X24WTUEQ/at/bhmx4pwtc5vz7scc97jjb4c9/sophos-the-cybersecurity-trust-reality-in-2026.pdf",
+  },
+  {
     publisher: "NIST",
     title: "Cybersecurity Framework 2.0",
-    detail:
-      "Framework and quick-start guidance framing cybersecurity as enterprise risk and governance, not only a technical issue.",
+    finding: "Frames cybersecurity as enterprise risk and governance.",
     url: "https://www.nist.gov/news-events/news/2024/02/nist-releases-version-20-landmark-cybersecurity-framework",
   },
 ];
@@ -262,41 +189,27 @@ function Eyebrow({
   );
 }
 
-function Citation({ number }: { number: number }) {
-  return (
-    <Link
-      href="#sources"
-      className="ml-1 font-['Space_Mono'] text-[9px] text-orange-300/80 no-underline hover:text-orange-200"
-      aria-label={`Jump to research source ${number}`}
-    >
-      [{number}]
-    </Link>
-  );
-}
-
 function SectionHeading({
   id,
   index,
   label,
   title,
   intro,
-  note,
   background = "#080d1a",
   children,
 }: {
-  id?: string;
+  id: string;
   index: string;
   label: string;
   title: React.ReactNode;
   intro?: React.ReactNode;
-  note?: string;
   background?: string;
   children?: React.ReactNode;
 }) {
   return (
     <section
       id={id}
-      className="relative scroll-mt-20 overflow-hidden border-t border-white/[0.05] py-20 md:py-28"
+      className="relative scroll-mt-20 overflow-hidden border-t border-white/[0.05] py-16 md:py-24"
       style={{ background }}
     >
       <Container className="relative z-10">
@@ -305,26 +218,18 @@ function SectionHeading({
             <Eyebrow index={index}>{label}</Eyebrow>
           </Reveal>
           <Reveal delay={70}>
-            <h2 className="mt-5 font-['Rajdhani'] text-[clamp(1.9rem,3.4vw,2.8rem)] font-bold leading-[1.04] tracking-tight text-slate-100">
+            <h2 className="mt-4 font-['Rajdhani'] text-[clamp(1.9rem,3.4vw,2.8rem)] font-bold leading-[1.04] tracking-tight text-slate-100">
               {title}
             </h2>
           </Reveal>
           {intro ? (
             <Reveal delay={120}>
-              <div className="mt-5 max-w-2xl font-sans text-[15px] leading-relaxed text-slate-400">
+              <div className="mt-4 max-w-2xl font-sans text-[15px] leading-relaxed text-slate-400">
                 {intro}
               </div>
             </Reveal>
           ) : null}
         </div>
-        {note ? (
-          <Reveal delay={150}>
-            <p className="mt-5 flex items-start gap-2 border-l border-orange-500/50 pl-4 font-['Space_Mono'] text-[9px] uppercase leading-relaxed tracking-[0.16em] text-slate-500">
-              <span className="text-orange-300/80">Note</span>
-              {note}
-            </p>
-          </Reveal>
-        ) : null}
         {children}
       </Container>
     </section>
@@ -338,7 +243,6 @@ function SharpFrame({
   height,
   className,
   sizes = "(max-width: 768px) 100vw, 1100px",
-  preload,
 }: {
   src: string;
   alt: string;
@@ -346,7 +250,6 @@ function SharpFrame({
   height: number;
   className?: string;
   sizes?: string;
-  preload?: boolean;
 }) {
   return (
     <div
@@ -358,7 +261,6 @@ function SharpFrame({
         width={width}
         height={height}
         sizes={sizes}
-        preload={preload}
         className="block h-auto w-full"
       />
       <div className="pointer-events-none absolute inset-0 ring-1 ring-inset ring-white/[0.035]" />
@@ -411,7 +313,7 @@ export function CyberReyCaseStudy({
         <SectionRail items={railItems} />
 
         <section
-          id="hero"
+          id="intro"
           className="relative scroll-mt-20 overflow-hidden pb-16 pt-24 md:pb-20 md:pt-28"
           style={{
             background:
@@ -457,14 +359,7 @@ export function CyberReyCaseStudy({
                   evaluation.
                 </p>
 
-                <p className="mt-7 max-w-2xl font-sans text-[15px] leading-relaxed text-slate-300 md:text-[17px]">
-                  The original site had the information, but not a reading
-                  path. I reorganised it around the questions a cautious buyer
-                  asks first: what do you do, why should I believe it, and how
-                  do I start?
-                </p>
-
-                <div className="mt-9 flex flex-wrap items-center gap-3">
+                <div className="mt-8 flex flex-wrap items-center gap-3">
                   <ComponentButton href={liveUrl} external>
                     View Live Website
                   </ComponentButton>
@@ -480,319 +375,64 @@ export function CyberReyCaseStudy({
                     Project record
                   </p>
                   <dl className="mt-5 space-y-4">
-                    <MetaItem label="Role" value="Complete UI/UX design, independently" />
+                    <MetaItem
+                      label="Role"
+                      value="Independent UI/UX Designer"
+                    />
                     <MetaItem label="Design" value="January–February 2026" />
                     <MetaItem
-                      label="Build"
-                      value="Webflow by Flowcubo Studio"
+                      label="Development"
+                      value="Webflow by me"
                     />
                     <MetaItem label="Delivery" value="April 2026" />
-                    <MetaItem label="Tools" value="Figma → Webflow" />
+                    <MetaItem label="Tools" value="Figma" />
                   </dl>
-                  <p className="mt-6 border-t border-white/[0.07] pt-4 font-sans text-[12px] leading-relaxed text-slate-500">
-                    The persona and market research in this case study are
-                    cited desk research. No client interviews or client-supplied
-                    persona were provided.
-                  </p>
                 </div>
               </div>
             </div>
 
-            <Reveal className="mt-12 md:mt-14">
-              <div className="relative mx-auto max-w-[1080px]">
-                <div className="relative overflow-hidden border border-white/10 bg-[#050810]">
-                  <div className="flex items-center justify-between gap-4 border-b border-white/[0.07] px-4 py-2.5">
-                    <span className="flex items-center gap-1.5" aria-hidden="true">
-                      <span className="h-2 w-2 rounded-full bg-[#ff5f57]" />
-                      <span className="h-2 w-2 rounded-full bg-[#febc2e]" />
-                      <span className="h-2 w-2 rounded-full bg-[#28c840]" />
-                    </span>
-                    <span className="font-['Space_Mono'] text-[9px] uppercase tracking-[0.18em] text-slate-500">
-                      cyberrey.com — final hero
-                    </span>
-                    <span className="hidden w-[52px] sm:block" />
+            <div className="mt-12 grid gap-8 border-t border-white/[0.08] pt-8 md:grid-cols-3 md:gap-10">
+              {summary.map((item) => (
+                <Reveal key={item.label}>
+                  <div>
+                    <p className="font-['Space_Mono'] text-[9px] uppercase tracking-[0.22em] text-orange-300/80">
+                      {item.label}
+                    </p>
+                    <p className="mt-3 font-sans text-[13px] leading-relaxed text-slate-300">
+                      {item.body}
+                    </p>
                   </div>
-                  <div className="relative aspect-[16/10] w-full overflow-hidden">
-                    <Image
-                      src={assets.hero}
-                      alt="Final CyberRey homepage hero design in a browser frame"
-                      fill
-                      sizes="(max-width: 768px) 100vw, 1080px"
-                      preload
-                      className="object-cover object-top"
-                    />
-                  </div>
-                </div>
-                <p className="mt-3 flex items-center justify-between gap-4 font-['Space_Mono'] text-[9px] uppercase tracking-[0.18em] text-slate-600">
-                  <span>Final homepage — first viewport</span>
-                  <span>Figma → Webflow</span>
-                </p>
-              </div>
-            </Reveal>
+                </Reveal>
+              ))}
+            </div>
           </Container>
         </section>
 
         <SectionHeading
-          id="brief"
-          index="02"
-          label="The brief"
-          title={
-            <>
-              The website had information. It did not have a reading path.
-            </>
-          }
-          intro={
-            <p>
-              CyberRey needed a more professional website that explained its
-              services and made the company easier to evaluate. The work was a
-              complete independent design; Flowcubo Studio built the approved
-              design in Webflow.
-            </p>
-          }
-        >
-          <div className="mt-12 grid gap-12 lg:grid-cols-12 lg:gap-16">
-            <div className="lg:col-span-7">
-              <Reveal>
-                <p className="font-['Space_Mono'] text-[9px] uppercase tracking-[0.22em] text-slate-500">
-                  What was visible in the original site
-                </p>
-              </Reveal>
-              <div className="mt-5">
-                <BriefObservation
-                  number="01"
-                  title="Services competed for attention"
-                  body="Broad approach language and a short service strip asked the visitor to piece the offer together."
-                />
-                <BriefObservation
-                  number="02"
-                  title="Proof was present but dispersed"
-                  body="Years, retention, projects, and vendor logos appeared across different parts of the long page."
-                />
-                <BriefObservation
-                  number="03"
-                  title="The enquiry route was narrow"
-                  body="Schedule a Call sat in the hero, while contact details were mainly left to the footer."
-                />
-              </div>
-            </div>
-
-            <div className="lg:col-span-5">
-              <Reveal delay={100}>
-                <div className="border-l border-orange-500/60 pl-6">
-                  <p className="font-['Space_Mono'] text-[9px] uppercase tracking-[0.22em] text-orange-300/80">
-                    Design objective
-                  </p>
-                  <p className="mt-4 font-['Rajdhani'] text-[clamp(1.5rem,2.4vw,2rem)] font-semibold leading-tight text-slate-100">
-                    Let a non-specialist confirm fit without reading the whole
-                    site.
-                  </p>
-                  <p className="mt-4 font-sans text-[13px] leading-relaxed text-slate-500">
-                    I treated structure, language, proof, and action as one
-                    problem rather than four separate visual sections.
-                  </p>
-                </div>
-              </Reveal>
-            </div>
-          </div>
-        </SectionHeading>
-
-        <SectionHeading
-          id="research"
-          index="03"
-          label="Research basis"
-          title={
-            <>
-              Security buyers research first, then look for reasons to trust.
-            </>
-          }
-          intro={
-            <p>
-              No client research pack was supplied, so I built an evidence base
-              from public B2B and security-buying studies. These findings shaped
-              the persona and the order of information on the page.
-            </p>
-          }
-          note="Desk research only. It explains the audience assumptions behind the design; it is not client-validated user research."
-          background="linear-gradient(180deg, #080d1a 0%, #0a1020 100%)"
-        >
-          <div className="mt-12 grid gap-x-8 gap-y-10 sm:grid-cols-2 xl:grid-cols-4">
-            {researchSignals.map((signal, signalIndex) => (
-              <Reveal key={signal.value} delay={signalIndex * 60}>
-                <div className="border-t border-orange-500/40 pt-5">
-                  <div className="flex items-baseline justify-between gap-3">
-                    <p className="font-['Rajdhani'] text-5xl font-bold leading-none text-slate-100">
-                      {signal.value}
-                    </p>
-                    <Citation number={signal.source} />
-                  </div>
-                  <p className="mt-4 font-['Rajdhani'] text-lg font-semibold leading-snug text-slate-200">
-                    {signal.label}
-                  </p>
-                  <p className="mt-3 font-sans text-[12px] leading-relaxed text-slate-500">
-                    {signal.detail}
-                  </p>
-                </div>
-              </Reveal>
-            ))}
-          </div>
-
-          <div className="mt-14 border-t border-white/[0.08] pt-8">
-            <Reveal>
-              <div className="flex flex-wrap items-center gap-3">
-                <span className="font-['Space_Mono'] text-[9px] uppercase tracking-[0.22em] text-orange-300/80">
-                  What this changed in the design
-                </span>
-                <span className="h-px flex-1 bg-white/[0.08]" />
-              </div>
-            </Reveal>
-            <div className="mt-7 grid gap-8 md:grid-cols-3">
-              <ResearchImplication
-                number="01"
-                title="Design for the invisible research phase"
-                body="Most evaluation happens before a conversation. The homepage had to answer real questions without depending on a sales call."
-                source={1}
-              />
-              <ResearchImplication
-                number="02"
-                title="Make validation easy"
-                body="Buyers use several sources and still want human confirmation at key moments. Clear routes to contact and deal registration matter."
-                source={2}
-              />
-              <ResearchImplication
-                number="03"
-                title="Reduce the trust gap"
-                body="Detailed, interpretable information is a trust signal. The site gives numbers, company context, projects, and vendors a clear order."
-                source={3}
-              />
-            </div>
-          </div>
-        </SectionHeading>
-
-        <SectionHeading
-          id="persona"
-          index="04"
-          label="Persona"
-          title={
-            <>
-              An evidence-based evaluator, not an invented customer.
-            </>
-          }
-          intro={
-            <p>
-              The persona is a composite built from the cited studies plus a
-              direct audit of CyberRey&apos;s navigation, labels, and page
-              screens. It has no fake name, quote, photograph, or client
-              attribution.
-            </p>
-          }
-          background="#080d1a"
-        >
-          <div className="mt-12 grid gap-10 lg:grid-cols-12 lg:gap-14">
-            <div className="lg:col-span-5">
-              <Reveal>
-                <div className="border border-white/[0.09] bg-[#070c17] p-6 md:p-8">
-                  <div className="flex flex-wrap items-center justify-between gap-3 border-b border-white/[0.08] pb-5">
-                    <p className="font-['Space_Mono'] text-[9px] uppercase tracking-[0.22em] text-orange-300/80">
-                      Composite persona
-                    </p>
-                    <span className="font-['Space_Mono'] text-[9px] uppercase tracking-[0.16em] text-slate-600">
-                      Desk research only
-                    </span>
-                  </div>
-                  <h3 className="mt-6 font-['Rajdhani'] text-3xl font-bold leading-tight text-slate-100">
-                    The evaluating operations lead
-                  </h3>
-                  <p className="mt-3 font-sans text-[13px] leading-relaxed text-slate-500">
-                    Accountable for choosing outside help, but not necessarily
-                    a cybersecurity specialist.
-                  </p>
-
-                  <dl className="mt-7">
-                    {personaSnapshot.map((item) => (
-                      <div
-                        key={item.label}
-                        className="border-t border-white/[0.08] py-4"
-                      >
-                        <dt className="font-['Space_Mono'] text-[9px] uppercase tracking-[0.18em] text-slate-600">
-                          {item.label}
-                        </dt>
-                        <dd className="mt-1.5 font-sans text-[13px] leading-relaxed text-slate-300">
-                          {item.value}
-                        </dd>
-                      </div>
-                    ))}
-                  </dl>
-                </div>
-              </Reveal>
-            </div>
-
-            <div className="lg:col-span-7">
-              <Reveal delay={80}>
-                <div className="flex flex-wrap items-center justify-between gap-3 border-b border-white/[0.08] pb-4">
-                  <p className="font-['Space_Mono'] text-[9px] uppercase tracking-[0.22em] text-slate-500">
-                    Evaluation path → design response
-                  </p>
-                  <span className="font-['Space_Mono'] text-[9px] uppercase tracking-[0.16em] text-slate-600">
-                    4 moments
-                  </span>
-                </div>
-              </Reveal>
-              <div className="mt-1">
-                {evaluationPath.map((step, stepIndex) => (
-                  <Reveal key={step.stage} delay={stepIndex * 60}>
-                    <div className="grid gap-4 border-b border-white/[0.08] py-6 sm:grid-cols-[110px_1fr] sm:gap-8">
-                      <p className="font-['Space_Mono'] text-[9px] uppercase tracking-[0.18em] text-orange-300/80">
-                        {step.stage}
-                      </p>
-                      <div>
-                        <p className="font-['Rajdhani'] text-xl font-semibold leading-snug text-slate-100">
-                          {step.question}
-                        </p>
-                        <p className="mt-2 max-w-xl font-sans text-[13px] leading-relaxed text-slate-500">
-                          {step.response}
-                        </p>
-                      </div>
-                    </div>
-                  </Reveal>
-                ))}
-              </div>
-              <Reveal delay={180}>
-                <p className="mt-7 border-l border-orange-500/50 pl-5 font-sans text-[13px] leading-relaxed text-slate-400">
-                  This is why the redesign leads with services and action, not
-                  with a long company story. The story is still present, but it
-                  appears after the visitor can confirm relevance.
-                </p>
-              </Reveal>
-            </div>
-          </div>
-        </SectionHeading>
-
-        <SectionHeading
           id="comparison"
-          index="05"
+          index="01"
           label="Before / after"
           title={
             <>
-              From service list to evaluation path.
+              From an outdated presentation to a clearer digital experience.
             </>
           }
           intro={
             <p>
-              Drag the divider to compare the original and redesigned
-              homepages. Scroll inside the frame to explore each full page at
-              its native proportions.
+              Explore how the original CyberRey website changed through the
+              redesign.
             </p>
           }
           background="linear-gradient(180deg, #0a1020 0%, #080d1a 100%)"
         >
-          <Reveal delay={100} className="mt-10">
+          <Reveal delay={100} className="mt-9">
             <CyberReyComparison
               beforeSrc={assets.old}
               afterSrc={assets.landing}
             />
           </Reveal>
 
-          <div className="mt-14 overflow-x-auto border-t border-white/[0.08]">
+          <div className="mt-10 overflow-x-auto border-t border-white/[0.08]">
             <table className="w-full min-w-[720px] border-collapse text-left">
               <thead>
                 <tr className="border-b border-white/[0.08]">
@@ -808,15 +448,15 @@ export function CyberReyCaseStudy({
                 </tr>
               </thead>
               <tbody>
-                {anatomyRows.map((row) => (
+                {comparisonRows.map((row) => (
                   <tr key={row.moment} className="border-b border-white/[0.07]">
-                    <td className="py-5 pr-6 align-top font-['Rajdhani'] text-lg font-semibold text-slate-200">
+                    <td className="py-4 pr-6 align-top font-['Rajdhani'] text-lg font-semibold text-slate-200">
                       {row.moment}
                     </td>
-                    <td className="py-5 pr-6 align-top font-sans text-[12px] leading-relaxed text-slate-500">
+                    <td className="py-4 pr-6 align-top font-sans text-[12px] leading-relaxed text-slate-500">
                       {row.before}
                     </td>
-                    <td className="py-5 align-top font-sans text-[12px] leading-relaxed text-slate-300">
+                    <td className="py-4 align-top font-sans text-[12px] leading-relaxed text-slate-300">
                       {row.after}
                     </td>
                   </tr>
@@ -827,143 +467,223 @@ export function CyberReyCaseStudy({
         </SectionHeading>
 
         <SectionHeading
-          id="system"
-          index="06"
-          label="Design system"
-          title={
-            <>
-              A calm system that survives every page.
-            </>
-          }
+          id="brief"
+          index="02"
+          label="Brief"
+          title="The brief"
           intro={
             <p>
-              The structure was mapped before the screens were refined. The
-              same navigation logic, type roles, spacing, and accent rules then
-              carried from the homepage to each supporting page.
+              The original site had the information but lacked a clear
+              structure. Services competed for attention, important company
+              proof was distributed across the page, and the contact experience
+              could be easier to navigate.
             </p>
           }
         >
-          <div className="mt-12 grid gap-10 lg:grid-cols-12 lg:gap-14">
-            <div className="lg:col-span-7">
-              <Reveal>
-                <SitemapDiagram />
-              </Reveal>
-            </div>
+          <div className="mt-7 flex flex-wrap gap-2">
+            {["Service clarity", "Company credibility", "Contact experience"].map(
+              (label) => (
+                <span
+                  key={label}
+                  className="border border-white/[0.08] px-3 py-2 font-['Space_Mono'] text-[9px] uppercase tracking-[0.18em] text-slate-300"
+                >
+                  {label}
+                </span>
+              )
+            )}
+          </div>
+        </SectionHeading>
 
-            <div className="lg:col-span-5">
-              <Reveal delay={80}>
-                <div className="grid grid-cols-2 gap-3">
-                  <MiniArtifact
-                    src={assets.palette}
-                    alt="CyberRey final color palette"
-                    label="Palette"
-                  />
-                  <MiniArtifact
-                    src={assets.typography}
-                    alt="CyberRey final typography board"
-                    label="Type"
-                  />
+        <SectionHeading
+          id="research"
+          index="03"
+          label="Research basis"
+          title="Research basis"
+          background="linear-gradient(180deg, #080d1a 0%, #0a1020 100%)"
+        >
+          <Reveal className="mt-9 max-w-2xl">
+            <span className="inline-flex items-center border border-orange-400/30 bg-orange-500/[0.07] px-3 py-1.5 font-['Rajdhani'] text-2xl font-bold text-orange-200">
+              5%
+            </span>
+            <p className="mt-5 font-['Rajdhani'] text-[clamp(1.4rem,2.4vw,1.9rem)] font-semibold leading-snug text-slate-100">
+              <strong>
+                Only 5% of IT leaders said both they and their organization had
+                full trust in their cybersecurity vendors.
+              </strong>
+            </p>
+            <p className="mt-3 font-['Space_Mono'] text-[9px] uppercase tracking-[0.18em] text-orange-300/80">
+              Source: Sophos — The Cybersecurity Trust Reality in 2026
+            </p>
+            <p className="mt-5 font-sans text-[14px] leading-relaxed text-slate-400">
+              This reinforced the need to present CyberRey&apos;s services and
+              company credibility clearly, without requiring visitors to rely
+              on a sales conversation to understand the business.
+            </p>
+          </Reveal>
+        </SectionHeading>
+
+        <SectionHeading
+          id="journey"
+          index="04"
+          label="Audience journey"
+          title="Audience journey"
+          intro={
+            <p>
+              The visitor: an IT or operations lead responsible for evaluating
+              providers, but not necessarily a cybersecurity specialist.
+            </p>
+          }
+        >
+          <div className="relative mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            <div
+              aria-hidden="true"
+              className="absolute left-6 right-6 top-[17px] hidden h-px bg-white/10 lg:block"
+            />
+            {journeySteps.map((step) => (
+              <Reveal key={step.number}>
+                <div className="relative">
+                  <span className="relative z-10 flex h-9 w-9 items-center justify-center border border-orange-400/40 bg-[#080d1a] font-['Space_Mono'] text-[10px] text-orange-300">
+                    {step.number}
+                  </span>
+                  <h3 className="mt-4 font-['Rajdhani'] text-xl font-semibold text-slate-100">
+                    {step.title}
+                  </h3>
+                  <p className="mt-1 font-sans text-[13px] leading-relaxed text-slate-400">
+                    {step.body}
+                  </p>
                 </div>
               </Reveal>
-              <div className="mt-7">
-                {systemRules.map((rule, ruleIndex) => (
-                  <Reveal key={rule.title} delay={ruleIndex * 60}>
-                    <div className="border-t border-white/[0.08] py-5">
-                      <div className="flex items-baseline justify-between gap-4">
-                        <h3 className="font-['Rajdhani'] text-lg font-semibold text-slate-200">
-                          {rule.title}
-                        </h3>
-                        <span className="font-['Space_Mono'] text-[9px] text-slate-600">
-                          {String(ruleIndex + 1).padStart(2, "0")}
-                        </span>
-                      </div>
-                      <p className="mt-2 font-sans text-[12px] leading-relaxed text-slate-500">
-                        {rule.body}
-                      </p>
-                    </div>
-                  </Reveal>
-                ))}
-              </div>
+            ))}
+          </div>
+          <p className="mt-7 border-t border-white/[0.07] pt-4 font-sans text-[12px] leading-relaxed text-slate-500">
+            Audience assumption informed by public research and a review of the
+            original website. It shaped the order of information on the page.
+          </p>
+        </SectionHeading>
+
+        <SectionHeading
+          id="system"
+          index="05"
+          label="Design system"
+          title="Design system"
+          intro={
+            <p>
+              A consistent visual language built around bold typography, a
+              violet-blue palette, and structured layouts.
+            </p>
+          }
+          background="linear-gradient(180deg, #080d1a 0%, #0a1020 100%)"
+        >
+          <div className="mt-10 space-y-8">
+            <Reveal>
+              <figure className="m-0">
+                <AssetPanel
+                  src={assets.navbars}
+                  alt="CyberRey navigation structures across the delivered website"
+                  width={6375}
+                  height={2746}
+                  sizes="(max-width: 768px) 100vw, 1100px"
+                />
+                <AssetCaption
+                  label="Information Architecture"
+                  detail="Delivered navigation and page structure."
+                />
+              </figure>
+            </Reveal>
+
+            <div className="grid gap-8 md:grid-cols-2">
+              <Reveal>
+                <figure className="m-0">
+                  <AssetPanel
+                    src={assets.palette}
+                    alt="CyberRey brand color palette"
+                    width={2150}
+                    height={1079}
+                    sizes="(max-width: 768px) 100vw, 550px"
+                  />
+                  <AssetCaption
+                    label="Color Palette"
+                    detail="CyberRey brand colors."
+                  />
+                </figure>
+              </Reveal>
+              <Reveal delay={80}>
+                <figure className="m-0">
+                  <AssetPanel
+                    src={assets.typography}
+                    alt="CyberRey typography board with Clash Display and General Sans"
+                    width={2687}
+                    height={1348}
+                    sizes="(max-width: 768px) 100vw, 550px"
+                  />
+                  <AssetCaption
+                    label="Typography"
+                    detail="Clash Display and General Sans."
+                  />
+                </figure>
+              </Reveal>
             </div>
           </div>
         </SectionHeading>
 
         <SectionHeading
           id="screens"
-          index="07"
+          index="06"
           label="Selected screens"
-          title={
-            <>
-              The system in use across the delivered pages.
-            </>
-          }
+          title="Selected screens"
           intro={
             <p>
-              A small set of screens shows how the same structure holds from
-              the first viewport through services, company information, and
-              enquiry.
+              The same structure carries across the homepage, services, company
+              information, enquiry, insights, and partners.
             </p>
           }
           background="#080d1a"
         >
-          <div className="mt-12 space-y-12">
+          <div className="mt-10 space-y-12">
             <Reveal>
               <ScreenPanel {...screens[0]} />
             </Reveal>
-            <div className="grid gap-10 md:grid-cols-2">
-              <Reveal delay={60}>
+            <div className="grid gap-10 lg:grid-cols-12 lg:gap-12">
+              <Reveal className="lg:col-span-7">
                 <ScreenPanel {...screens[1]} />
               </Reveal>
-              <Reveal delay={110}>
+              <Reveal delay={80} className="lg:col-span-5">
                 <ScreenPanel {...screens[2]} />
               </Reveal>
             </div>
-            <div className="grid gap-10 md:grid-cols-3">
-              {screens.slice(3).map((screen, screenIndex) => (
-                <Reveal key={screen.label} delay={screenIndex * 60}>
-                  <ScreenPanel {...screen} />
-                </Reveal>
-              ))}
+            <Reveal>
+              <ScreenPanel {...screens[3]} />
+            </Reveal>
+            <div className="grid gap-10 md:grid-cols-2">
+              <Reveal>
+                <ScreenPanel {...screens[4]} />
+              </Reveal>
+              <Reveal delay={80}>
+                <ScreenPanel {...screens[5]} />
+              </Reveal>
             </div>
           </div>
         </SectionHeading>
 
         <SectionHeading
           id="outcome"
-          index="08"
+          index="07"
           label="Outcome"
-          title={
-            <>
-              Positive feedback, with the evidence boundary kept clear.
-            </>
-          }
+          title="Outcome"
           background="linear-gradient(180deg, #0a1020 0%, #080d1a 100%)"
         >
-          <div className="mt-12 grid gap-12 lg:grid-cols-12 lg:gap-16">
+          <div className="mt-9 grid gap-10 lg:grid-cols-12 lg:gap-16">
             <div className="lg:col-span-7">
               <Reveal>
                 <p className="font-['Space_Mono'] text-[9px] uppercase tracking-[0.22em] text-orange-300/80">
                   Client feedback — paraphrased
                 </p>
                 <p className="mt-5 max-w-2xl font-['Rajdhani'] text-[clamp(1.4rem,2.4vw,1.9rem)] font-medium leading-snug text-slate-200">
-                  Following delivery, the client said the redesigned website
-                  communicated services more clearly, drew positive reactions
-                  from visitors, and contributed to more clients coming through
+                  <strong>The client said</strong> the redesigned website
+                  communicated services more clearly, received positive
+                  reactions from visitors, and brought in more clients through
                   the website.
                 </p>
-              </Reveal>
-              <Reveal delay={100}>
-                <div className="mt-8 border-t border-white/[0.08] pt-6">
-                  <p className="font-['Space_Mono'] text-[9px] uppercase tracking-[0.22em] text-slate-500">
-                    Reflection
-                  </p>
-                  <p className="mt-4 max-w-2xl font-sans text-[13px] leading-relaxed text-slate-400">
-                    The redesign worked because the information order changed,
-                    not only the styling. Services became recognisable, proof
-                    became sequenceable, and the next step stopped depending on
-                    a footer link.
-                  </p>
-                </div>
               </Reveal>
             </div>
 
@@ -979,33 +699,10 @@ export function CyberReyCaseStudy({
                   <p className="mt-3 font-['Rajdhani'] text-2xl font-semibold text-slate-100">
                     5 out of 5
                   </p>
-                  <p className="mt-2 font-sans text-[12px] leading-relaxed text-slate-500">
-                    The client gave a five-star review. Exact wording was not
-                    supplied and is not reproduced here.
+                  <p className="mt-3 font-sans text-[12px] leading-relaxed text-slate-500">
+                    Client feedback; no measured traffic or conversion figures
+                    were supplied.
                   </p>
-                </div>
-              </Reveal>
-
-              <Reveal delay={130}>
-                <div className="mt-6 border-t border-white/[0.08] pt-5">
-                  <p className="font-['Space_Mono'] text-[9px] uppercase tracking-[0.22em] text-slate-500">
-                    Evidence boundary
-                  </p>
-                  <ul className="mt-4">
-                    {[
-                      "Measured traffic or conversion data: not supplied",
-                      "Exact client quote: not supplied",
-                      "Client-supplied persona research: not supplied",
-                    ].map((item) => (
-                      <li
-                        key={item}
-                        className="flex gap-3 border-t border-white/[0.06] py-3 font-sans text-[12px] leading-relaxed text-slate-500 first:border-t-0 first:pt-0"
-                      >
-                        <span className="mt-1 h-1 w-1 shrink-0 bg-orange-400/80" />
-                        {item}
-                      </li>
-                    ))}
-                  </ul>
                 </div>
               </Reveal>
             </div>
@@ -1014,61 +711,34 @@ export function CyberReyCaseStudy({
 
         <SectionHeading
           id="sources"
-          index="09"
-          label="Research sources"
-          title={
-            <>
-              Where the persona evidence comes from.
-            </>
-          }
-          intro={
-            <p>
-              The persona is a synthesis of these public sources and a direct
-              audit of CyberRey&apos;s live site and Figma screens. It is not a
-              claim about client research or a specific CyberRey customer.
-            </p>
-          }
+          index="08"
+          label="Sources"
+          title="Sources"
           background="#080d1a"
         >
-          <div className="mt-12">
+          <div className="mt-9 grid gap-x-12 gap-y-5 md:grid-cols-2">
             {sources.map((source) => (
-              <Reveal key={source.number}>
-                <div className="grid gap-4 border-t border-white/[0.08] py-6 sm:grid-cols-[56px_1fr] sm:gap-8">
-                  <span className="font-['Space_Mono'] text-[10px] tracking-[0.16em] text-orange-300/80">
-                    {source.number}
-                  </span>
-                  <div>
-                    <p className="font-['Space_Mono'] text-[9px] uppercase tracking-[0.2em] text-slate-500">
-                      {source.publisher}
-                    </p>
-                    <a
-                      href={source.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="group mt-2 inline-flex max-w-full items-start gap-2 font-['Rajdhani'] text-xl font-semibold leading-snug text-slate-100 no-underline transition-colors duration-300 hover:text-orange-300"
-                    >
-                      <span>{source.title}</span>
-                      <ArrowUpRight className="mt-1 shrink-0 text-orange-400/80 transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
-                    </a>
-                    <p className="mt-2 max-w-2xl font-sans text-[12px] leading-relaxed text-slate-500">
-                      {source.detail}
-                    </p>
-                  </div>
+              <Reveal key={`${source.publisher}-${source.finding}`}>
+                <div className="border-t border-white/[0.08] pt-4">
+                  <p className="font-['Space_Mono'] text-[9px] uppercase tracking-[0.18em] text-slate-500">
+                    {source.publisher}
+                  </p>
+                  <a
+                    href={source.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group mt-1 inline-flex max-w-full items-start gap-2 font-['Rajdhani'] text-lg font-semibold leading-snug text-slate-100 no-underline transition-colors duration-300 hover:text-orange-300"
+                  >
+                    <span>{source.title}</span>
+                    <ArrowUpRight className="mt-1 shrink-0 text-orange-400/80 transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+                  </a>
+                  <p className="mt-1 font-sans text-[12px] leading-relaxed text-slate-500">
+                    {source.finding}
+                  </p>
                 </div>
               </Reveal>
             ))}
           </div>
-
-          <Reveal delay={100}>
-            <div className="mt-8 flex flex-wrap gap-3 border-t border-white/[0.08] pt-7">
-              <ComponentButton href={liveUrl} external>
-                View Live Website
-              </ComponentButton>
-              <ComponentButton href={figmaUrl} variant="outline" external>
-                View Figma Design
-              </ComponentButton>
-            </div>
-          </Reveal>
         </SectionHeading>
       </main>
 
@@ -1164,60 +834,41 @@ function MetaItem({ label, value }: { label: string; value: string }) {
   );
 }
 
-function BriefObservation({
-  number,
-  title,
-  body,
+function AssetPanel({
+  src,
+  alt,
+  width,
+  height,
+  sizes,
 }: {
-  number: string;
-  title: string;
-  body: string;
+  src: string;
+  alt: string;
+  width: number;
+  height: number;
+  sizes: string;
 }) {
   return (
-    <div className="grid gap-3 border-t border-white/[0.08] py-5 sm:grid-cols-[48px_1fr] sm:gap-6">
-      <span className="font-['Space_Mono'] text-[9px] tracking-[0.18em] text-orange-400/80">
-        {number}
-      </span>
-      <div>
-        <h3 className="font-['Rajdhani'] text-xl font-semibold leading-snug text-slate-100">
-          {title}
-        </h3>
-        <p className="mt-2 font-sans text-[13px] leading-relaxed text-slate-500">
-          {body}
-        </p>
-      </div>
+    <div className="border border-white/[0.09] bg-[#070c17] p-3 md:p-4">
+      <Image
+        src={src}
+        alt={alt}
+        width={width}
+        height={height}
+        sizes={sizes}
+        className="block h-auto w-full"
+      />
     </div>
   );
 }
 
-function ResearchImplication({
-  number,
-  title,
-  body,
-  source,
-}: {
-  number: string;
-  title: string;
-  body: string;
-  source: number;
-}) {
+function AssetCaption({ label, detail }: { label: string; detail: string }) {
   return (
-    <Reveal>
-      <div className="border-t border-white/[0.08] pt-5">
-        <div className="flex items-center justify-between gap-4">
-          <span className="font-['Space_Mono'] text-[9px] tracking-[0.18em] text-orange-400/80">
-            {number}
-          </span>
-          <Citation number={source} />
-        </div>
-        <h3 className="mt-4 font-['Rajdhani'] text-xl font-semibold leading-snug text-slate-100">
-          {title}
-        </h3>
-        <p className="mt-2 font-sans text-[12px] leading-relaxed text-slate-500">
-          {body}
-        </p>
-      </div>
-    </Reveal>
+    <figcaption className="mt-3 flex flex-wrap items-baseline gap-x-3 gap-y-1">
+      <span className="font-['Space_Mono'] text-[9px] uppercase tracking-[0.2em] text-orange-400/70">
+        {label}
+      </span>
+      <span className="font-sans text-[12px] text-slate-500">{detail}</span>
+    </figcaption>
   );
 }
 
@@ -1227,155 +878,62 @@ function ScreenPanel({
   height,
   alt,
   label,
-  title,
   caption,
-  compact,
+  annotation,
+  framed,
 }: {
   src: string;
   width: number;
   height: number;
   alt: string;
   label: string;
-  title: string;
   caption: string;
-  compact?: boolean;
+  annotation?: string;
+  framed?: boolean;
 }) {
   return (
     <figure className="m-0">
-      <SharpFrame
-        src={src}
-        width={width}
-        height={height}
-        alt={alt}
-        sizes={
-          compact
-            ? "(max-width: 768px) 100vw, 360px"
-            : "(max-width: 768px) 100vw, 1100px"
-        }
-      />
-      <figcaption className="mt-3 flex flex-col gap-2 sm:flex-row sm:items-baseline sm:gap-8">
-        <div className="sm:w-[38%] sm:shrink-0">
-          <p className="font-['Space_Mono'] text-[9px] uppercase tracking-[0.2em] text-orange-400/70">
-            {label}
-          </p>
-          <p className="mt-1 font-['Rajdhani'] text-lg font-semibold leading-snug text-slate-200">
-            {title}
-          </p>
-        </div>
-        <p className="font-sans text-[12px] leading-relaxed text-slate-500">
+      <div className="relative">
+        {framed ? (
+          <div className="relative overflow-hidden border border-white/10 bg-[#050810]">
+            <div className="flex items-center justify-between gap-4 border-b border-white/[0.07] px-4 py-2.5">
+              <span className="flex items-center gap-1.5" aria-hidden="true">
+                <span className="h-2 w-2 rounded-full bg-[#ff5f57]" />
+                <span className="h-2 w-2 rounded-full bg-[#febc2e]" />
+                <span className="h-2 w-2 rounded-full bg-[#28c840]" />
+              </span>
+              <span className="font-['Space_Mono'] text-[9px] uppercase tracking-[0.18em] text-slate-500">
+                cyberrey.com
+              </span>
+              <span className="hidden w-[52px] sm:block" />
+            </div>
+            <SharpFrame
+              src={src}
+              width={width}
+              height={height}
+              alt={alt}
+              sizes="(max-width: 768px) 100vw, 1100px"
+              className="border-0"
+            />
+          </div>
+        ) : (
+          <SharpFrame src={src} width={width} height={height} alt={alt} />
+        )}
+        {annotation ? (
+          <span className="absolute bottom-3 right-3 flex items-center gap-2 border border-white/10 bg-black/75 px-2.5 py-1.5 font-['Space_Mono'] text-[8px] uppercase tracking-[0.16em] text-slate-200 backdrop-blur-sm">
+            <span className="h-1.5 w-1.5 rounded-full bg-orange-400" />
+            {annotation}
+          </span>
+        ) : null}
+      </div>
+      <figcaption className="mt-3 flex flex-wrap items-baseline gap-x-4 gap-y-1">
+        <span className="font-['Space_Mono'] text-[9px] uppercase tracking-[0.2em] text-orange-400/70">
+          {label}
+        </span>
+        <span className="font-sans text-[12px] leading-relaxed text-slate-500">
           {caption}
-        </p>
+        </span>
       </figcaption>
     </figure>
-  );
-}
-
-function SitemapDiagram() {
-  return (
-    <div className="border border-white/[0.09] bg-[#080d18] p-6">
-      <div className="flex items-center justify-between gap-4 border-b border-white/[0.07] pb-4">
-        <p className="font-['Space_Mono'] text-[9px] uppercase tracking-[0.2em] text-slate-400">
-          Sitemap — delivered structure
-        </p>
-        <span className="h-1.5 w-1.5 rounded-full bg-orange-500" />
-      </div>
-
-      <div className="mt-5 font-['Space_Mono'] text-[10px] leading-relaxed">
-        <div className="border border-orange-400/30 bg-orange-500/[0.07] px-3 py-2 text-orange-200">
-          HOME
-        </div>
-
-        <div className="ml-3 mt-3 space-y-3 border-l border-white/[0.1] pl-4">
-          <SitemapBranch label="VENDORS" children={["Vendor profile"]} />
-          <SitemapBranch
-            label="SOLUTIONS"
-            children={[
-              "Security Awareness Training",
-              "IoT Security Audit",
-              "Cybersecurity Strategy & Audit",
-              "Infrastructure Security Consulting",
-            ]}
-          />
-          <SitemapBranch
-            label="COMPANY"
-            children={[
-              "About Us",
-              "Our Team",
-              "Mission & Vision",
-              "Awards & Recognition",
-            ]}
-          />
-          <div className="flex items-center gap-2 text-slate-400">
-            <span className="h-px w-4 bg-white/15" />
-            BLOG
-          </div>
-          <div className="flex items-center gap-2 text-slate-400">
-            <span className="h-px w-4 bg-white/15" />
-            DEAL REGISTRATION
-          </div>
-          <div className="flex items-center gap-2 text-slate-400">
-            <span className="h-px w-4 bg-white/15" />
-            CONTACT
-          </div>
-        </div>
-      </div>
-
-      <p className="mt-5 border-t border-white/[0.07] pt-4 font-sans text-[11px] leading-relaxed text-slate-600">
-        Mapped from the delivered navigation and confirmed page screens — not
-        a separate, undocumented sitemap artefact.
-      </p>
-    </div>
-  );
-}
-
-function SitemapBranch({
-  label,
-  children,
-}: {
-  label: string;
-  children: string[];
-}) {
-  return (
-    <div>
-      <div className="flex items-center gap-2 text-slate-300">
-        <span className="h-px w-4 bg-white/15" />
-        {label}
-      </div>
-      <div className="ml-5 mt-2 space-y-1.5 border-l border-white/[0.06] pl-4 text-slate-500">
-        {children.map((child) => (
-          <div key={child} className="flex items-center gap-2">
-            <span className="h-px w-3 bg-white/10" />
-            {child}
-          </div>
-        ))}
-      </div>
-    </div>
-  );
-}
-
-function MiniArtifact({
-  src,
-  alt,
-  label,
-}: {
-  src: string;
-  alt: string;
-  label: string;
-}) {
-  return (
-    <div className="border border-white/[0.08] bg-[#050810]">
-      <div className="relative aspect-[16/10] overflow-hidden">
-        <Image
-          src={src}
-          alt={alt}
-          fill
-          sizes="(max-width: 768px) 50vw, 220px"
-          className="object-cover object-top"
-        />
-      </div>
-      <p className="border-t border-white/[0.07] px-3 py-2 font-['Space_Mono'] text-[8px] uppercase tracking-[0.18em] text-slate-500">
-        {label}
-      </p>
-    </div>
   );
 }

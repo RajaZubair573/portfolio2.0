@@ -114,7 +114,7 @@ export function CyberReyComparison({
         <div className="relative">
           <div
             ref={viewportRef}
-            className="cyberrey-scroll relative h-[420px] overflow-x-hidden overflow-y-auto bg-[#050810] sm:h-[520px] lg:h-[640px]"
+            className="cyberrey-scroll relative h-[460px] overflow-x-hidden overflow-y-auto bg-[#050810] sm:h-[620px] lg:h-[760px]"
             aria-label="Scrollable before and after website comparison"
           >
             <div
@@ -233,16 +233,6 @@ export function CyberReyComparison({
         </div>
       </div>
 
-      <figcaption className="mt-4 flex flex-wrap items-center justify-between gap-3 border-t border-white/[0.06] pt-4">
-        <p className="font-sans text-[12px] leading-relaxed text-slate-500">
-          Both pages are shown at their native proportions inside one shared
-          scroll area. The redesigned page is longer, so the original ends
-          earlier — no sections are stretched or artificially aligned.
-        </p>
-        <span className="font-['Space_Mono'] text-[9px] uppercase tracking-[0.18em] text-slate-600">
-          Original 1440 × 6138 · Redesign 1440 × 9620
-        </span>
-      </figcaption>
     </figure>
   );
 }
