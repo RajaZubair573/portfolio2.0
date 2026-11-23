@@ -1,194 +1,550 @@
 "use client";
 
-import Image from "next/image";
 import type { CaseStudy } from "@/lib/case-studies";
-import { EditorialGallery } from "./editorial-gallery";
+import { CaseStudyScrollToTop } from "./case-study-scroll-to-top";
+import {
+  CaseStudyAssetCaption as AssetCaption,
+  CaseStudyAssetPanel as AssetPanel,
+  CaseStudyEndNav,
+  CaseStudyMetaItem as MetaItem,
+  CaseStudyScreenPanel as ScreenPanel,
+  CaseStudySectionHeading as SectionHeading,
+} from "./case-study-template";
 import { ReadingProgress } from "./reading-progress";
 import { Reveal } from "./reveal";
 import { SectionRail, type RailItem } from "./section-rail";
-import { BackLink, ComponentButton, Container, SectionHeading, SectionLabel } from "./ui";
-import { cn } from "@/lib/utils";
+import { BackLink, ComponentButton, Container } from "./ui";
+
+const m = (file: string) =>
+  `/projects/Moniva/${file.split(" ").map(encodeURIComponent).join("%20")}`;
 
 const railItems: RailItem[] = [
-  { id: "hero", label: "Intro" },
-  { id: "overview", label: "Overview" },
-  { id: "challenge", label: "Challenge" },
-  { id: "persona", label: "Personas" },
-  { id: "architecture", label: "IA & Navigation" },
-  { id: "direction", label: "Visual Design" },
-  { id: "showcase", label: "UI Showcase" },
-  { id: "outcomes", label: "Outcomes" },
+  { id: "intro", label: "Overview" },
+  { id: "brief", label: "Brief" },
+  { id: "flows", label: "Key flows" },
+  { id: "architecture", label: "IA" },
+  { id: "system", label: "System" },
+  { id: "outcome", label: "Outcome" },
 ];
 
-const m = (f: string) => `/projects/Moniva/${f}`;
+const assets = {
+  mockup: m("Moniva-Mockup.jpg"),
+  logo: m("Moniva-Logo.png"),
+  full: m("Moniva-Fulldesign.png"),
+  palette: m("Moniva-Colorpalette.png"),
+  typography: m("Moniva-Typography.png"),
+  developer: m("Moniva-Developernote.png"),
+  onboarding: m("Onboarding 4 - framed.png"),
+  loanApproved: m("Loan Approved.png"),
+  home: m("Home - Verified.png"),
+  bills: m("Bills - Recent.png"),
+  addMoney: m("Add moneysuccess.png"),
+};
 
-const challenges = [
-  { t: "01 — Complex Financial Workflows", b: "Registration, identity verification, wallet funding, and loan applications require different types of information and interactions." },
-  { t: "02 — Building Trust", b: "Financial interactions require clarity when users enter personal information, authorize payments, or manage borrowing." },
-  { t: "03 — Service Organization", b: "Multiple financial services need clear separation without making the application feel fragmented." },
-  { t: "04 — Consistent Interactions", b: "Different features should share familiar visual patterns and predictable navigation." },
-  { t: "05 — Supporting Different Outcomes", b: "The experience must account for pending payments, verification feedback, failed transactions, and incomplete applications." },
-];
-
-const personas = [
+const summary = [
   {
-    name: "Sarah Ahmed",
-    role: "The Everyday Money Manager",
-    bio: "Sarah wants a convenient way to manage everyday financial activities without switching between multiple applications. She values quick payments, clear transaction records, and easy access to her wallet.",
-    goals: ["Manage money from one place.", "Check available wallet balance.", "Purchase mobile airtime and data.", "Pay utility bills.", "Review previous transactions."],
-    frus: ["Switching between multiple apps.", "Repeatedly entering payment information.", "Unclear payment confirmations.", "Difficulty locating previous transactions."],
-    needs: ["Accessible payment shortcuts.", "Clear wallet balance.", "Organized bill categories.", "Understandable payment confirmations.", "Easy-to-find transaction history."],
+    label: "Problem",
+    body: "Wallet, lending and bill payments usually live in separate apps, so users repeat steps and lose track of their money.",
   },
   {
-    name: "Ahmed Khan",
-    role: "The Personal Loan Seeker",
-    bio: "Ahmed wants to understand available borrowing options before making a financial commitment. He needs clear loan information, understandable repayment terms, and transparent application status.",
-    goals: ["Understand loan eligibility.", "Select a suitable loan amount.", "Review repayment terms.", "Track application progress.", "Manage loan repayments."],
-    frus: ["Unclear borrowing requirements.", "Confusing repayment information.", "Uncertainty about application status.", "Difficulty understanding outstanding balances."],
-    needs: ["Visible eligibility requirements.", "Structured loan application.", "Clear repayment summaries.", "Distinct application statuses.", "Accessible loan history."],
+    label: "What I did",
+    body: "Designed a four-tab mobile app (Home, Loan, Bills, More) in Figma, with 88 screens covering onboarding, verification, payments, borrowing and security.",
+  },
+  {
+    label: "Focus",
+    body: "Making every money action predictable, with clear confirmation, status and error states.",
   },
 ];
 
-const architecture = [
-  { n: "01 — Home", i: ["Wallet balance.", "Linked banking information.", "Add money.", "Payment shortcuts.", "Recent transactions."] },
-  { n: "02 — Loan", i: ["Loan overview.", "Eligibility.", "Loan amount selection.", "Repayment duration.", "Application submission.", "Application status.", "Loan history and repayments."] },
-  { n: "03 — Bills", i: ["Airtime.", "Mobile data.", "Electricity.", "Cable television.", "Provider selection.", "Payment confirmation."] },
-  { n: "04 — More", i: ["Personal information.", "Identity verification.", "Linked bank accounts.", "Debit card management.", "Biometric login.", "Password and PIN settings."] },
+const flows = [
+  {
+    number: "01",
+    title: "Loan Application",
+    body: "From loan promise to decision and repayment summary.",
+  },
+  {
+    number: "02",
+    title: "Bill Payment",
+    body: "From wallet balance to category, biller and payment result.",
+  },
+  {
+    number: "03",
+    title: "Confirmation States",
+    body: "Clear outcomes after top-ups and loan decisions.",
+  },
 ];
 
-const galleryItems = [
-  { src: m("Moniva-Fulldesign.png"), alt: "Moniva full design board", label: "Full Design", caption: "Complete design board covering 88 mobile screens and states." },
-  { src: m("Moniva-Colorpalette.png"), alt: "Moniva color palette", label: "Color Palette", caption: "Supplied color palette design asset." },
-  { src: m("Moniva-Typography.png"), alt: "Moniva typography", label: "Typography", caption: "Supplied typography design asset." },
-  { src: m("Moniva-Developernote.png"), alt: "Moniva developer notes and components", label: "Design System", caption: "Supplied design system and developer notes asset." },
-  { src: m("Moniva-Logo.png"), alt: "Moniva logo", label: "Logo", caption: "Moniva logo asset." },
-];
+const screens = {
+  onboarding: {
+    src: assets.onboarding,
+    width: 378,
+    height: 815,
+    alt: "Moniva personal loans onboarding screen",
+    label: "Loan Application",
+    caption:
+      "Convenient Personal Loans introduces the offer and leads into registration.",
+  },
+  loanApproved: {
+    src: assets.loanApproved,
+    width: 375,
+    height: 812,
+    alt: "Moniva loan request received screen",
+    label: "Loan Application",
+    caption:
+      "The loan request is reviewed with amount, rate, date and repayment shown together.",
+  },
+  home: {
+    src: assets.home,
+    width: 375,
+    height: 812,
+    alt: "Moniva verified home screen with wallet balance and payment shortcuts",
+    label: "Bill Payment",
+    caption:
+      "Home keeps balance, linked bank details, shortcuts and recent activity together.",
+  },
+  bills: {
+    src: assets.bills,
+    width: 375,
+    height: 812,
+    alt: "Moniva bill payment category screen",
+    label: "Bill Payment",
+    caption:
+      "Bills organize recent payments, biller lists and utility categories.",
+  },
+  addMoney: {
+    src: assets.addMoney,
+    width: 750,
+    height: 1624,
+    alt: "Moniva top up success screen",
+    label: "Confirmation States",
+    caption:
+      "Top Up Success confirms the amount and the payment method used.",
+  },
+};
 
-const outcomes = [
-  { t: "01 — Unified Financial Experience", b: "Multiple financial services organized within a single application." },
-  { t: "02 — Structured User Journeys", b: "Account setup, wallet funding, borrowing, and bill payments organized into manageable interactions." },
-  { t: "03 — Clear Financial Information", b: "Dedicated interfaces for balances, repayments, transaction details, and payment outcomes." },
-  { t: "04 — Consistent Interface System", b: "Reusable visual patterns and interaction components across different application features." },
-  { t: "05 — Comprehensive Design Coverage", b: "88 mobile screens and states covering the application's major financial journeys." },
-];
-
-export function MonivaCaseStudy({ caseStudy, index }: { caseStudy: CaseStudy; index: number }) {
-
+export function MonivaCaseStudy({
+  caseStudy,
+  index,
+  next,
+  previous,
+}: {
+  caseStudy: CaseStudy;
+  index: number;
+  next: CaseStudy;
+  previous?: CaseStudy | null;
+}) {
   return (
-    <main className="relative w-full overflow-hidden bg-[#080d1a]">
-      <ReadingProgress />
-      <SectionRail items={railItems} />
+    <>
+      <CaseStudyScrollToTop />
+      <main className="relative w-full overflow-hidden bg-[#070b16]">
+        <ReadingProgress />
+        <SectionRail items={railItems} />
 
-      <section id="hero" className="relative overflow-hidden pb-20 pt-28 md:pb-24 md:pt-32" style={{ background: "linear-gradient(180deg,#080d1a 0%,#0a1020 46%,#0b1120 100%)" }}>
-        <div aria-hidden className="pointer-events-none absolute inset-0 bg-grid-subtle opacity-20 [mask-image:radial-gradient(ellipse_at_50%_0%,black,transparent_72%)]" />
-        <div aria-hidden className="pointer-events-none absolute -top-24 left-1/2 h-[520px] w-[900px] -translate-x-1/2 rounded-full bg-violet-600/20 blur-[130px]" />
-        <Container className="relative z-10">
-          <div className="hero-in flex flex-wrap items-center justify-between gap-4">
-            <BackLink />
-            <div className="flex items-center gap-3 font-['Space_Mono'] text-[10px] uppercase tracking-[0.24em] text-slate-500"><span className="h-1.5 w-1.5 rounded-full bg-orange-500" /> Case study {String(index + 1).padStart(2, "0")} / Fintech</div>
-          </div>
-          <div className="mt-12 grid items-end gap-10 lg:grid-cols-12 lg:gap-14">
-            <div className="lg:col-span-7">
-              <div className="hero-in flex items-center gap-3"><span className="h-px w-10 bg-gradient-to-r from-orange-500/70 to-transparent" /><span className="font-['Space_Mono'] text-[10px] uppercase tracking-[0.28em] text-orange-400/80">UI/UX Design / Fintech</span></div>
-              <h1 className="hero-in mt-5 font-['Rajdhani'] text-[clamp(2.3rem,4.8vw,3.8rem)] font-bold leading-[0.92] tracking-[-0.02em] text-slate-50">Moniva — Unified Financial Experience</h1>
-              <p className="hero-in mt-4 max-w-2xl font-['Rajdhani'] text-[clamp(1.1rem,2vw,1.5rem)] font-medium leading-[1.15] text-slate-400">Designing a unified financial experience for everyday money management.</p>
-              <p className="hero-in mt-6 max-w-2xl font-sans text-base leading-relaxed text-slate-300 md:text-lg">An all-in-one mobile financial platform bringing digital wallet management, personal lending, and everyday bill payments into one intuitive experience.</p>
+        <section
+          id="intro"
+          className="relative scroll-mt-20 overflow-hidden pb-16 pt-24 md:pb-20 md:pt-28"
+          style={{
+            background:
+              "linear-gradient(180deg, #080d1a 0%, #0a1020 48%, #0b1120 100%)",
+          }}
+        >
+          <div
+            aria-hidden="true"
+            className="pointer-events-none absolute inset-0 bg-grid-subtle opacity-[0.22] [mask-image:radial-gradient(ellipse_at_50%_0%,black,transparent_70%)]"
+          />
+          <div
+            aria-hidden="true"
+            className="pointer-events-none absolute -top-40 left-1/2 h-[460px] w-[820px] -translate-x-1/2 rounded-full opacity-60 blur-[130px]"
+            style={{
+              background:
+                "radial-gradient(circle, rgba(76,29,149,0.45), rgba(30,27,75,0.12) 58%, transparent 76%)",
+            }}
+          />
+
+          <Container className="relative z-10">
+            <div className="flex flex-wrap items-center justify-between gap-4">
+              <BackLink />
+              <span className="font-['Space_Mono'] text-[10px] uppercase tracking-[0.24em] text-slate-500">
+                Case study {String(index + 1).padStart(2, "0")} / Mobile app
+              </span>
             </div>
-            <aside className="hero-in lg:col-span-5 lg:border-l lg:border-white/10 lg:pl-10">
-              <p className="font-['Space_Mono'] text-[9px] uppercase tracking-[0.24em] text-slate-500">Project metadata</p>
-              <dl className="mt-5 grid grid-cols-2 gap-x-6 gap-y-5">{[["Product","Moniva"],["Industry","Fintech / Digital Financial Services"],["Platform","Mobile Application"],["Market Context","Pakistan"],["Role","UI/UX Designer"],["Tools","Figma"],["Design Scope","88 mobile screens and states"]].map(([l,v])=>(<div key={l}><dt className="font-['Space_Mono'] text-[9px] uppercase tracking-[0.18em] text-slate-500">{l}</dt><dd className="mt-1.5 font-sans text-[13px] text-slate-300">{v}</dd></div>))}</dl>
-            </aside>
-          </div>
-          <Reveal className="mt-12 md:mt-16" instant>
-            <div className="relative overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-b from-[#101a2f] to-[#0a1120] p-4 md:p-8">
-              <div aria-hidden className="pointer-events-none absolute -left-20 top-10 h-64 w-64 rounded-full bg-orange-500/20 blur-[90px]" />
-              <div aria-hidden className="pointer-events-none absolute right-0 top-0 h-72 w-72 rounded-full bg-violet-500/20 blur-[100px]" />
-              <div className="relative mx-auto max-w-5xl overflow-hidden rounded-2xl">
-                <div className="relative aspect-[16/10] w-full">
-                  <Image src={m("Moniva-Mockup.jpg")} alt="Moniva main project mockup" fill priority className="object-contain" sizes="(max-width: 1200px) 100vw, 1100px" />
+
+            <div className="mt-12 grid gap-10 lg:mt-14 lg:grid-cols-12 lg:gap-12">
+              <div className="lg:col-span-8">
+                <div className="flex items-center gap-3">
+                  <span className="h-1.5 w-1.5 rounded-full bg-orange-500" />
+                  <span className="font-['Space_Mono'] text-[10px] uppercase tracking-[0.26em] text-orange-300/80">
+                    Concept project · Fintech · Mobile app · Pakistan
+                  </span>
+                </div>
+
+                <h1 className="mt-5 font-['Rajdhani'] text-[clamp(2.15rem,4.5vw,3.8rem)] font-bold leading-[0.9] tracking-[-0.04em] text-slate-50">
+                  Moniva — Unified Financial Experience
+                </h1>
+                <p className="mt-5 max-w-3xl font-['Rajdhani'] text-[clamp(1.35rem,2.4vw,1.9rem)] font-medium leading-[1.1] text-slate-300">
+                  Moniva is a concept for a Pakistan-focused financial app.
+                </p>
+
+                <div className="mt-8 flex flex-wrap items-center gap-3">
+                  <ComponentButton href="#flows">
+                    View Selected Screens
+                  </ComponentButton>
+                  <ComponentButton href="#outcome" variant="outline">
+                    Read the Outcome
+                  </ComponentButton>
                 </div>
               </div>
-              <p className="mt-6 text-center font-['Space_Mono'] text-[9px] uppercase tracking-[0.2em] text-slate-500">Main Moniva project mockup</p>
-            </div>
-          </Reveal>
-        </Container>
-      </section>
 
-      <section id="overview" className="border-t border-white/[0.05] py-20 md:py-28" style={{ background: "#080d1a" }}>
-        <Container>
-          <SectionHeading index="02" label="Project overview" title="Bringing everyday financial services into one experience." />
-          <div className="mt-12 grid gap-12 lg:grid-cols-12 lg:gap-16">
-            <div className="space-y-5 lg:col-span-7">
-              <Reveal><p className="font-sans text-lg leading-relaxed text-slate-300">Moniva is a Pakistan-oriented digital financial-services concept designed to bring essential money-management activities into one mobile application.</p></Reveal>
-              <Reveal delay={40}><p className="font-sans text-sm leading-relaxed text-slate-400 md:text-base">The experience combines wallet management, personal lending, bill payments, and transaction tracking within a unified interface.</p></Reveal>
-              <Reveal delay={80}><p className="font-sans text-sm leading-relaxed text-slate-400 md:text-base">The design focuses on simplifying financial interactions, organizing different services, and creating consistent experiences across account registration, payments, borrowing, and account management.</p></Reveal>
-              <Reveal delay={120}><div className="border-t border-white/[0.08] pt-6"><SectionLabel>My contribution</SectionLabel><p className="mt-3 font-sans text-sm leading-relaxed text-slate-300">UI/UX design across the application's core financial experiences, including onboarding, identity verification, wallet management, personal lending, bill payments, transaction records, and account settings.</p></div></Reveal>
-            </div>
-            <aside className="lg:col-span-5 lg:border-l lg:border-white/[0.08] lg:pl-10">
-              <Reveal><SectionLabel>Project information</SectionLabel></Reveal>
-              <dl className="mt-5">{[["Product","Moniva"],["Industry","Fintech"],["Platform","Mobile Application"],["Market","Pakistan"],["Role","UI/UX Designer"],["Tools","Figma"],["Scope","88 screens and states"],["Navigation","Home, Loan, Bills, More"]].map(([l,v],i)=>(<Reveal key={l} delay={25*i}><div className="grid grid-cols-[110px_1fr] gap-4 border-t border-white/[0.06] py-3.5"><dt className="font-['Space_Mono'] text-[9px] uppercase tracking-[0.16em] text-slate-500">{l}</dt><dd className="font-sans text-[13px] text-slate-300">{v}</dd></div></Reveal>))}</dl>
-            </aside>
-          </div>
-        </Container>
-      </section>
-
-      <section id="challenge" className="relative overflow-hidden border-t border-white/[0.05] py-20 md:py-28" style={{ background: "linear-gradient(180deg,#0b1120 0%,#0c1324 50%,#0a101f 100%)" }}>
-        <div aria-hidden className="pointer-events-none absolute inset-0 bg-grid-subtle opacity-25" />
-        <Container className="relative z-10">
-          <SectionHeading index="03" label="The challenge & product goals" title="Multiple financial services. One cohesive experience." intro="Combining wallet management, borrowing, and everyday payments within one application introduces different interaction requirements. The challenge was to make these services feel connected without overwhelming users with complex workflows." />
-          <div className="mt-14 grid gap-x-14 gap-y-8 md:grid-cols-2">{challenges.map((p,i)=>(<Reveal key={p.t} delay={40*i}><div className="border-t border-white/[0.1] pt-5"><h3 className="font-['Rajdhani'] text-xl font-semibold text-slate-100 md:text-2xl">{p.t}</h3><p className="mt-2 max-w-md font-sans text-sm leading-relaxed text-slate-400">{p.b}</p></div></Reveal>))}</div>
-          <Reveal delay={100}><div className="mt-14 border-l-2 border-orange-500/70 bg-gradient-to-r from-orange-500/[0.06] to-transparent py-5 pl-6 pr-4 md:pl-8"><span className="font-['Space_Mono'] text-[9px] uppercase tracking-[0.24em] text-orange-400/80">Design objective</span><p className="mt-2 max-w-3xl font-sans text-base leading-relaxed text-slate-200 md:text-lg">Create a unified mobile financial experience that makes essential financial activities easier to understand, navigate, and manage.</p></div></Reveal>
-        </Container>
-      </section>
-
-      <section id="persona" className="relative overflow-hidden border-t border-white/[0.05] py-20 md:py-28" style={{ background: "#080d1a" }}>
-        <Container>
-          <SectionHeading index="04" label="Target audience & user personas" title="Designed around everyday money needs and borrowing decisions." intro="Two product archetypes based on the application's intended functionality. These are not personas validated through interviews or formal research." />
-          <div className="mt-12 grid gap-6 lg:grid-cols-2">{personas.map((p,i)=>(<Reveal key={p.name} delay={60*i}><article className="relative h-full overflow-hidden rounded-2xl border border-white/[0.09] bg-[#090f1d] p-6 md:p-7"><div className="flex items-start gap-4"><div className="flex h-16 w-16 items-center justify-center rounded-full border border-white/10 bg-gradient-to-br from-violet-500/40 to-orange-500/30 font-['Rajdhani'] text-xl font-bold text-slate-100">{p.name.split(" ").map(n=>n[0]).join("")}</div><div><h3 className="font-['Rajdhani'] text-2xl font-bold text-slate-100">{p.name}</h3><p className="font-['Space_Mono'] text-[9px] uppercase tracking-[0.16em] text-orange-300/80">{p.role}</p></div></div><p className="mt-5 font-sans text-sm leading-relaxed text-slate-400">{p.bio}</p><div className="mt-6 grid gap-4 sm:grid-cols-3">{[["Goals",p.goals,"text-violet-300/80","bg-violet-500/10 border-violet-400/20"],["Frustrations",p.frus,"text-orange-300/80","bg-orange-500/10 border-orange-400/20"],["Design considerations",p.needs,"text-emerald-300/80","bg-emerald-500/10 border-emerald-400/20"]].map(([title,items,lc,cc])=>(<div key={title as string} className={cn("rounded-xl border p-4",cc as string)}><h4 className="font-['Rajdhani'] text-xl font-semibold text-slate-100">{title as string}</h4><p className={cn("mt-1 font-['Space_Mono'] text-[8px] uppercase tracking-[0.16em]",lc as string)}>{(items as string[]).length} items</p><ul className="mt-3 space-y-2">{(items as string[]).map((it)=>(<li key={it} className="font-sans text-[12px] leading-relaxed text-slate-400">• {it}</li>))}</ul></div>))}</div></article></Reveal>))}</div>
-          <Reveal delay={80}><div className="mt-8 rounded-xl border border-violet-400/15 bg-violet-500/[0.05] p-6"><SectionLabel>Shared user need</SectionLabel><p className="mt-3 font-sans text-base leading-relaxed text-slate-200">Users need a financial application that makes essential tasks easy to find, financial information easy to understand, and important actions easy to complete with confidence.</p></div></Reveal>
-        </Container>
-      </section>
-
-      <section id="architecture" className="border-t border-white/[0.05] py-20 md:py-28" style={{ background: "linear-gradient(180deg,#0b1120 0%,#0a101f 100%)" }}>
-        <Container>
-          <SectionHeading index="05" label="Information architecture & navigation" title="One application. Four essential experiences." />
-          <div className="mt-12 grid gap-5 md:grid-cols-2 lg:grid-cols-4">{architecture.map((a,i)=>(<Reveal key={a.n} delay={35*i}><div className="h-full rounded-xl border border-white/[0.08] bg-white/[0.02] p-5"><h3 className="font-['Rajdhani'] text-xl font-semibold text-slate-100">{a.n}</h3><ul className="mt-4 space-y-2">{a.i.map((it)=>(<li key={it} className="font-sans text-[13px] leading-relaxed text-slate-400">• {it}</li>))}</ul></div></Reveal>))}</div>
-        </Container>
-      </section>
-
-      <section id="direction" className="border-t border-white/[0.05] py-20 md:py-28" style={{ background: "#080d1a" }}>
-        <Container>
-          <SectionHeading index="06" label="Visual design & design system" title="Creating a distinctive and consistent fintech identity." intro="The visual direction combines a clean interface foundation with a distinctive Midnight Blue and Tangerine identity. The design emphasizes readability, structured layouts, and clear financial information." />
-          <div className="mt-12 grid gap-10 lg:grid-cols-12">
-            <Reveal className="lg:col-span-7"><SectionLabel>Supplied design assets</SectionLabel><div className="mt-4 grid gap-4 sm:grid-cols-2">{[["Color palette",m("Moniva-Colorpalette.png"),"object-contain p-2"],["Typography",m("Moniva-Typography.png"),"object-contain p-2"],["UI components / system",m("Moniva-Developernote.png"),"object-contain p-2"],["Logo / identity",m("Moniva-Logo.png"),"object-contain p-6"]].map(([label,src,cls])=>(<div key={label as string}><p className="mb-2 font-['Space_Mono'] text-[9px] uppercase tracking-[0.18em] text-slate-500">{label as string}</p><div className="relative aspect-[16/10] overflow-hidden rounded-xl border border-white/10 bg-[#070c16]"><Image src={src as string} alt={`Moniva ${label as string}`} fill className={cls as string} sizes="(max-width:768px) 100vw, 500px" /></div></div>))}</div><p className="mt-4 font-sans text-[11px] leading-relaxed text-slate-500">Supplied actual Figma/design assets are presented as-is and take priority over the proposed palette below.</p></Reveal>
-            <div className="space-y-8 lg:col-span-5"><Reveal delay={60}><SectionLabel>Proposed Moniva brand direction</SectionLabel><ul className="mt-4 space-y-2.5">{[["Midnight Blue","#142B4A","Primary"],["Tangerine","#F47B35","Accent"],["Background","#F7F9FC","Surface"],["White","#FFFFFF","Base"],["Primary Text","#17263B","Type"],["Secondary Text","#748196","Type"],["Border","#E3E8EF","UI"],["Success","#13845B","Semantic"],["Error","#D83F49","Semantic"],["Warning","#D98A20","Semantic"]].map(([name,hex,role])=>(<li key={hex} className="flex items-center gap-3 border-t border-white/[0.06] pt-2.5"><span className="h-7 w-7 rounded-md border border-white/10" style={{backgroundColor:hex}} /><span className="flex-1 font-sans text-[12px] text-slate-300">{name} <span className="text-slate-600">· {role}</span></span><span className="font-['Space_Mono'] text-[9px] text-slate-500">{hex}</span></li>))}</ul></Reveal><Reveal delay={100}><SectionLabel>Typography & principles</SectionLabel><p className="mt-3 font-sans text-sm text-slate-400">Primary typeface: Inter. Clear hierarchy with bold headings, semibold component titles, medium labels, regular body text, and clear financial figures.</p><ul className="mt-4 grid gap-3">{["1. Clarity over complexity.","2. Consistent interaction patterns.","3. Readable financial information.","4. Trust through transparent feedback."].map((p)=>(<li key={p} className="border-t border-white/[0.08] pt-3 font-sans text-sm text-slate-300">{p}</li>))}</ul></Reveal></div>
-          </div>
-        </Container>
-      </section>
-
-      <section id="showcase" className="border-t border-white/[0.06] py-20 md:py-28" style={{ background: "#060a12" }}>
-        <Container>
-          <SectionHeading index="07" label="Visual system" title="Selected screens" />
-          <Reveal delay={80} className="mt-6"><EditorialGallery items={galleryItems} title="Moniva" /></Reveal>
-        </Container>
-      </section>
-
-      <section id="outcomes" className="relative overflow-hidden border-t border-white/[0.05] py-20 md:py-28" style={{ background: "linear-gradient(180deg,#0b1120 0%,#0c1426 55%,#080d1a 100%)" }}>
-        <Container className="relative z-10">
-          <SectionHeading index="08" label="Outcomes & reflection" title="A unified foundation for everyday financial experiences." />
-          <div className="mt-12 grid gap-x-8 gap-y-8 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">{outcomes.map((o,i)=>(<Reveal key={o.t} delay={35*i}><div className="border-t border-white/[0.1] pt-4"><span className="font-['Space_Mono'] text-[9px] tracking-[0.14em] text-orange-400/70">{String(i+1).padStart(2,"0")}</span><h3 className="mt-3 font-['Rajdhani'] text-xl font-semibold text-slate-100">{o.t}</h3><p className="mt-1.5 font-sans text-[12px] leading-relaxed text-slate-500">{o.b}</p></div></Reveal>))}</div>
-          <div className="mt-14 grid gap-10 border-t border-white/[0.08] pt-10 lg:grid-cols-12"><div className="lg:col-span-7"><Reveal><SectionLabel>Key reflection</SectionLabel></Reveal><Reveal delay={60}><blockquote className="mt-5 font-['Rajdhani'] text-xl font-medium leading-snug text-slate-200 md:text-2xl"><span className="mr-1 text-3xl text-orange-500/70">“</span>Moniva reinforced that successful fintech design is not simply about making financial services accessible. It is about making financial information understandable, interactions predictable, and important actions transparent. Working across onboarding, wallet management, lending, payments, and transaction records highlighted the importance of consistency throughout an entire financial product experience.</blockquote></Reveal></div><div className="lg:col-span-5"><Reveal><SectionLabel>Project deliverables</SectionLabel></Reveal><ul className="mt-4">{["88 mobile screen designs and states.","Account onboarding and verification.","Wallet management and funding.","Personal loan application and repayment.","Bill payments.","Transaction history and receipts.","Profile and security settings.","Visual foundations and reusable components.","Interactive prototype."].map((item,i)=>(<Reveal key={item} delay={30*i}><li className="flex items-center justify-between gap-4 border-t border-white/[0.06] py-3"><span className="font-sans text-[13px] text-slate-300">{item}</span><span className="font-['Space_Mono'] text-[9px] text-slate-600">{String(i+1).padStart(2,"0")}</span></li></Reveal>))}</ul></div></div>
-          {(caseStudy.liveUrl || caseStudy.link) ? (
-            <Reveal delay={80}>
-              <div className="mt-14 flex w-full flex-col items-stretch gap-3 sm:flex-row sm:flex-wrap sm:items-center">
-                {caseStudy.liveUrl ? <ComponentButton href={caseStudy.liveUrl} external>Live Site</ComponentButton> : null}
-                {caseStudy.link ? <ComponentButton href={caseStudy.link} external variant={caseStudy.liveUrl ? "outline" : "primary"}>View Full Design</ComponentButton> : null}
+              <div className="lg:col-span-4 lg:border-l lg:border-white/[0.08] lg:pl-9">
+                <div className="border-t border-white/[0.08] pt-5">
+                  <p className="font-['Space_Mono'] text-[9px] uppercase tracking-[0.22em] text-slate-500">
+                    Project record
+                  </p>
+                  <dl className="mt-5 space-y-4">
+                    <MetaItem label="Role" value="UI/UX Designer" />
+                    <MetaItem label="Platform" value="Mobile application" />
+                    <MetaItem label="Market" value="Pakistan" />
+                    <MetaItem label="Scope" value="88 screens and states" />
+                    <MetaItem label="Tools" value="Figma" />
+                    <MetaItem
+                      label="Navigation"
+                      value="Home, Loan, Bills, More"
+                    />
+                  </dl>
+                </div>
               </div>
-            </Reveal>
-          ) : null}
-        </Container>
-      </section>
+            </div>
 
-    </main>
+            <div className="mt-12 grid gap-8 border-t border-white/[0.08] pt-8 md:grid-cols-3 md:gap-10">
+              {summary.map((item) => (
+                <Reveal key={item.label}>
+                  <div>
+                    <p className="font-['Space_Mono'] text-[9px] uppercase tracking-[0.22em] text-orange-300/80">
+                      {item.label}
+                    </p>
+                    <p className="mt-3 font-sans text-[13px] leading-relaxed text-slate-300">
+                      {item.body}
+                    </p>
+                  </div>
+                </Reveal>
+              ))}
+            </div>
+          </Container>
+        </section>
+
+        <SectionHeading
+          id="brief"
+          index="01"
+          label="Brief"
+          title="The brief"
+          intro={
+            <p>
+              Moniva is a concept for a Pakistan-focused financial app. The
+              challenge was to combine a wallet, personal loans and bill
+              payments without overwhelming people, and to keep trust high at
+              the moments that matter: entering personal details, authorising a
+              payment, and waiting on a loan decision.
+            </p>
+          }
+        >
+          <div className="mt-7 flex flex-wrap gap-2">
+            {[
+              "Wallet",
+              "Personal loans",
+              "Bill payments",
+              "Trust at key moments",
+            ].map((label) => (
+              <span
+                key={label}
+                className="border border-white/[0.08] px-3 py-2 font-['Space_Mono'] text-[9px] uppercase tracking-[0.18em] text-slate-300"
+              >
+                {label}
+              </span>
+            ))}
+          </div>
+
+          <Reveal delay={100} className="mt-9">
+            <figure className="mx-auto max-w-[720px]">
+              <AssetPanel
+                src={assets.mockup}
+                alt="Moniva project mockup across wallet, loans, bills and account screens"
+                width={1200}
+                height={896}
+                sizes="(max-width: 768px) 100vw, 720px"
+              />
+              <AssetCaption
+                label="Project Mockup"
+                detail="Four-tab mobile experience across wallet, loans, bills and account management."
+              />
+            </figure>
+          </Reveal>
+
+          <Reveal delay={140} className="mt-8 max-w-2xl">
+            <p className="font-sans text-[14px] leading-relaxed text-slate-400">
+              Designed for two everyday needs: managing money without switching
+              apps, and understanding a loan before committing to it. These are
+              assumptions from the app&apos;s intended use, not
+              interview-validated research.
+            </p>
+          </Reveal>
+        </SectionHeading>
+
+        <SectionHeading
+          id="flows"
+          index="02"
+          label="Key flows"
+          title="Key flows"
+          intro={
+            <p>
+              The selected screens follow the money actions the app is built
+              around: borrowing, paying bills, and confirming the result.
+            </p>
+          }
+          background="linear-gradient(180deg, #080d1a 0%, #0a1020 100%)"
+        >
+          <div className="relative mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            <div
+              aria-hidden="true"
+              className="absolute left-6 right-6 top-[17px] hidden h-px bg-white/10 lg:block"
+            />
+            {flows.map((flow) => (
+              <Reveal key={flow.number}>
+                <div className="relative">
+                  <span className="relative z-10 flex h-9 w-9 items-center justify-center border border-orange-400/40 bg-[#080d1a] font-['Space_Mono'] text-[10px] text-orange-300">
+                    {flow.number}
+                  </span>
+                  <h3 className="mt-4 font-['Rajdhani'] text-xl font-semibold text-slate-100">
+                    {flow.title}
+                  </h3>
+                  <p className="mt-1 font-sans text-[13px] leading-relaxed text-slate-400">
+                    {flow.body}
+                  </p>
+                </div>
+              </Reveal>
+            ))}
+          </div>
+
+          <div className="mt-10 overflow-x-auto pb-2 md:overflow-visible md:pb-0">
+            <div className="flex w-max gap-4 md:grid md:w-full md:grid-cols-3 md:gap-6 xl:grid-cols-5">
+              {[
+                screens.onboarding,
+                screens.loanApproved,
+                screens.home,
+                screens.bills,
+                screens.addMoney,
+              ].map((screen, i) => (
+                <Reveal
+                  key={screen.src}
+                  delay={i * 60}
+                  className="w-[190px] shrink-0 md:w-auto"
+                >
+                  <ScreenPanel {...screen} />
+                </Reveal>
+              ))}
+            </div>
+          </div>
+        </SectionHeading>
+
+        <SectionHeading
+          id="architecture"
+          index="03"
+          label="Information Architecture"
+          title="Four tabs keep each job separate."
+          intro={
+            <p>
+              Home, Loan, Bills and More give wallet, borrowing, payments and
+              account management their own place in the app.
+            </p>
+          }
+        >
+          <Reveal className="mt-9">
+            <figure className="mx-auto max-w-[760px]">
+              <AssetPanel
+                src={assets.full}
+                alt="Moniva full design board showing 88 mobile screens"
+                width={1177}
+                height={742}
+                sizes="(max-width: 768px) 100vw, 760px"
+              />
+              <AssetCaption
+                label="Full Design Board"
+                detail="The complete 88-screen Figma board, presented without cropping."
+              />
+            </figure>
+          </Reveal>
+
+          <div className="mt-10 grid gap-x-12 gap-y-5 md:grid-cols-2">
+            {[
+              ["Home", "Balance, shortcuts, and recent activity."],
+              ["Loan", "Personal loan exploration, application, and repayment."],
+              ["Bills", "Airtime, mobile data, electricity, and TV payments."],
+              [
+                "More",
+                "Profile, verification, linked accounts, cards, and security.",
+              ],
+            ].map(([tab, detail]) => (
+              <Reveal key={tab}>
+                <div className="border-t border-white/[0.08] pt-4">
+                  <p className="font-['Space_Mono'] text-[9px] uppercase tracking-[0.18em] text-orange-300/80">
+                    {tab}
+                  </p>
+                  <p className="mt-2 font-['Rajdhani'] text-xl font-semibold leading-snug text-slate-100">
+                    {detail}
+                  </p>
+                </div>
+              </Reveal>
+            ))}
+          </div>
+        </SectionHeading>
+
+        <SectionHeading
+          id="system"
+          index="04"
+          label="Design System"
+          title="One visual system across 88 screens."
+          intro={
+            <p>
+              Midnight Blue for trust, Tangerine for key actions, Inter for
+              readable figures. Reusable components and semantic colours
+              (success, error, warning) keep all 88 screens consistent.
+            </p>
+          }
+          background="linear-gradient(180deg, #080d1a 0%, #0a1020 100%)"
+        >
+          <div className="mt-10 space-y-8">
+            <div className="grid gap-8 md:grid-cols-2">
+              <Reveal>
+                <figure className="m-0">
+                  <AssetPanel
+                    src={assets.palette}
+                    alt="Moniva color palette"
+                    width={1600}
+                    height={856}
+                    sizes="(max-width: 768px) 100vw, 550px"
+                  />
+                  <AssetCaption
+                    label="Color Palette"
+                    detail="Navy #142B4A, Tangerine #F47B35, Gray #979797, White #FFFFFF, Success #108F05, Error #E71616, Warning #F59300."
+                  />
+                </figure>
+              </Reveal>
+              <Reveal delay={80}>
+                <figure className="m-0">
+                  <AssetPanel
+                    src={assets.logo}
+                    alt="Moniva logo"
+                    width={853}
+                    height={365}
+                    sizes="(max-width: 768px) 100vw, 550px"
+                  />
+                  <AssetCaption
+                    label="Identity"
+                    detail="The app's own brand mark and identity asset."
+                  />
+                </figure>
+              </Reveal>
+            </div>
+
+            <Reveal>
+              <figure className="mx-auto max-w-[420px]">
+                <AssetPanel
+                  src={assets.typography}
+                  alt="Moniva typography board"
+                  width={1600}
+                  height={2076}
+                  sizes="(max-width: 768px) 100vw, 420px"
+                />
+                <AssetCaption
+                  label="Typography"
+                  detail="Lato-led UI (400, 500, 600, 700); Inter retained for large numeric amounts; 14px and 16px are common."
+                />
+              </figure>
+            </Reveal>
+
+            <Reveal delay={80}>
+              <figure className="mx-auto max-w-[760px]">
+                <AssetPanel
+                  src={assets.developer}
+                  alt="Moniva developer notes and design system"
+                  width={1600}
+                  height={644}
+                  sizes="(max-width: 768px) 100vw, 760px"
+                />
+                <AssetCaption
+                  label="Developer Notes"
+                  detail="7 local colour variables and 16 app text styles; no component inventory or shade ramps."
+                />
+              </figure>
+            </Reveal>
+          </div>
+        </SectionHeading>
+
+        <SectionHeading
+          id="outcome"
+          index="05"
+          label="Outcome & Reflection"
+          title="Outcome & reflection"
+          background="linear-gradient(180deg, #0a1020 0%, #080d1a 100%)"
+        >
+          <div className="mt-9 grid gap-10 lg:grid-cols-12 lg:gap-16">
+            <div className="lg:col-span-7">
+              <Reveal>
+                <p className="font-['Space_Mono'] text-[9px] uppercase tracking-[0.22em] text-orange-300/80">
+                  Concept project · no usage data
+                </p>
+                <p className="mt-5 max-w-2xl font-['Rajdhani'] text-[clamp(1.4rem,2.4vw,1.9rem)] font-medium leading-snug text-slate-200">
+                  <strong>
+                    This is a concept, so there is no usage data.
+                  </strong>{" "}
+                  What the project delivered: a complete, consistent flow set
+                  across onboarding, wallet, lending, bills and security, plus
+                  a reusable component system and 88 designed screens.
+                </p>
+              </Reveal>
+            </div>
+
+            <div className="lg:col-span-5">
+              <Reveal delay={80}>
+                <div className="border border-white/[0.08] bg-white/[0.02] p-7">
+                  <p className="font-['Space_Mono'] text-[9px] uppercase tracking-[0.22em] text-slate-500">
+                    What I&apos;d test first
+                  </p>
+                  <p className="mt-4 font-['Rajdhani'] text-2xl font-semibold text-slate-100">
+                    Loan application completion and payment error rates.
+                  </p>
+                  <div className="mt-6 border-t border-white/[0.08] pt-5">
+                    <p className="font-['Space_Mono'] text-[9px] uppercase tracking-[0.22em] text-slate-500">
+                      Reflection
+                    </p>
+                    <p className="mt-3 font-sans text-[12px] leading-relaxed text-slate-500">
+                      In fintech, clarity is what builds trust. Predictable
+                      interactions and honest feedback matter more than visual
+                      flair.
+                    </p>
+                  </div>
+                </div>
+              </Reveal>
+            </div>
+          </div>
+        </SectionHeading>
+      </main>
+
+      <CaseStudyEndNav
+        ariaLabel="End of Moniva case study"
+        eyebrow="Continue exploring"
+        title="Open the final work."
+        actions={
+          <>
+            <ComponentButton href="#flows">View Selected Screens</ComponentButton>
+            <ComponentButton href="#outcome" variant="outline">
+              Read the Outcome
+            </ComponentButton>
+          </>
+        }
+        previous={previous}
+        next={next}
+        index={index}
+      />
+    </>
   );
 }

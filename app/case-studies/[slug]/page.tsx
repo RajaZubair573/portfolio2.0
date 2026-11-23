@@ -99,7 +99,15 @@ export default async function CaseStudyPage({
     );
     standalone = true;
   } else if (caseStudy.slug === "moniva-financial-app") {
-    content = <MonivaCaseStudy caseStudy={caseStudy} index={index} />;
+    content = (
+      <MonivaCaseStudy
+        caseStudy={caseStudy}
+        index={index}
+        next={next}
+        previous={previous}
+      />
+    );
+    standalone = true;
   } else if (caseStudy.slug === "reclaim-data-recovery-app") {
     content = <ReclaimCaseStudy caseStudy={caseStudy} index={index} />;
   } else if (caseStudy.slug === "cwesd-learning-platform") {
