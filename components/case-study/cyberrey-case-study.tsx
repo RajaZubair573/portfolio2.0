@@ -262,10 +262,10 @@ export function CyberReyCaseStudy({
                   </span>
                 </div>
 
-                <h1 className="mt-5 font-['Rajdhani'] text-[clamp(2.8rem,6.2vw,4.9rem)] font-bold leading-[0.86] tracking-[-0.04em] text-slate-50">
+                <h1 className="mt-5 font-['Rajdhani'] text-[clamp(2.15rem,4.5vw,3.8rem)] font-bold leading-[0.9] tracking-[-0.04em] text-slate-50">
                   CyberRey
                 </h1>
-                <p className="mt-5 max-w-3xl font-['Rajdhani'] text-[clamp(1.45rem,2.7vw,2.1rem)] font-medium leading-[1.1] text-slate-300">
+                <p className="mt-5 max-w-3xl font-['Rajdhani'] text-[clamp(1.35rem,2.4vw,1.9rem)] font-medium leading-[1.1] text-slate-300">
                   A security website built for skeptical, self-directed
                   evaluation.
                 </p>
