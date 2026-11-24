@@ -114,6 +114,29 @@ export const caseStudies: CaseStudy[] = [
 },
 
   {
+    id: 3,
+    title: "Axion Lighting E-Commerce",
+    slug: "axion-lighting-ecommerce",
+    overview: "Real client project: UI/UX design of Axion Lighting's e-commerce storefront, responsive mobile experience, and dashboard, developed by Synctom.",
+    challenge: "Create a premium online shopping experience and a dashboard for business operations, with one visual direction across storefront, mobile, and admin interfaces.",
+    solution: "Designed the visual system, storefront, mobile experience, and dashboard in Figma, retaining the client's original logo and presenting the direction directly to the client.",
+    results: [
+      "Created the brand palette, typography, and interface foundations around the client's retained logo",
+      "Designed the desktop storefront from product discovery through checkout",
+      "Designed the responsive mobile storefront and checkout screens",
+      "Designed the operational dashboard in the same visual language",
+      "Client reported that the live website helped bring in customers and inquiries beyond referrals"
+    ],
+    gallery: ["/projects/Axion/Axion-Mockup.png", "/projects/Axion/Axion_colorpalette.png", "/projects/Axion/Axion_typography.png", "/projects/Axion/Axion_Products_Pages.webp", "/projects/Axion/Axion_Projects_Pages.webp", "/projects/Axion/Axion_Blogs_Pages.webp", "/projects/Axion/Axion_AC_Pages.webp", "/projects/Axion/Axion_Order_Pages.webp", "/projects/Axion/Axion_Profile_Pages.webp", "/projects/Axion/Axion_Mobile_View.webp", "/projects/Axion/Axion_Dashboards.webp", "/projects/Axion/Axion-System-Board.png", "/projects/Axion/Axion Main Landing Page.png", "/projects/Axion/axion Mobile Landing Page.png"],
+    previews: {
+      desktop: "/projects/Axion/Axion-Mockup.png",
+    },
+    tags: ["UI/UX Design", "E-Commerce", "Visual System", "Dashboard Design"],
+    link: "https://www.figma.com/proto/9f0Zx8QtkreC2pR7xTk6ut/Axion-Landing-Pages?node-id=622-4523&p=f&viewport=261%2C279%2C0.02&t=wWShF8wyKCKlWKpL-1&scaling=scale-down-width&content-scaling=fixed&starting-point-node-id=622%3A4523&page-id=99%3A88",
+    featured: true,
+    liveUrl: "https://axionlights.com/"
+  },
+  {
     id: 7,
     title: "Light House E-commerce Website",
     slug: "light-house-ecommerce-website",
@@ -160,30 +183,6 @@ export const caseStudies: CaseStudy[] = [
     tags: ["UI/UX Design", "Education", "Web Design", "Community"],
     link: "https://www.figma.com/proto/9Nv6z5mVXXUn2KzwMK1d5V/CWESD?node-id=124-707&viewport=431%2C25%2C0.1&t=W0hMRftf6JdoHNrR-1&scaling=min-zoom&content-scaling=fixed&page-id=13%3A2",
     featured: true
-  },
-  {
-    id: 3,
-    title: "Axion Lighting E-Commerce",
-    slug: "axion-lighting-ecommerce",
-    overview: "Axion is a premium lighting e-commerce platform with a complete digital ecosystem spanning brand identity, a full online store, a responsive mobile experience, and a dashboard.",
-    challenge: "Design a complete digital experience from scratch, establishing the brand before extending it across a storefront, mobile experience, and dashboard.",
-    solution: "Built the brand foundation first, then designed the e-commerce website, responsive mobile experience, and dashboard around one consistent visual language and a connected shopping journey.",
-    results: [
-      "A complete brand identity and visual foundation",
-      "A full e-commerce website covering product discovery through purchase",
-      "A responsive mobile experience with consistent brand expression",
-      "A complete dashboard interface within the same ecosystem",
-      "A consistent design language across the digital experience",
-      "A website that now serves as a source of new client acquisition"
-    ],
-    gallery: ["/projects/Axion/Axion-Mockup.png", "/projects/Axion/Axion_colorpalette.png", "/projects/Axion/Axion_typography.png", "/projects/Axion/Axion_Products_Pages.webp", "/projects/Axion/Axion_Projects_Pages.webp", "/projects/Axion/Axion_Blogs_Pages.webp", "/projects/Axion/Axion_AC_Pages.webp", "/projects/Axion/Axion_Order_Pages.webp", "/projects/Axion/Axion_Profile_Pages.webp", "/projects/Axion/Axion_Mobile_View.webp", "/projects/Axion/Axion_Dashboards.webp", "/projects/Axion/Axion Main Landing Page.png", "/projects/Axion/axion Mobile Landing Page.png"],
-    previews: {
-      desktop: "/projects/Axion/Axion Main Landing Page.png",
-    },
-    tags: ["Brand Identity", "E-commerce", "UI/UX Design", "Product Design", "Responsive Design", "Dashboard Design"],
-    link: "https://www.figma.com/proto/9f0Zx8QtkreC2pR7xTk6ut/Axion-Landing-Pages?node-id=622-4523&p=f&viewport=261%2C279%2C0.02&t=wWShF8wyKCKlWKpL-1&scaling=scale-down-width&content-scaling=fixed&starting-point-node-id=622%3A4523&page-id=99%3A88",
-    featured: true,
-    liveUrl: "https://axionlights.com/"
   },
   {
     id: 4,

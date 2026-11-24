@@ -27,6 +27,15 @@ const featuredProjects: FeaturedProject[] = [
     link: "/case-studies/cyberrey-platform",
   },
   {
+    id: 3,
+    title: "Axion Lighting E-commerce",
+    description:
+      "Axion is a real client project: UI/UX design of a premium lighting storefront, responsive mobile experience, and dashboard, developed by Synctom.",
+    tags: ["UI/UX Design", "E-Commerce", "Dashboard"],
+    image: "/projects/Axion/Axion-Mockup.png",
+    link: "/case-studies/axion-lighting-ecommerce",
+  },
+  {
     id: 2,
     title: "CWESD",
     description:
@@ -34,15 +43,6 @@ const featuredProjects: FeaturedProject[] = [
     tags: ["UI/UX Design", "Web Design", "Figma"],
     image: "/projects/CWESD/CWESD - Mockup.png",
     link: "/case-studies/cwesd-learning-platform",
-  },
-  {
-    id: 3,
-    title: "Axion Lighting Collection",
-    description:
-      "Axion is a sleek eCommerce platform showcasing curated lighting collections with an elegant and user-friendly shopping experience.",
-    tags: ["E-Commerce", "Figma", "Interaction"],
-    image: "/projects/Axion/Axion-Mockup.png",
-    link: "/case-studies/axion-lighting-ecommerce",
   },
   {
     id: 4,

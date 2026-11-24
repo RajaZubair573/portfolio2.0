@@ -47,37 +47,47 @@ export async function generateMetadata({
   const isReclaim = caseStudy.slug === "reclaim-data-recovery-app";
   const isLightHouse = caseStudy.slug === "light-house-ecommerce-website";
   const isCwesd = caseStudy.slug === "cwesd-learning-platform";
+  const isAxion = caseStudy.slug === "axion-lighting-ecommerce";
   const pageTitle = isReclaim
     ? "Reclaim — Data Recovery App Concept | Raja Zubair"
     : isLightHouse
       ? "Light House E-commerce Website | UI/UX Case Study — Raja Zubair"
       : isCwesd
         ? "CWESD Learning Platform | UI/UX Case Study — Raja Zubair"
-        : `${caseStudy.title} | Case Study`;
+        : isAxion
+          ? "Axion Lighting E-commerce, Mobile & Dashboard Design | Raja Zubair"
+          : `${caseStudy.title} | Case Study`;
   const description = isReclaim
     ? "A mobile data recovery app concept designed to make scanning, previewing and restoring deleted files feel clear and reassuring."
     : isLightHouse
       ? "A client project by Raja Zubair: UI/UX design for a premium architectural lighting e-commerce website, designed in Figma and developed by Synctom using custom coding."
       : isCwesd
         ? "A real client project by Raja Zubair: UI/UX design for CWESD, a learning platform supporting women in technology through education, mentorship, and community."
-        : detail?.intro ?? caseStudy.overview;
+        : isAxion
+          ? "A real client project by Raja Zubair: UI/UX design of Axion Lighting's e-commerce storefront, responsive mobile experience, and dashboard, developed by Synctom."
+          : detail?.intro ?? caseStudy.overview;
   const socialImage = isLightHouse
     ? "/projects/Lighthouse/Lighthouse-Mockup.png"
     : isCwesd
       ? "/projects/CWESD/CWESD - Mockup.png"
-      : caseStudy.previews.desktop;
+      : isAxion
+        ? "/projects/Axion/Axion-Mockup.png"
+        : caseStudy.previews.desktop;
 
   const metadata: Metadata = {
     title: pageTitle,
     description,
     openGraph: {
-      title: isReclaim || isLightHouse || isCwesd ? pageTitle : caseStudy.title,
+      title:
+        isReclaim || isLightHouse || isCwesd || isAxion
+          ? pageTitle
+          : caseStudy.title,
       description,
       images: socialImage ? [{ url: socialImage }] : undefined,
     },
   };
 
-  if (isReclaim || isLightHouse || isCwesd) {
+  if (isReclaim || isLightHouse || isCwesd || isAxion) {
     metadata.twitter = {
       card: "summary_large_image",
       title: pageTitle,
@@ -169,7 +179,15 @@ export default async function CaseStudyPage({
     );
     standalone = true;
   } else if (caseStudy.slug === "axion-lighting-ecommerce") {
-    content = <AxionCaseStudy caseStudy={caseStudy} index={index} />;
+    content = (
+      <AxionCaseStudy
+        caseStudy={caseStudy}
+        index={index}
+        next={next}
+        previous={previous}
+      />
+    );
+    standalone = true;
   } else if (caseStudy.slug === "prime-renovations") {
     content = <PrimeRenovationsCaseStudy caseStudy={caseStudy} index={index} />;
   } else if (caseStudy.slug === "synctom-digital-solutions") {

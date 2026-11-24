@@ -87,9 +87,9 @@ export const projects: Project[] = [
   },
   {
     id: 13,
-    name: "Axion Lighting Collection",
+    name: "Axion Lighting E-commerce",
     imagePath: "/projects/Axion/Axion-Mockup.png",
-    desc: "Axion is a sleek eCommerce platform showcasing curated lighting collections with an elegant and user-friendly shopping experience.",
+    desc: "Real client project: UI/UX design of a premium lighting storefront, responsive mobile experience, and dashboard, developed by Synctom.",
     link: "",
   },
 
@@ -401,7 +401,7 @@ export const experience: Experience[] = [
     type: "Full-Time · Islamabad, Pakistan",
     points: [
       "Worked as a UI/UX Designer at Synctom, a software house based in Islamabad, contributing to the design of multiple large-scale digital products.",
-      "Designed Axion Lighting Solutions — a sleek eCommerce platform for a curated lighting brand, focused on elegant product presentation and seamless shopping flows.",
+      "Designed Axion Lighting's storefront, responsive mobile experience, and dashboard in Figma, around the client's retained logo; Synctom developed the website.",
       "Led the UI design for the Synctom software house website, establishing a strong visual identity with clear service hierarchy and conversion-focused layouts.",
       "Contributed to several other internal and client-facing projects, consistently delivering responsive, production-ready designs with attention to detail and brand consistency.",
     ],
