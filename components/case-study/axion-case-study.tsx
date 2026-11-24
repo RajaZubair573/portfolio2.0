@@ -28,6 +28,7 @@ const assets = {
   mobileProducts: a("Axion-Mobile-Products.png"),
   mobileCheckout: a("Axion-Mobile-Checkout.png"),
   dashboardOverview: a("Axion-Dashboard-Overview.png"),
+  dashboardAxion: a("Dashboard-Axion.png"),
   dashboardOrders: a("Axion-Dashboard-Orders.png"),
   dashboardOrderDetails: a("Axion-Dashboard-Order-Details.png"),
   dashboardDiscounts: a("Axion-Dashboard-Discounts.png"),
@@ -114,7 +115,7 @@ const mobileScreens = [
     width: 390,
     height: 844,
     label: "Mobile hero",
-    className: "mx-auto max-w-[280px]",
+    className: "w-[220px] shrink-0 snap-start sm:w-[240px] lg:w-[260px]",
   },
   {
     src: assets.mobileCollections,
@@ -122,7 +123,7 @@ const mobileScreens = [
     width: 390,
     height: 844,
     label: "Collections",
-    className: "mx-auto max-w-[280px]",
+    className: "w-[220px] shrink-0 snap-start sm:w-[240px] lg:w-[260px]",
   },
   {
     src: assets.mobileProducts,
@@ -130,7 +131,7 @@ const mobileScreens = [
     width: 390,
     height: 844,
     label: "Products",
-    className: "mx-auto max-w-[280px]",
+    className: "w-[220px] shrink-0 snap-start sm:w-[240px] lg:w-[260px]",
   },
   {
     src: assets.mobileCheckout,
@@ -138,7 +139,7 @@ const mobileScreens = [
     width: 351,
     height: 2301,
     label: "Checkout",
-    className: "mx-auto max-w-[220px]",
+    className: "w-[220px] shrink-0 snap-start sm:w-[240px] lg:w-[260px]",
   },
 ];
 
@@ -376,13 +377,13 @@ export function AxionCaseStudy({
                       {decision.body}
                     </p>
                     {decision.evidence ? (
-                      <div className="mt-4 max-w-[180px]">
+                      <div className="mt-5 w-full max-w-[560px] [&_img]:object-contain">
                         <AssetPanel
                           src={decision.evidence.src}
                           alt={decision.evidence.alt}
                           width={decision.evidence.width}
                           height={decision.evidence.height}
-                          sizes="180px"
+                          sizes="(max-width: 768px) 100vw, 560px"
                         />
                       </div>
                     ) : null}
@@ -401,18 +402,21 @@ export function AxionCaseStudy({
         >
           <Reveal className="mt-10">
             <div className="overflow-x-auto pb-2 md:overflow-visible md:pb-0">
-              <div className="relative min-w-[1020px]">
+              <div className="relative min-w-[1060px] md:min-w-0">
                 <div
                   aria-hidden="true"
-                  className="absolute left-5 right-5 top-[15px] h-px bg-white/10"
+                  className="absolute left-5 right-5 top-[19px] h-px bg-white/10"
                 />
-                <div className="relative flex items-start gap-4">
+                <div className="relative flex items-start gap-5">
                   {journey.map((step, i) => (
-                    <div key={step} className="w-[132px] shrink-0">
-                      <span className="relative z-10 flex h-8 w-8 items-center justify-center border border-orange-400/40 bg-[#080d1a] font-['Space_Mono'] text-[9px] text-orange-300">
+                    <div
+                      key={step}
+                      className="w-[150px] min-w-0 shrink-0 md:w-auto md:flex-1"
+                    >
+                      <span className="relative z-10 flex h-10 w-10 items-center justify-center border border-orange-400/40 bg-[#080d1a] font-['Space_Mono'] text-[10px] text-orange-300">
                         {String(i + 1).padStart(2, "0")}
                       </span>
-                      <p className="mt-4 font-['Rajdhani'] text-[15px] font-semibold leading-snug text-slate-100">
+                      <p className="mt-5 font-['Rajdhani'] text-[17px] font-semibold leading-snug text-slate-100 md:text-[18px]">
                         {step}
                       </p>
                     </div>
@@ -528,16 +532,16 @@ export function AxionCaseStudy({
               The mobile screens adapt navigation, collection cards, product density,
               and checkout into focused layouts while keeping the same visual system.
             </p>
-            <div className="mt-6 grid items-start gap-5 sm:grid-cols-2">
+            <div className="mt-6 flex snap-x snap-mandatory gap-4 overflow-x-auto pb-3 md:gap-5">
               {mobileScreens.map((screen, i) => (
                 <Reveal key={screen.label} delay={i * 50} className={screen.className}>
-                  <figure className="m-0">
+                  <figure className="m-0 [&_img]:h-[560px] [&_img]:w-full [&_img]:object-contain [&_img]:object-top">
                     <AssetPanel
                       src={screen.src}
                       alt={screen.alt}
                       width={screen.width}
                       height={screen.height}
-                      sizes="(max-width: 640px) 90vw, 280px"
+                      sizes="(max-width: 640px) 60vw, 260px"
                     />
                     <AssetCaption label={screen.label} detail="Supplied mobile design" />
                   </figure>
@@ -554,13 +558,13 @@ export function AxionCaseStudy({
               Operational screens in the same visual language
             </h3>
             <div className="mt-6">
-              <figure className="m-0">
+              <figure className="m-0 [&_img]:object-contain">
                 <AssetPanel
-                  src={assets.dashboardOverview}
+                  src={assets.dashboardAxion}
                   alt="Axion admin dashboard overview with order totals, order trend, top products, and low-stock products"
-                  width={1152}
-                  height={1052}
-                  sizes="(max-width: 768px) 100vw, 900px"
+                  width={1440}
+                  height={1131}
+                  sizes="(max-width: 768px) 100vw, 1100px"
                 />
                 <AssetCaption
                   label="Dashboard Overview"
@@ -597,8 +601,8 @@ export function AxionCaseStudy({
             <figure className="m-0">
               <AssetPanel
                 src={assets.systemBoard}
-                alt="Axion design-system board combining the created color palette, typography system, and interface component examples"
-                width={2256}
+                alt="Axion design-system board combining the created color palette and typography system"
+                width={1496}
                 height={520}
                 sizes="(max-width: 768px) 100vw, 1100px"
               />
@@ -620,7 +624,7 @@ export function AxionCaseStudy({
                   Created by me
                 </p>
                 <p className="mt-3 font-sans text-[14px] leading-relaxed text-slate-300">
-                  Palette, typography, and interface components.
+                  Palette and typography.
                 </p>
               </div>
             </Reveal>
