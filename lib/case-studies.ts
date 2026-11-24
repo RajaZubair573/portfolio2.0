@@ -76,7 +76,7 @@ export const caseStudies: CaseStudy[] = [
   id: 8,
   title: "Reclaim — Data Recovery App",
   slug: "reclaim-data-recovery-app",
-  overview: "Reclaim is a mobile data recovery application designed to help users recover lost or accidentally deleted files. The experience focuses on making file discovery, scanning, previewing, and recovery simple through an intuitive and approachable interface.",
+  overview: "A mobile data recovery app concept designed to make scanning, previewing and restoring deleted files feel clear and reassuring.",
 
   challenge: "Recovering deleted files can be confusing, especially for users who are unfamiliar with file systems and recovery tools. The challenge was to create an interface that makes file discovery and recovery understandable without overwhelming users with technical complexity.",
 

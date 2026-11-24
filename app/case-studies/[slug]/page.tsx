@@ -44,19 +44,35 @@ export async function generateMetadata({
   if (!caseStudy) return { title: "Case Study Not Found" };
 
   const detail = caseStudyDetails[caseStudy.slug];
-  const description = detail?.intro ?? caseStudy.overview;
+  const isReclaim = caseStudy.slug === "reclaim-data-recovery-app";
+  const pageTitle = isReclaim
+    ? "Reclaim — Data Recovery App Concept | Raja Zubair"
+    : `${caseStudy.title} | Case Study`;
+  const description = isReclaim
+    ? "A mobile data recovery app concept designed to make scanning, previewing and restoring deleted files feel clear and reassuring."
+    : detail?.intro ?? caseStudy.overview;
+  const socialImage = caseStudy.previews.desktop;
 
-  return {
-    title: `${caseStudy.title} | Case Study`,
+  const metadata: Metadata = {
+    title: pageTitle,
     description,
     openGraph: {
-      title: caseStudy.title,
+      title: isReclaim ? pageTitle : caseStudy.title,
       description,
-      images: caseStudy.previews.desktop
-        ? [{ url: caseStudy.previews.desktop }]
-        : undefined,
+      images: socialImage ? [{ url: socialImage }] : undefined,
     },
   };
+
+  if (isReclaim) {
+    metadata.twitter = {
+      card: "summary_large_image",
+      title: pageTitle,
+      description,
+      images: socialImage ? [socialImage] : undefined,
+    };
+  }
+
+  return metadata;
 }
 
 const railItems: RailItem[] = [
@@ -109,7 +125,15 @@ export default async function CaseStudyPage({
     );
     standalone = true;
   } else if (caseStudy.slug === "reclaim-data-recovery-app") {
-    content = <ReclaimCaseStudy caseStudy={caseStudy} index={index} />;
+    content = (
+      <ReclaimCaseStudy
+        caseStudy={caseStudy}
+        index={index}
+        next={next}
+        previous={previous}
+      />
+    );
+    standalone = true;
   } else if (caseStudy.slug === "cwesd-learning-platform") {
     content = <CwesdCaseStudy caseStudy={caseStudy} index={index} />;
   } else if (caseStudy.slug === "light-house-ecommerce-website") {

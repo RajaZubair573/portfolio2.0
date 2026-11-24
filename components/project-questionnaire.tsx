@@ -62,7 +62,7 @@ export default function ProjectQuestionnaire({
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
 
-  const totalSteps = questions.length + 1;
+  const totalSteps = questions.length;
   const currentStepNumber = Math.min(step + 1, totalSteps);
   const progress = submitted ? 100 : Math.round((currentStepNumber / totalSteps) * 100);
   const activeQuestion = questions[step];
