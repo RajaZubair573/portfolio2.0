@@ -138,6 +138,7 @@ export const caseStudies: CaseStudy[] = [
     },
     tags: ["UI/UX Design", "E-commerce", "Web Design", "Responsive Design", "Lighting"],
     link: "https://www.figma.com/proto/xpokrtxgP4akM88XI3Rcej/Lighthouse-isb?node-id=187-2543&p=f&viewport=-403%2C50%2C0.06&t=9JasNXrElqMa9Kwu-1&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=187%3A2543&page-id=4%3A44",
+    liveUrl: "https://www.lighthouseisb.com.pk/",
     featured: true
   },
   {
