@@ -46,31 +46,38 @@ export async function generateMetadata({
   const detail = caseStudyDetails[caseStudy.slug];
   const isReclaim = caseStudy.slug === "reclaim-data-recovery-app";
   const isLightHouse = caseStudy.slug === "light-house-ecommerce-website";
+  const isCwesd = caseStudy.slug === "cwesd-learning-platform";
   const pageTitle = isReclaim
     ? "Reclaim — Data Recovery App Concept | Raja Zubair"
     : isLightHouse
       ? "Light House E-commerce Website | UI/UX Case Study — Raja Zubair"
-      : `${caseStudy.title} | Case Study`;
+      : isCwesd
+        ? "CWESD Learning Platform | UI/UX Case Study — Raja Zubair"
+        : `${caseStudy.title} | Case Study`;
   const description = isReclaim
     ? "A mobile data recovery app concept designed to make scanning, previewing and restoring deleted files feel clear and reassuring."
     : isLightHouse
       ? "A client project by Raja Zubair: UI/UX design for a premium architectural lighting e-commerce website, designed in Figma and developed by Synctom using custom coding."
-      : detail?.intro ?? caseStudy.overview;
+      : isCwesd
+        ? "A real client project by Raja Zubair: UI/UX design for CWESD, a learning platform supporting women in technology through education, mentorship, and community."
+        : detail?.intro ?? caseStudy.overview;
   const socialImage = isLightHouse
     ? "/projects/Lighthouse/Lighthouse-Mockup.png"
-    : caseStudy.previews.desktop;
+    : isCwesd
+      ? "/projects/CWESD/CWESD - Mockup.png"
+      : caseStudy.previews.desktop;
 
   const metadata: Metadata = {
     title: pageTitle,
     description,
     openGraph: {
-      title: isReclaim ? pageTitle : isLightHouse ? pageTitle : caseStudy.title,
+      title: isReclaim || isLightHouse || isCwesd ? pageTitle : caseStudy.title,
       description,
       images: socialImage ? [{ url: socialImage }] : undefined,
     },
   };
 
-  if (isReclaim || isLightHouse) {
+  if (isReclaim || isLightHouse || isCwesd) {
     metadata.twitter = {
       card: "summary_large_image",
       title: pageTitle,
@@ -142,7 +149,15 @@ export default async function CaseStudyPage({
     );
     standalone = true;
   } else if (caseStudy.slug === "cwesd-learning-platform") {
-    content = <CwesdCaseStudy caseStudy={caseStudy} index={index} />;
+    content = (
+      <CwesdCaseStudy
+        caseStudy={caseStudy}
+        index={index}
+        next={next}
+        previous={previous}
+      />
+    );
+    standalone = true;
   } else if (caseStudy.slug === "light-house-ecommerce-website") {
     content = (
       <LighthouseCaseStudy

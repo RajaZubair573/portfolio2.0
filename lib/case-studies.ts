@@ -145,20 +145,19 @@ export const caseStudies: CaseStudy[] = [
     id: 2,
     title: "CWESD Learning Platform",
     slug: "cwesd-learning-platform",
-    overview: "CWESD is a learning platform designed to empower women in technology through educational opportunities, structured learning experiences, mentorship, and community building.",
-    challenge: "Create an inclusive, engaging platform that appeals to women in tech while maintaining professional credibility and ease of navigation for diverse user groups.",
-    solution: "Designed a welcoming, responsive website experience with clear content presentation, intuitive navigation, and a cohesive visual direction to help visitors explore learning opportunities and community-related information.",
+    overview: "CWESD is a real client project: UI/UX design for a learning platform supporting women in technology through education, mentorship, and community.",
+    challenge: "Communicate CWESD's learning, mentorship, and community focus with a clear, welcoming visual direction.",
+    solution: "Designed the landing page and dashboard experience in Figma, establishing a consistent visual system across the available website presentation.",
     results: [
-      "Clearer Content Presentation — organized platform information into a more structured visual experience",
-      "Consistent Visual Identity — established a cohesive presentation through typography, color, and layout",
-      "Improved Information Discoverability — focused on making important learning and platform information easier to explore",
-      "Responsive Design Direction — designed the website experience with consideration for different screen sizes"
+      "Designed a landing page presenting CWESD's purpose, programs, and community focus",
+      "Established a consistent visual direction using the supplied brand colors and typography",
+      "Documented the dashboard as part of project scope; dashboard visuals are not available in the current portfolio assets"
     ],
     gallery: ["/projects/CWESD/CWESD - Mockup.png","/projects/CWESD/CWESD_typography.png","/projects/CWESD/CWESD_Colorpalette.webp","/projects/CWESD/CWESD_Landingpage.webp"],
     previews: {
       desktop: "/projects/CWESD/CWESD Landing Page.png",
     },
-    tags: ["UI/UX Design", "Education", "Web Design", "Mobile-First", "Community"],
+    tags: ["UI/UX Design", "Education", "Web Design", "Community"],
     link: "https://www.figma.com/proto/9Nv6z5mVXXUn2KzwMK1d5V/CWESD?node-id=124-707&viewport=431%2C25%2C0.1&t=W0hMRftf6JdoHNrR-1&scaling=min-zoom&content-scaling=fixed&page-id=13%3A2",
     featured: true
   },

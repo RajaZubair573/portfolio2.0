@@ -47,7 +47,7 @@ export const projects: Project[] = [
     id: 18,
     name: "CWESD",
     imagePath: "/projects/CWESD/CWESD - Mockup.png",
-    desc: "CWESD is a modern, conversion-focused learning platform empowering women to learn, grow, and lead.",
+    desc: "CWESD is a real client project: UI/UX design for a learning platform supporting women in technology through education, mentorship, and community.",
     link: "",
   },
   {
@@ -317,9 +317,9 @@ export const topProjects: TopProject[] = [
   },
   {
     title: "CWESD",
-    image: "/projects/CWESD - Mockup.png",
+    image: "/projects/CWESD/CWESD - Mockup.png",
     description:
-      "CWESD is a modern, conversion-focused learning platform empowering women to learn, grow, and lead.",
+      "CWESD is a real client project: UI/UX design for a learning platform supporting women in technology through education, mentorship, and community.",
     link: "https://www.figma.com/proto/9Nv6z5mVXXUn2KzwMK1d5V/CWESD?node-id=124-707&viewport=431%2C25%2C0.1&t=W0hMRftf6JdoHNrR-1&scaling=min-zoom&content-scaling=fixed&page-id=13%3A2",
   },
   {

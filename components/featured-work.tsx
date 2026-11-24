@@ -30,8 +30,8 @@ const featuredProjects: FeaturedProject[] = [
     id: 2,
     title: "CWESD",
     description:
-      "CWESD is a modern, conversion-focused learning platform empowering women to learn, grow, and lead.",
-    tags: ["Web Design", "Development", "Figma"],
+      "CWESD is a real client project: UI/UX design for a learning platform supporting women in technology through education, mentorship, and community.",
+    tags: ["UI/UX Design", "Web Design", "Figma"],
     image: "/projects/CWESD/CWESD - Mockup.png",
     link: "/case-studies/cwesd-learning-platform",
   },
